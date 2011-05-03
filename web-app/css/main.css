@@ -87,7 +87,7 @@ ul.menuitems li a:hover {
 	color: #ffb400;
 }
 a:link, a:visited, a:hover {
-    color: #666;
+    color: #00a4dd;
     text-decoration: underline;
 }
 #splogo {
@@ -162,6 +162,11 @@ input.submitButton {
 	background: url('../images/linebreak.png') no-repeat center;
 	height: 1px;
 	width: 960px;
+}
+.innerlinebreak {
+	background: url('../images/innerlinebreak.png') no-repeat center;
+	height: 21px;
+	width: 880px;
 }
 
 /* FOOTER */

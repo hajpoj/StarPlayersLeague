@@ -53,9 +53,7 @@
 		<div class="mcontent">
 			<g:each in="${noticeInstanceList}" status="i" var="noticeInstance">
 				<g:if test="${i > 0}">
-					<hr color="#ccc" size="1px" />
-					<div class="break"></div>
-					
+					<div class="innerlinebreak"></div>
 					</g:if>
 					<h2>${fieldValue(bean: noticeInstance, field: "title")}</h2>
 					<br/>
@@ -65,8 +63,7 @@
 					<div class="break"></div>
 			</g:each>
 			<div class="paginateButtons">
-				<hr color="#ccc" size="1px" />
-				<div class="break"></div>
+				<div class="innerlinebreak"></div>
 				<g:paginate next="Next" prev="Previous" maxsteps="0" action="welcome" total="${noticeInstanceTotal}" />
 			</div>
 		</div>
