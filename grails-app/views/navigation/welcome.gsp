@@ -1,6 +1,6 @@
 <%@ page import="spl.Notice" %>
 <html>
-
+<%--Welcome--%>
 	<head>
 		<title>StarPlayers League</title>
 		<meta name="layout" content="main" />
