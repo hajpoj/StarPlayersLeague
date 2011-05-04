@@ -54,6 +54,7 @@ class BootStrap {
 		// create roles
 		def userRole = AuthRole.findByAuthority("ROLE_USER") ?: new AuthRole(authority: "ROLE_USER").save()
 		def adminRole = AuthRole.findByAuthority("ROLE_ADMIN") ?: new AuthRole(authority: "ROLE_ADMIN").save()
+		
 	}
 	
 	private void importMaps() {
@@ -136,10 +137,12 @@ class BootStrap {
 			def user = new User(username:username[0],
 								email:email,
 								password:springSecurityService.encodePassword("${bnetId}${bnetCC}"),
+								bnetId:bnetId,
+								bnetCharCode:bnetCC,
 								primaryRace:race,
 								primarySkillLevel:skill,
 								enabled:true)
-			user.addToBnetIds("${bnetId}")
+
 			user.addToRegistrations(player)
 			user.save()
 			if (user.hasErrors()) {
