@@ -19,7 +19,7 @@
 	    	<g:each in="${messageInstanceList}" status="i" var="messageInstance">
 		    	<g:if test="${i > 0}"><div class="break"></div></g:if>
 		    	<div class="mcontent">
-		        	<p class="messageperson">${fieldValue(bean: messageInstance, field: "fromUser")} <g:if test="${messageInstance.fromUser.bnetIds.size() > 0}">${messageInstance.fromUser.bnetIds}</g:if></p><br/>
+		        	<p class="messageperson">${fieldValue(bean: messageInstance, field: "fromUser")} (${messageInstance.fromUser.bnetId}.${messageInstance.fromUser.bnetCharCode})</p><br/>
 		        	<p>${fieldValue(bean: messageInstance, field: "text")}</p><br/>
 		        	<p class="date">Sent on ${messageInstance.dateCreated.format('MM-dd-yyyy, HH:mm z')}</p>
 		        </div>

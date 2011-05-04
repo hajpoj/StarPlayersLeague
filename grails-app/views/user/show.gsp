@@ -51,6 +51,20 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="user.bnetId.label" default="Bnet Id" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: userInstance, field: "bnetId")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="user.bnetCharCode.label" default="Bnet Char Code" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: userInstance, field: "bnetCharCode")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="user.primaryRace.label" default="Primary Race" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: userInstance, field: "primaryRace")}</td>
@@ -75,13 +89,6 @@
                             <td valign="top" class="name"><g:message code="user.accountLocked.label" default="Account Locked" /></td>
                             
                             <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.accountLocked}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="user.bnetIds.label" default="Bnet Ids" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: userInstance, field: "bnetIds")}</td>
                             
                         </tr>
                     

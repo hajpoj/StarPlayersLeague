@@ -25,18 +25,12 @@
        			<br/>
         		<g:if test="${userInstance.id == threadInstance.fromUser.id}">
         			<p class="date"><span class="threadlabel">Conversation with:</span>
-        				${fieldValue(bean: threadInstance, field: "toUser")}
-        				<g:if test="${threadInstance.toUser.bnetIds.size() > 0}">
-        					${threadInstance.toUser.bnetIds}
-        				</g:if>
+        				${fieldValue(bean: threadInstance, field: "toUser")} (${threadInstance.toUser.bnetId}.${threadInstance.toUser.bnetCharCode})
         			</p>
         		</g:if>
         		<g:if test="${userInstance.id == threadInstance.toUser.id}">
         			<p class="date"><span class="threadlabel">Conversation with:</span> 
-        				${fieldValue(bean: threadInstance, field: "fromUser")}
-        				<g:if test="${threadInstance.fromUser.bnetIds.size() > 0}">
-        					${threadInstance.fromUser.bnetIds}
-        				</g:if>
+        				${fieldValue(bean: threadInstance, field: "fromUser")} (${threadInstance.fromUser.bnetId}.${threadInstance.fromUser.bnetCharCode})
         			</p>
         		</g:if>
         		<p class="date"><span class="threadlabel">Last message sent:</span> ${threadInstance.lastSentMessage.format('MM-dd-yyyy, HH:mm z')}</p>

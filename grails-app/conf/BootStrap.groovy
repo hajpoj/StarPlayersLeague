@@ -37,8 +37,10 @@ class BootStrap {
 				simulateMessages()
 				break
 			case "test":				
+						
 				break
 			case "production":
+				
 				break
 		}
 		
@@ -49,19 +51,9 @@ class BootStrap {
 	}
 	
 	private void createRoles() {
-		// create roles and admin user
+		// create roles
 		def userRole = AuthRole.findByAuthority("ROLE_USER") ?: new AuthRole(authority: "ROLE_USER").save()
 		def adminRole = AuthRole.findByAuthority("ROLE_ADMIN") ?: new AuthRole(authority: "ROLE_ADMIN").save()
-		
-		if (!User.findByUsername("admin")) {
-			def admin = User.findByUsername("admin") ?: new User(username:"admin",
-																 email:"ricgoto@gmail.com",
-																 password:springSecurityService.encodePassword("fcb2009"),
-																 primaryRace:"Random",
-																 primarySkillLevel:"Bronze",
-																 enabled:true).save()
-	        AuthUserAuthRole.create(admin, adminRole)
-		}
 	}
 	
 	private void importMaps() {

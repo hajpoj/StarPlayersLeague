@@ -13,7 +13,7 @@ class UserController {
     }
 
     def list = {
-        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        params.max = params.max ? params.int('max') : 500
         [userInstanceList: User.list(params), userInstanceTotal: User.count()]
     }
 

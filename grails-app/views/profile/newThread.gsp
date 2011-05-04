@@ -20,8 +20,8 @@
 	   		<div class="mcontent">
 	   			<g:hiddenField name="toUser" value="${threadInstance?.toUser.id}" />
 	   			<g:hiddenField name="fromUser" value="${threadInstance?.fromUser.id}" />
-	   			<p><span class="messagelabel">To: </span>${fieldValue(bean: messageInstance, field: "toUser")} <g:if test="${messageInstance.toUser.bnetIds.size() > 0}">${messageInstance.toUser.bnetIds}</g:if></p>
-        		<p><span class="messagelabel">From: </span>${fieldValue(bean: messageInstance, field: "fromUser")} <g:if test="${messageInstance.fromUser.bnetIds.size() > 0}">${messageInstance.fromUser.bnetIds}</g:if></p><br/>
+	   			<p><span class="messagelabel">To: </span>${fieldValue(bean: messageInstance, field: "toUser")} (${messageInstance.toUser.bnetId}.${messageInstance.toUser.bnetCharCode})</p>
+        		<p><span class="messagelabel">From: </span>${fieldValue(bean: messageInstance, field: "fromUser")} (${messageInstance.fromUser.bnetId}.${messageInstance.fromUser.bnetCharCode})</p><br/>
 	   			<p><span class="messagelabel">Subject: </span><g:textField class="subject_" name='subject'></g:textField></p><br/>
 	   			<p><span class="messagelabel">Body: </span><textarea class="message_" name='body'></textarea>
 	       	</div>

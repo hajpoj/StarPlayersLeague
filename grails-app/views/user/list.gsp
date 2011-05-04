@@ -30,9 +30,9 @@
                         
                             <g:sortableColumn property="email" title="${message(code: 'user.email.label', default: 'Email')}" />
                         
-                            <g:sortableColumn property="primaryRace" title="${message(code: 'user.primaryRace.label', default: 'Primary Race')}" />
+                            <g:sortableColumn property="bnetId" title="${message(code: 'user.bnetId.label', default: 'Bnet Id')}" />
                         
-                            <g:sortableColumn property="primarySkillLevel" title="${message(code: 'user.primarySkillLevel.label', default: 'Primary Skill Level')}" />
+                            <g:sortableColumn property="bnetCharCode" title="${message(code: 'user.bnetCharCode.label', default: 'Bnet Char Code')}" />
                         
                         </tr>
                     </thead>
@@ -48,9 +48,9 @@
                         
                             <td>${fieldValue(bean: userInstance, field: "email")}</td>
                         
-                            <td>${fieldValue(bean: userInstance, field: "primaryRace")}</td>
+                            <td>${fieldValue(bean: userInstance, field: "bnetId")}</td>
                         
-                            <td>${fieldValue(bean: userInstance, field: "primarySkillLevel")}</td>
+                            <td>${fieldValue(bean: userInstance, field: "bnetCharCode")}</td>
                         
                         </tr>
                     </g:each>

@@ -60,6 +60,24 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="bnetId"><g:message code="user.bnetId.label" default="Bnet Id" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'bnetId', 'errors')}">
+                                    <g:textField name="bnetId" value="${userInstance?.bnetId}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="bnetCharCode"><g:message code="user.bnetCharCode.label" default="Bnet Char Code" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'bnetCharCode', 'errors')}">
+                                    <g:textField name="bnetCharCode" value="${userInstance?.bnetCharCode}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                   <label for="primaryRace"><g:message code="user.primaryRace.label" default="Primary Race" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'primaryRace', 'errors')}">
@@ -91,15 +109,6 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'accountLocked', 'errors')}">
                                     <g:checkBox name="accountLocked" value="${userInstance?.accountLocked}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="bnetIds"><g:message code="user.bnetIds.label" default="Bnet Ids" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'bnetIds', 'errors')}">
-                                    
                                 </td>
                             </tr>
                         

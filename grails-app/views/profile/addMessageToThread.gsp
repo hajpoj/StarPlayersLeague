@@ -21,8 +21,8 @@
 	   			<g:hiddenField name="id" value="${threadInstance?.id}" />
 	   			<g:hiddenField name="toUser" value="${messageInstance?.toUser.id}" />
 	   			<g:hiddenField name="fromUser" value="${messageInstance?.fromUser.id}" />
-	   			<p><span class="messagelabel">To: </span>${fieldValue(bean: messageInstance, field: "toUser")} <g:if test="${messageInstance.toUser.bnetIds.size() > 0}">${messageInstance.toUser.bnetIds}</g:if></p>
-        		<p><span class="messagelabel">From: </span>${fieldValue(bean: messageInstance, field: "fromUser")} <g:if test="${messageInstance.fromUser.bnetIds.size() > 0}">${messageInstance.fromUser.bnetIds}</g:if></p><br/>
+	   			<p><span class="messagelabel">To: </span>${fieldValue(bean: messageInstance, field: "toUser")} (${messageInstance.toUser.bnetId}.${messageInstance.toUser.bnetCharCode})</p>
+        		<p><span class="messagelabel">From: </span>${fieldValue(bean: messageInstance, field: "fromUser")} (${messageInstance.fromUser.bnetId}.${messageInstance.fromUser.bnetCharCode})</p><br/>
 	   			<p><span class="messagelabel">Subject: </span>${fieldValue(bean: threadInstance, field: "subject")}</p><br/>
 	   			<p><span class="messagelabel">Body: </span><textarea class="message_" name='replyMessage'></textarea>
 	       	</div>
