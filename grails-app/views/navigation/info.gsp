@@ -53,6 +53,7 @@
 				<li>Players must report scores for BOTH matches for the week by Sunday at 11:59pm EDT.</li>
 				<li>If a player messages an opponent and he does not respond by the due date,  your opponent automatically forfeits and you may report a 2-0 win.</li>
 				<li>If your opponent responds to your message without enough time to schedule a game before the due date, you may schedule a makeup and report the score before the next week's due date.</li>
+				<li>Disconnects are automatic losses unless both players agree to rematch or if both players can agree on a clear winner before the disconnect occurred.</li>
 			</ul>
 			<br/>
 			<p>Player Conduct</p>

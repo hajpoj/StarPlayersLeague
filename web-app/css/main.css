@@ -21,6 +21,7 @@ h2 {
 	margin: 0;
 }
 h3 {
+	font-size: 12px;
 }
 h4 {
 	margin: 0 0 3px 0;
@@ -177,6 +178,10 @@ input.submitButton {
 	width: 920px;
 	margin: 10px;
 	padding: 10px;
+}
+div.donate {
+	float: right;
+	text-align: right;
 }
 div.flinks {
 	float: left;

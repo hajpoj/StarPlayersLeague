@@ -6,6 +6,22 @@
         <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
         <g:layoutHead />
         <g:javascript library="application" />
+        
+        <!-- Google Analytics -->
+	    <script type="text/javascript">
+	
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-23141936-1']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+	
+		</script>
+		<!-- End Google Analytics -->
     </head>
     <body>
         <div id="spinner" class="spinner" style="display:none;">
@@ -74,6 +90,16 @@
 						<li><a href="http://www.pokerstrategytsl3.com">TL Star League</a></li>
 						<li><a href="http://screddit.com">SCReddit Open</a></li>
 					</ul>
+				</div>
+				<div class="donate">
+					<h4>Please help keep our servers running!</h4>
+					<h4>We do not have enough minerals!</h4>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="GDXYTK2B98MEQ">
+						<input type="image" src="https://www.paypalobjects.com/WEBSCR-640-20110429-1/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.paypalobjects.com/WEBSCR-640-20110429-1/en_US/i/scr/pixel.gif" width="1" height="1">
+					</form>
 				</div>
 			</div>
 		</div>

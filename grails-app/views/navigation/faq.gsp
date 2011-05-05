@@ -7,27 +7,25 @@
 		<h1>Frequently Asked Questions</h1>
 		<div class="break"></div>
 		<div class="mcontent">
-			<p>
-				<a href="#14">What is the StarPlayers League?</a>
-				</p><p><a href="#1">I registered, but why have I not received any emails?</a>
-				</p><p><a href="#2">May I change races after the league has started?</a>
-				</p><p><a href="#3">May I register in the league more than once as multiple races?</a>
-				</p><p><a href="#4">How do I contact my opponent?</a>
-				</p><p><a href="#5">How many matches do I play per week?</a>
-				</p><p><a href="#6">When do our matches for the week need to be played by?</a>
-				</p><p><a href="#7">What if my opponent is unresponsive to my messages?</a>
-				</p><p><a href="#8">What if my opponent responds just before the due date where there is not enough time to play or schedule a match?</a>
-				</p><p><a href="#9">What if my opponent and I schedule a match time, but he doesn't show up? How long should I wait?</a>
-				</p><p><a href="#14">Who should report the score?</a>
-				</p><p><a href="#10">What if my opponent reports an incorrect score?</a>
-				</p><p><a href="#11">How do I view which maps to play on for my match?</a>
-				</p><p><a href="#12">Where can I meet my opponent if I do not want to give away my character code?</a>
-<%--			</p><p><a href="#13">How can I help out the StarPlayers League?</a>--%>
-			</p>
+				<p><a href="#14">What is the StarPlayers League?</a>
+				</p><br/><p><a href="#1">I registered, but why have I not received any emails?</a>
+				</p><br/><p><a href="#2">May I change races after the league has started?</a>
+				</p><br/><p><a href="#3">May I register in the league more than once as multiple races?</a>
+				</p><br/><p><a href="#4">How do I contact my opponent?</a>
+				</p><br/><p><a href="#5">How many matches do I play per week?</a>
+				</p><br/><p><a href="#6">When do our matches for the week need to be played by?</a>
+				</p><br/><p><a href="#7">What do I do if my opponent is unresponsive to my messages?</a>
+				</p><br/><p><a href="#8">What do I do if my opponent responds just before the due date where there is not enough time to play or schedule a match?</a>
+				</p><br/><p><a href="#9">What do I do if my opponent and I schedule a match time, but he doesn't show up? How long should I wait?</a>
+				</p><br/><p><a href="#14">Who should report the score?</a>
+				</p><br/><p><a href="#10">What do I do if my opponent reports an incorrect score?</a>
+				</p><br/><p><a href="#11">How do I view which maps to play on for my match?</a>
+				</p><br/><p><a href="#15">Who wins when a player disconnects from the game?</a>
+				</p><br/><p><a href="#12">Is there a StarPlayers League channel on Battle.net?</a>
+<%--			</p><br/><p><a href="#13">How can I help out the StarPlayers League?</a>--%>
 		</div>
 		<div class="break"></div>
-		<div class="mcontent">
-		
+		<div class="mcontent">		
 <h3 id="14">What is the StarPlayers League?</h3>
 <div class="break"></div>
     <p>The StarPlayers League allows StarCraft2 players of all skill levels to engage in a friendly competition against others. Our goal is to provide players with a more intimate league compared to the Battle.net ladder. In our league, you may find worthy opponents, develop rivalries, and even scout your opponent's play-style before your match. Most importantly, we want to expand StarCraft2 e-sports to anyone who wants to play.</p>
@@ -93,9 +91,14 @@
     <p>After you log in, click on the Matches link at the top of the page. To view the maps for a specific match, click the Map Pack link.</p>
 <div class="innerlinebreak"></div>
 
-<h3 id="12">Where can I meet my opponent if I do not want to give away my character code?</h3>
+<h3 id="15">Who wins when a player disconnects from the game?</h3>
 <div class="break"></div>
-<p>You can meet your opponent on any of our Battle.net channels: StarPlayers League, StarPlayers League 2, StarPlayers League 3, etc. Due to the large number of players we have in the league arrange ahead of time which channel to meet on.</p>
+<p>Disconnects are automatic losses unless both players agree to rematch or if both players can agree on a clear winner before the disconnect occurred.</p>
+<div class="innerlinebreak"></div>
+
+<h3 id="12">Is there a StarPlayers League channel on Battle.net?</h3>
+<div class="break"></div>
+<p>Yes, check out Battle.net channels: StarPlayers League, StarPlayers League 2, StarPlayers League 3, etc.</p>
 <div class="break"></div>
 <%--<div class="innerlinebreak"></div>--%>
 <%----%>
