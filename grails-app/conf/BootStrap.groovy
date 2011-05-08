@@ -150,7 +150,7 @@ class BootStrap {
 					println it
 				}
 			}
-			def userRole = AuthRole.findByAuthority("ROLE_USER")
+			def userRole = AuthRole.findByAuthority("ROLE_ADMIN")
 			AuthUserAuthRole.create(user, userRole)
 			//println "${code} ${division} ${group} ${player.bnetId}"
 			all_players[code][division][group]["${player.bnetId}${player.bnetCharCode}"] = player
@@ -204,8 +204,7 @@ class BootStrap {
 					for (Integer _round = 0; _round < numRounds; _round++) {
 						for (Integer _match = 0; _match < numMatches; _match++) {
 							
-							Match match = new Match(roundNumber:(_round+1),
-													matchNumber:(_match+1),
+							Match match = new Match(matchNumber:(_round+1),
 													played: false,
 													mapPack:MapPack.get((_round % 9)+1),
 													bestOf:3,

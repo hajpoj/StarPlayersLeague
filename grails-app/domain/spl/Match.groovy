@@ -1,7 +1,6 @@
 package spl
 
 class Match {
-	//Integer roundNumber
 	Integer matchNumber
 	MapPack mapPack
 	Integer bestOf
@@ -17,25 +16,13 @@ class Match {
 	}
 	
     static constraints = {
-		//roundNumber(nullable:false, blank:false, min:1)
 		matchNumber(nullable:false, blank:false, min:1)
 		mapPack(nullable:false)
 		bestOf(nullable:false, blank:false, min:1)
 		winner(nullable:true)
 		loserScore(nullable:true, blank:true, min:0)
     }
-	
-//	def beforeUpdate = {
-//		this.updateResult()
-//	}
-//	
-//	def afterUpdate = {
-//		for (_entry in entries) {
-//			_entry.updateMatchGameStats()
-//			_entry.save()
-//		}
-//	}
-	
+		
 	public void createGames() {
 		for (Integer i = 0; i < bestOf; i++) {
 			Game game = new Game(gameNumber:(i+1), map:mapPack.maps[i])
