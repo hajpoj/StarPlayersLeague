@@ -15,27 +15,30 @@
                 <g:renderErrors bean="${threadInstance}" as="list" />
             </div>
         </g:hasErrors>
-       	<g:each in="${threadInstanceList}" status="i" var="threadInstance">
-       		<g:if test="${i > 0}"><div class="break"></div></g:if>
-       		<div class="mcontent">
-       			<h2>
-       				<g:if test="${(currentUser.id == threadInstance.toUser.id) ? (threadInstance.unreadTo == true) : (threadInstance.unreadFrom == true)}">New!</g:if>
-       				<g:link action="listMessages" params="[id:threadInstance.id]">${fieldValue(bean: threadInstance, field: "subject")}</g:link>
-       			</h2>
-       			<br/>
-        		<g:if test="${userInstance.id == threadInstance.fromUser.id}">
-        			<p class="date"><span class="threadlabel">Conversation with:</span>
-        				${fieldValue(bean: threadInstance, field: "toUser")} (${threadInstance.toUser.bnetId}.${threadInstance.toUser.bnetCharCode})
-        			</p>
-        		</g:if>
-        		<g:if test="${userInstance.id == threadInstance.toUser.id}">
-        			<p class="date"><span class="threadlabel">Conversation with:</span> 
-        				${fieldValue(bean: threadInstance, field: "fromUser")} (${threadInstance.fromUser.bnetId}.${threadInstance.fromUser.bnetCharCode})
-        			</p>
-        		</g:if>
-        		<p class="date"><span class="threadlabel">Last message sent:</span> ${threadInstance.lastSentMessage.format('MM-dd-yyyy, HH:mm z')}</p>
-       		</div>
-       	</g:each>
+        <div class="list">
+			<table>
+				<col width="25%">
+		       	<col width="55">
+		       	<col width="20%">
+       			<tr>
+       				<th>Conversation With</th>
+       				<th>Subject</th>
+       				<th>Last Message Sent</th>
+       			</tr>
+	       		<g:each in="${threadInstanceList}" status="i" var="threadInstance">
+	            	<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+	            		<td><g:if test="${userInstance.id == threadInstance.fromUser.id}">
+			        		${fieldValue(bean: threadInstance, field: "toUser")} (${threadInstance.toUser.bnetId}.${threadInstance.toUser.bnetCharCode})</g:if>
+			        		<g:if test="${userInstance.id == threadInstance.toUser.id}">
+			        		${fieldValue(bean: threadInstance, field: "fromUser")} (${threadInstance.fromUser.bnetId}.${threadInstance.fromUser.bnetCharCode})
+			        		</g:if></td>
+						<td><g:if test="${(currentUser.id == threadInstance.toUser.id) ? (threadInstance.unreadTo == true) : (threadInstance.unreadFrom == true)}">New!</g:if>
+       						<g:link action="listMessages" params="[id:threadInstance.id]">${fieldValue(bean: threadInstance, field: "subject")}</g:link></td>
+						<td>${threadInstance.lastSentMessage.format('MM-dd-yyyy, HH:mm z')}</td>
+	                </tr>
+	        	</g:each>
+        	</table>
+   		</div>  
        	<div class="break"></div>
        	<div class="paginateButtons">
        		<g:paginate next="Next" prev="Previous"

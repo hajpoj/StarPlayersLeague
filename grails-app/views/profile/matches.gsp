@@ -19,6 +19,14 @@
         	<div class="message">${flash.message}</div>
         </g:if>
        	<table>
+       		<col width="5%">
+	       	<col width="16%">
+	       	<col width="8%">
+	       	<col width="5%">
+	       	<col width="8%">
+	       	<col width=28%">
+	       	<col width="15%">
+	       	<col width="15%">
        		<tr> 
        			<th class="right">Match</th>
        			<th class="right">Battle.net ID</th>
