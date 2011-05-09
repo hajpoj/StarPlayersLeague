@@ -20,4 +20,20 @@ class User extends AuthUser {
 	String toString() {
 		return "${username}"
 	}
+	
+	Integer unreadMessageCount() {
+		def unreadCount = 0
+		def threads = []
+		threads += this.threadsToMe
+		threads += this.threadsFromMe
+		for (_thread in threads) {
+			if (   _thread.toUser.id == this.id 
+				&& _thread.unreadTo == true
+				|| _thread.fromUser.id == this.id
+				&& _thread.unreadFrom == true) {
+				unreadCount++
+			}
+		}
+		return unreadCount
+	}
 }
