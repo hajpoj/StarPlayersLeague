@@ -87,8 +87,47 @@ class UserController {
     def delete = {
         def userInstance = User.get(params.id)
         if (userInstance) {
+			
+			def userAuth = AuthUserAuthRole.findByAuthUser(userInstance)
+			userAuth.delete(flush: true)
+			def tempCollection = []
+			def tempCollection2 = []
+			
+			for (_registration in userInstance.registrations) {
+				tempCollection = []
+				tempCollection += _registration.matches
+				for (_match in tempCollection) {
+					tempCollection2 = []
+					tempCollection2 += _match.entries
+					for (_entry in tempCollection2) {
+						_entry.removeFromMatches(_match)
+					}
+					_match.delete(flush: true)
+				}
+			}
+			tempCollection = []
+			tempCollection += userInstance.threadsToMe
+			for (_message in tempCollection) {
+				userInstance.removeFromThreadsToMe(_message)
+				_message.delete(flush: true)
+			}
+			tempCollection = []
+			tempCollection += userInstance.threadsFromMe
+			for (_message in tempCollection) {
+				userInstance.removeFromThreadsFromMe(_message)
+				_message.delete(flush: true)
+			}
+
+//			for (_registration in userInstance.registrations) {
+//				for (_entry in _registration.group.entries) {
+//					_entry.updateMatchGameStats()
+//					_entry.user.save(flush: true)
+//				}
+//			}
+			
             try {
-                userInstance.delete(flush: true)
+				userInstance.delete(flush: true)
+				
                 flash.message = "${message(code: 'default.deleted.message', args: [message(code: 'user.label', default: 'User'), params.id])}"
                 redirect(action: "list")
             }
