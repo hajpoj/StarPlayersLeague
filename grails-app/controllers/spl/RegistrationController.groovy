@@ -100,4 +100,12 @@ class RegistrationController {
             redirect(action: "list")
         }
     }
+	
+	def updateAllRegistrations = {
+		def registrations = Registration.list()
+		for (_registration in registrations) {
+			_registration.updateMatchGameStats()
+		}
+		redirect(action: "list")
+	}
 }

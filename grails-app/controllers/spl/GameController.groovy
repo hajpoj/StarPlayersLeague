@@ -69,7 +69,8 @@ class GameController {
             }
             gameInstance.properties = params
             if (!gameInstance.hasErrors() && gameInstance.save(flush: true)) {
-				for (_player in gameInstance.players) {
+				gameInstance.match.updateResult()
+				for (_player in gameInstance.entries) {
 					_player.updateMatchGameStats()
 				}
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'game.label', default: 'Game'), gameInstance.id])}"
