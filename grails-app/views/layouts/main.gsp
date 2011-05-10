@@ -34,7 +34,7 @@
         		<g:link controller="login">Log In</g:link>
         	</sec:ifNotLoggedIn>
         	<sec:ifLoggedIn>
-        		Welcome <sec:username/>! <g:link controller="profile" action="profile">Profile</g:link> | <g:link controller="profile" action="matches">Matches</g:link> | <g:link controller="profile" action="listThreads">Messages (${User.get(session.SPRING_SECURITY_CONTEXT?.authentication?.principal?.id).unreadMessageCount()})</g:link> | <g:link controller="logout">Log Out</g:link>
+        		Welcome <sec:username/>! <g:link controller="profile" action="profile">Profile</g:link> | <g:link controller="profile" action="matches">Matches</g:link> | <g:link controller="profile" action="listThreads">Messages (${User.get(session.SPRING_SECURITY_CONTEXT?.authentication?.principal?.id)?.unreadMessageCount()})</g:link> | <g:link controller="logout">Log Out</g:link>
         	</sec:ifLoggedIn>
         </div>
         	<div id="splogo">
