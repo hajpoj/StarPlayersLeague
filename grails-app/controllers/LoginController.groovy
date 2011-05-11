@@ -1,9 +1,8 @@
+import spl.*
 import grails.converters.JSON
-
+import org.apache.commons.lang.RandomStringUtils
 import javax.servlet.http.HttpServletResponse
-
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
-
 import org.springframework.security.authentication.AccountExpiredException
 import org.springframework.security.authentication.CredentialsExpiredException
 import org.springframework.security.authentication.DisabledException
@@ -52,6 +51,32 @@ class LoginController {
 		String postUrl = "${request.contextPath}${config.apf.filterProcessesUrl}"
 		render view: view, model: [postUrl: postUrl,
 		                           rememberMeParameter: config.rememberMe.parameter]
+	}
+	
+	// FORGOT PASSWORD
+	def forgotPassword = {
+		
+	}
+	
+	def resetPassword = {
+		def user = User.findByUsernameLike(params.username)
+		if (!user) {
+			flash.message = "Couldn't find anyone with username: ${params.username}."
+		} else {
+			user.password = springSecurityService.encodePassword(RandomStringUtils.random(12, true, true))
+			def bodyText = 'Hey ${user.username}, we reset your password to ${user.password}. Please login and change your password.'
+			sendMail {
+				to "${user.email}"
+				from "StarPlayers League <contact@starplayersleague.com>"
+				subject "Password Reset"
+				body bodyText
+			}
+			flash.message = "Please check your email for your new password."
+			//println "sent mail to ${user.email} with password: ${newPassword}"
+		}
+
+		
+		render(view: 'forgotPassword')
 	}
 
 	/**

@@ -48,6 +48,7 @@
 					<p>
 						<label for='password'>Password</label>
 						<input type='password' class='text_' name='j_password' id='password' />
+<%--						<g:link controller='login' action='forgotPassword'>Forgot your password?</g:link>--%>
 					</p>
 					<br/>
 					<p>

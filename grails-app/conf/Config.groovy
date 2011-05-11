@@ -99,3 +99,6 @@ grails.plugins.springsecurity.securityConfigType = SecurityConfigType.Annotation
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'spl.AuthUser'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'spl.AuthUserAuthRole'
 grails.plugins.springsecurity.authority.className = 'spl.AuthRole'
+
+// Mail configs
+grails.mail.default.from='contact@starplayersleague.com'
