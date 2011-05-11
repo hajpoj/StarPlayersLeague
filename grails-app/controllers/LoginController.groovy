@@ -63,8 +63,11 @@ class LoginController {
 		if (!user) {
 			flash.message = "Couldn't find anyone with username: ${params.username}."
 		} else {
-			user.password = springSecurityService.encodePassword(RandomStringUtils.random(12, true, true))
-			def bodyText = 'Hey ${user.username}, we reset your password to ${user.password}. Please login and change your password.'
+			def rawPassword = RandomStringUtils.random(12, true, true)
+			user.password = springSecurityService.encodePassword(rawPassword)
+			def bodyText = "Hey ${user.username},\r\n\r\n"
+			bodyText += "We reset your password to ${rawPassword}. Please login and change your password.\r\n\r\n"
+			bodyText += "StarPlayers Team"
 			sendMail {
 				to "${user.email}"
 				from "StarPlayers League <contact@starplayersleague.com>"
@@ -72,7 +75,6 @@ class LoginController {
 				body bodyText
 			}
 			flash.message = "Please check your email for your new password."
-			//println "sent mail to ${user.email} with password: ${newPassword}"
 		}
 
 		
