@@ -10,7 +10,7 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
-//import spl.*
+import spl.*
 //import org.springframework.orm.hibernate3.HibernateOptimisticLockingFailureException
 //import org.hibernate.StaleObjectStateException
 //import org.springframework.dao.OptimisticLockingFailureException
@@ -102,19 +102,20 @@ grails.plugins.springsecurity.useSecurityEventListener = true
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'spl.AuthUser'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'spl.AuthUserAuthRole'
 grails.plugins.springsecurity.authority.className = 'spl.AuthRole'
-//grails.plugins.springsecurity.onInteractiveAuthenticationSuccessEvent = { e, appCtx ->
-//	User.withTransaction {
-//		def user = User.get(appCtx.springSecurityService.currentUser.id)
+grails.plugins.springsecurity.onInteractiveAuthenticationSuccessEvent = { e, appCtx ->
+	User.withTransaction {
+		def user = User.get(appCtx.springSecurityService.currentUser.id)
+		println "DEBUG: ${new Date()} user logged in: ${user.username}"
 //		try {
 //			user.lastLogin = new Date()
 //			println "DEBUG: ${user.lastLogin} trying to save user: ${user.username}"
 //			user.save()
-//		} catch(HibernateOptimisticLockingFailureException  ex) {
+//		} catch(StaleObjectStateException ex) {
 //			user = user.merge()
 //			println "DEBUG: ${user.lastLogin} caught exception, merging user: ${user.username}"
 //		}
-//	}
-//}
+	}
+}
 
 // Mail configs
 grails.mail.default.from='contact@starplayersleague.com'
