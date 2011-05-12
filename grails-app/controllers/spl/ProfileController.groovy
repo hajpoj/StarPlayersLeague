@@ -6,33 +6,26 @@ import grails.plugins.springsecurity.Secured
 class ProfileController {
 	def springSecurityService
 	
-	private currentUser() {
-		if (springSecurityService.loggedIn) {
-			return User.get(springSecurityService.principal.id)
-		} else {
-			return null
-		}
-	}
 	def index = {
 		redirect(action: "profile")
 	}
 	
 	// VIEW PROFILE
 	def profile = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def registrationList = user.registrations
 		[userInstance: user, registrationInstanceList: registrationList]
 	}
 	
 	// EDIT PROFILE
 	def edit = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		[userInstance: user]
 	}
 	
 	// UPDATE PROFILE
 	def update = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def registrationList = user.registrations
 		user.username = params.username
 		user.email = params.email
@@ -59,7 +52,7 @@ class ProfileController {
 	
 	// USER'S MATCHES
 	def matches = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def entry
 		def matchesList = []
 		if ((user != null) && (user.registrations.toArray().size() != 0)) {
@@ -71,7 +64,7 @@ class ProfileController {
 	
 	// REPORT SCORE
 	def reportScore = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def match = Match.get(params.id)
 		if (!match.accessAllowed(user)) {
 			flash.message = "You are unauthorized to view this match"
@@ -131,7 +124,7 @@ class ProfileController {
 	
 	// INTERNAL MESSAGING 
 	def listThreads = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def threadList = MessageThread.findAllByToUserOrFromUser(user, user)
 		def total = threadList.toArray().size()
 		def range
@@ -149,7 +142,7 @@ class ProfileController {
 	}
 	
 	def listMessages = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def thread = MessageThread.get(params.id)
 		if (!thread.accessAllowed(user)) {
 			flash.message = "You are unauthorized to see this thread."
@@ -169,7 +162,7 @@ class ProfileController {
 	}
 	
 	def addMessageToThread = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def thread = MessageThread.get(params.id)
 		def other_user = (thread.toUser.id == user.id) ? thread.fromUser : thread.toUser
 		if (!thread.accessAllowed(user)) {
@@ -182,7 +175,7 @@ class ProfileController {
 	}
 	
 	def newThread = {
-		def fromUser = currentUser()
+		def fromUser = springSecurityService.currentUser
 		def toUser = User.get(params.id)
 		def message = new Message(fromUser: fromUser, toUser: toUser)
 		def thread = new MessageThread(fromUser: fromUser, toUser: toUser)
@@ -205,7 +198,7 @@ class ProfileController {
 	}
 	
 	def updateThread = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def thread = MessageThread.get(params.id)
 		def toUser = User.get(params.toUser)
 		def fromUser = User.get(params.fromUser)

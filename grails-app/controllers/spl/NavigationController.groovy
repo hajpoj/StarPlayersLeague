@@ -5,14 +5,6 @@ import grails.plugins.springsecurity.Secured
 class NavigationController {
 	def springSecurityService
 	
-	private currentUser() {
-		if (springSecurityService.loggedIn) {
-			return User.get(springSecurityService.principal.id)
-		} else {
-			return null
-		}
-	}
-	
     def index = { redirect(action: "welcome") }
 	
 	// HOME VIEW
@@ -33,7 +25,7 @@ class NavigationController {
 		codeList = codeList.reverse()
 		// END BS
 
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def code = Code.findByName("SP")
 		def division = Division.findByNameAndCode("1", code)
 		group = Group.findByNameAndDivision("A", division)
@@ -140,7 +132,7 @@ class NavigationController {
 		codeList = codeList.reverse()
 		// END BS
 
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		if (params.group) { 
 			group = Group.get(params.group)
 		} else if ((user == null) || (user.registrations.toArray().size() == 0)) {

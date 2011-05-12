@@ -96,6 +96,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="lastLogin"><g:message code="user.lastLogin.label" default="Last Login" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'lastLogin', 'errors')}">
+                                    <g:datePicker name="lastLogin" precision="day" value="${userInstance?.lastLogin}" default="none" noSelection="['': '']" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                   <label for="accountExpired"><g:message code="user.accountExpired.label" default="Account Expired" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'accountExpired', 'errors')}">

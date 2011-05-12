@@ -79,6 +79,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="user.lastLogin.label" default="Last Login" /></td>
+                            
+                            <td valign="top" class="value"><g:formatDate date="${userInstance?.lastLogin}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="user.accountExpired.label" default="Account Expired" /></td>
                             
                             <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.accountExpired}" /></td>
