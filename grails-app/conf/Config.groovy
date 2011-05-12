@@ -11,6 +11,7 @@
 // }
 
 import spl.*
+import org.hibernate.StaleObjectStateException
 import grails.plugins.springsecurity.SecurityConfigType
 
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
@@ -102,9 +103,12 @@ grails.plugins.springsecurity.authority.className = 'spl.AuthRole'
 grails.plugins.springsecurity.onInteractiveAuthenticationSuccessEvent = { e, appCtx ->
 	User.withTransaction {
 		def user = appCtx.springSecurityService.currentUser
-		if (!user.isAttached()) user.attach()
-		user.lastLogin = new Date()
-		user.save(flush: true)
+		try {
+			user.lastLogin = new Date()
+			user.save(flush: true)
+		} catch(StaleObjectStateException ex) {
+			user = user.merge()
+		}
 	}
 }
 
