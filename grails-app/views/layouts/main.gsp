@@ -30,12 +30,7 @@
         </div>
         <div id="wrapper">
         <div id="loginheader">
-        	<sec:ifNotLoggedIn>
-        		<g:link controller="login">Log In</g:link>
-        	</sec:ifNotLoggedIn>
-        	<sec:ifLoggedIn>
-        		Welcome <sec:username/>! <g:link controller="profile" action="profile">Profile</g:link> | <g:link controller="profile" action="matches">Matches</g:link> | <g:link controller="profile" action="listThreads">Messages (${User.get(session.SPRING_SECURITY_CONTEXT?.authentication?.principal?.id)?.unreadMessageCount()})</g:link> | <g:link controller="logout">Log Out</g:link>
-        	</sec:ifLoggedIn>
+        	<g:loginHeader/>
         </div>
         	<div id="splogo">
 				<a href="http://www.starplayersleague.com"><img src="${resource(dir:'images',file:'splogo.png')}" alt="StarPlayers Logo" border="0" /></a>
