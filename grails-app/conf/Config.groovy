@@ -10,6 +10,7 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
+import spl.*
 import grails.plugins.springsecurity.SecurityConfigType
 
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
@@ -94,11 +95,18 @@ log4j = {
 // Added by the Spring Security Core plugin:
 grails.plugins.springsecurity.requestMap.className = 'spl.Requestmap'
 grails.plugins.springsecurity.securityConfigType = SecurityConfigType.Annotation
-
-// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.useSecurityEventListener = true
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'spl.AuthUser'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'spl.AuthUserAuthRole'
 grails.plugins.springsecurity.authority.className = 'spl.AuthRole'
+grails.plugins.springsecurity.onInteractiveAuthenticationSuccessEvent = { e, appCtx ->
+	User.withTransaction {
+		def user = appCtx.springSecurityService.currentUser
+		if (!user.isAttached()) user.attach()
+		user.lastLogin = new Date()
+		user.save(flush: true)
+	}
+}
 
 // Mail configs
 grails.mail.default.from='contact@starplayersleague.com'
