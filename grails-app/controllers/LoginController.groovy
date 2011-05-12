@@ -72,7 +72,6 @@ class LoginController {
 				body bodyText
 			}
 			flash.message = "Please check your email for your new password."
-			//println "sent mail to ${user.email} with password: ${newPassword}"
 		}
 
 		
