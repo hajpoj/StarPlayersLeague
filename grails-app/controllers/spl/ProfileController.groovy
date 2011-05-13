@@ -85,25 +85,45 @@ class ProfileController {
 	
 	def submitScore = {
 		def match = Match.get(params.id)
-		// verify that the games are consistent
 		def players = match.entries.toArray()
-		def player1Wins = 0
-		def player2Wins = 0
+		def gameWinnerId = new String[match.bestOf] 
+		def expectNull = false
+		def foundScoreError = false
+		Integer winThreshold = (match.bestOf/2) + 1
+		Integer[] playerWins
+		playerWins = new Integer[players.size()]
+		for (_i in 0..players.size()-1) {
+			playerWins[_i] = 0
+		}
+		
 		for (_game in 1..match.bestOf) {
-			if (params."game${_game}" != 'null') { 
-				if (players[0].id == Registration.get(params."game${_game}").id) {
-					player1Wins++
-				} else {
-					player2Wins++
+			if (!foundScoreError
+				&& (    expectNull && (params."game${_game}" != 'null')
+				    || !expectNull && (params."game${_game}" == 'null'))) {
+				flash.message = "Please fix the result for game ${_game}"
+				foundScoreError = true
+			}
+			if (!foundScoreError) {
+				if (params."game${_game}" != 'null') {
+					for (_i in 0..players.size()-1) {
+						if (players[_i].id == Registration.get(params."game${_game}").id) {
+							playerWins[_i]++
+						}
+						if (playerWins[_i] >= winThreshold) {
+							expectNull = true
+						}
+					}
+					gameWinnerId[_game-1] = params."game${_game}" 
 				}
-				match.games[_game-1].winner = Registration.get(params."game${_game}")
 			}
 		}
-		if (   player1Wins != (((Integer)match.bestOf/2)+1) 
-			&& player2Wins != (((Integer)match.bestOf/2)+1)) {
-			flash.message = "Scores are inconsistent"
+		
+		if (foundScoreError) {
 			redirect(action: "reportScore", id: match.id)
 		} else {
+			for (_i in 0..match.bestOf-1) {
+				match.games[_i].winner = Registration.get(gameWinnerId[_i])
+			}
 			match.played = true
 			match.updateResult()
 			if (match.hasErrors() || !match.save(flush: true)) {

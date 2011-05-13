@@ -32,10 +32,8 @@
         						     from="${matchInstance.entries}"
         					  		 optionKey="id"
         					  		 value="${game?.winner?.id}"
-        					  		 noSelection="${['null': 'Select one...']}"/></p>
+        					  		 noSelection="${['null': 'Not Played']}"/></p>
         			</g:each>
-        			<p>Only report game 3 if players split first 2 games! Otherwise leave as 'Select one...'</p>
-        			<p>We are working on getting this fixed!</p>
         		</div>
         	</div>
         <p><g:actionSubmit class="submitButton" action="submitScore" value="Submit" /></p>
