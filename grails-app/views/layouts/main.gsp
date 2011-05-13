@@ -91,6 +91,13 @@
 						<li><a href="http://screddit.com">SCReddit Open</a></li>
 					</ul>
 				</div>
+				<div class="flinks">
+					<h4>SPL Community</h4>
+					<ul class="flinks">
+						<li><a href="https://www.facebook.com/pages/StarPlayers-League/214953398529055">Facebook</a></li>
+						<li><a href="http://twitter.com/#!/StarPlayersSC">Twitter</a></li>
+					</ul>
+				</div>
 				<div class="donate">
 					<h4>Please help keep our servers running!</h4>
 					<h4>We do not have enough minerals!</h4>
