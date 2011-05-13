@@ -6,6 +6,8 @@ class User extends AuthUser {
 	String bnetCharCode
 	String primaryRace
 	String primarySkillLevel
+	Boolean messageNotification = true
+	Date lastLogin
 	static hasMany = [registrations:Registration, threadsToMe:MessageThread, threadsFromMe:MessageThread]
 	static mappedBy = [threadsToMe:"toUser", threadsFromMe:"fromUser"] 
 	
@@ -15,9 +17,26 @@ class User extends AuthUser {
 		bnetCharCode(nullable:false, blank:true)
 		primaryRace(inList:["Random", "Zerg", "Protoss", "Terran"])
 		primarySkillLevel(inList:["Master", "Diamond", "Platinum", "Gold", "Silver", "Bronze"])
+		lastLogin(nullable:true)
 	}
 
 	String toString() {
 		return "${username}"
+	}
+	
+	Integer unreadMessageCount() {
+		def unreadCount = 0
+		def threads = []
+		threads += this.threadsToMe
+		threads += this.threadsFromMe
+		for (_thread in threads) {
+			if (   _thread.toUser.id == this.id 
+				&& _thread.unreadTo == true
+				|| _thread.fromUser.id == this.id
+				&& _thread.unreadFrom == true) {
+				unreadCount++
+			}
+		}
+		return unreadCount
 	}
 }

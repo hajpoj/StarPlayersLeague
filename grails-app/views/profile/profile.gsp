@@ -22,10 +22,18 @@
     		<div class="infoleft">
     			<p>Username:</p>
     			<p>Email Address:</p>
+    			<p>Email me when I receive a message:</p>
     		</div>
     		<div class="inforight">
     			<p>${userInstance.username}</p>
     			<p>${userInstance.email}</p>
+    			<p></p>
+    			<g:if test="${userInstance.messageNotification}">
+    				<p>Yes</p>
+ 				</g:if>
+ 				<g:else>
+ 					<p>No</p>
+ 				</g:else>
     		</div>
     	</div>
     	<g:each in="${registrationInstanceList}" status="i" var="registrationInstance">

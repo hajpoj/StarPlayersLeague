@@ -6,36 +6,30 @@ import grails.plugins.springsecurity.Secured
 class ProfileController {
 	def springSecurityService
 	
-	private currentUser() {
-		if (springSecurityService.loggedIn) {
-			return User.get(springSecurityService.principal.id)
-		} else {
-			return null
-		}
-	}
 	def index = {
 		redirect(action: "profile")
 	}
 	
 	// VIEW PROFILE
 	def profile = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def registrationList = user.registrations
 		[userInstance: user, registrationInstanceList: registrationList]
 	}
 	
 	// EDIT PROFILE
 	def edit = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		[userInstance: user]
 	}
 	
 	// UPDATE PROFILE
 	def update = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def registrationList = user.registrations
 		user.username = params.username
 		user.email = params.email
+		user.messageNotification = params.messageNotification
 		if (   params.oldPassword != "" 
 			|| params.newPassword != "" 
 			|| params.confirmNewPassword != "") {
@@ -59,7 +53,7 @@ class ProfileController {
 	
 	// USER'S MATCHES
 	def matches = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def entry
 		def matchesList = []
 		if ((user != null) && (user.registrations.toArray().size() != 0)) {
@@ -71,7 +65,7 @@ class ProfileController {
 	
 	// REPORT SCORE
 	def reportScore = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def match = Match.get(params.id)
 		if (!match.accessAllowed(user)) {
 			flash.message = "You are unauthorized to view this match"
@@ -131,7 +125,7 @@ class ProfileController {
 	
 	// INTERNAL MESSAGING 
 	def listThreads = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def threadList = MessageThread.findAllByToUserOrFromUser(user, user)
 		def total = threadList.toArray().size()
 		def range
@@ -149,7 +143,7 @@ class ProfileController {
 	}
 	
 	def listMessages = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def thread = MessageThread.get(params.id)
 		if (!thread.accessAllowed(user)) {
 			flash.message = "You are unauthorized to see this thread."
@@ -169,7 +163,7 @@ class ProfileController {
 	}
 	
 	def addMessageToThread = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def thread = MessageThread.get(params.id)
 		def other_user = (thread.toUser.id == user.id) ? thread.fromUser : thread.toUser
 		if (!thread.accessAllowed(user)) {
@@ -182,7 +176,7 @@ class ProfileController {
 	}
 	
 	def newThread = {
-		def fromUser = currentUser()
+		def fromUser = springSecurityService.currentUser
 		def toUser = User.get(params.id)
 		def message = new Message(fromUser: fromUser, toUser: toUser)
 		def thread = new MessageThread(fromUser: fromUser, toUser: toUser)
@@ -195,6 +189,8 @@ class ProfileController {
 		def thread = new MessageThread(fromUser: fromUser, toUser: toUser, subject: params.subject)
 		def message = new Message(fromUser: fromUser, toUser: toUser, text: params.body)
 		thread.addToMessages(message)
+		if (toUser.messageNotification) sendMailNotification(toUser, fromUser)
+		//BOZO: should add collision protection
 		if (!thread.hasErrors() && thread.save(flush: true)) {
 			flash.message = "Successfully sent message!"
 			redirect(action: "listMessages", id: thread.id)
@@ -205,17 +201,31 @@ class ProfileController {
 	}
 	
 	def updateThread = {
-		def user = currentUser()
+		def user = springSecurityService.currentUser
 		def thread = MessageThread.get(params.id)
 		def toUser = User.get(params.toUser)
 		def fromUser = User.get(params.fromUser)
 		def message = new Message(fromUser: fromUser, toUser: toUser, text:params.replyMessage, thread:thread)
 		thread.addToMessages(message)
+		if (toUser.messageNotification) sendMailNotification(toUser, fromUser)
+		//BOZO: should add collision protection
 		if (!thread.hasErrors() && thread.save(flush: true)) {
 			flash.message = "Successfully sent message!"
 			redirect(action: "listMessages", id: thread.id)
 		} else {
 			redirect(action: "addMessageToThread", id: thread.id)
+		}
+	}
+	
+	private void sendMailNotification(User toUser, User fromUser) {
+		def bodyText = "Hey ${toUser.username},\r\n\r\n"
+		bodyText += "You have a message from ${fromUser.username}. Please log in to www.starplayersleague.com to read your messages.\r\n\r\n"
+		bodyText += "StarPlayers Team"
+		sendMail {
+			to "${toUser.email}"
+			from "StarPlayers League <contact@starplayersleague.com>"
+			subject "You have a message from ${fromUser.username}"
+			body bodyText
 		}
 	}
 

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page import="spl.User" %>
 <html>
     <head>
         <title><g:layoutTitle default="StarPlayers League" /></title>
@@ -29,12 +30,7 @@
         </div>
         <div id="wrapper">
         <div id="loginheader">
-        	<sec:ifNotLoggedIn>
-        		<g:link controller="login">Log In</g:link>
-        	</sec:ifNotLoggedIn>
-        	<sec:ifLoggedIn>
-        		Welcome <sec:username/>! <g:link controller="profile" action="profile">Profile</g:link> | <g:link controller="profile" action="matches">Matches</g:link> | <g:link controller="profile" action="listThreads">Messages</g:link> | <g:link controller="logout">Log Out</g:link>
-        	</sec:ifLoggedIn>
+        	<g:loginHeader/>
         </div>
         	<div id="splogo">
 				<a href="http://www.starplayersleague.com"><img src="${resource(dir:'images',file:'splogo.png')}" alt="StarPlayers Logo" border="0" /></a>

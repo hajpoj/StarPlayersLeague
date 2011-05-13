@@ -93,6 +93,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="lastLogin"><g:message code="user.lastLogin.label" default="Last Login" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'lastLogin', 'errors')}">
+                                    <g:datePicker name="lastLogin" precision="day" value="${userInstance?.lastLogin}" default="none" noSelection="['': '']" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="accountExpired"><g:message code="user.accountExpired.label" default="Account Expired" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'accountExpired', 'errors')}">
@@ -115,6 +124,15 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'enabled', 'errors')}">
                                     <g:checkBox name="enabled" value="${userInstance?.enabled}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="messageNotification"><g:message code="user.messageNotification.label" default="Message Notification" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'messageNotification', 'errors')}">
+                                    <g:checkBox name="messageNotification" value="${userInstance?.messageNotification}" />
                                 </td>
                             </tr>
                         

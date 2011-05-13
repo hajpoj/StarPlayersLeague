@@ -79,6 +79,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="user.lastLogin.label" default="Last Login" /></td>
+                            
+                            <td valign="top" class="value"><g:formatDate date="${userInstance?.lastLogin}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="user.accountExpired.label" default="Account Expired" /></td>
                             
                             <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.accountExpired}" /></td>
@@ -96,6 +103,13 @@
                             <td valign="top" class="name"><g:message code="user.enabled.label" default="Enabled" /></td>
                             
                             <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.enabled}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="user.messageNotification.label" default="Message Notification" /></td>
+                            
+                            <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.messageNotification}" /></td>
                             
                         </tr>
                     

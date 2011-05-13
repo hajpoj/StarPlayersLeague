@@ -10,6 +10,10 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
+import spl.*
+//import org.springframework.orm.hibernate3.HibernateOptimisticLockingFailureException
+//import org.hibernate.StaleObjectStateException
+//import org.springframework.dao.OptimisticLockingFailureException
 import grails.plugins.springsecurity.SecurityConfigType
 
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
@@ -94,8 +98,24 @@ log4j = {
 // Added by the Spring Security Core plugin:
 grails.plugins.springsecurity.requestMap.className = 'spl.Requestmap'
 grails.plugins.springsecurity.securityConfigType = SecurityConfigType.Annotation
-
-// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.useSecurityEventListener = true
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'spl.AuthUser'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'spl.AuthUserAuthRole'
 grails.plugins.springsecurity.authority.className = 'spl.AuthRole'
+grails.plugins.springsecurity.onInteractiveAuthenticationSuccessEvent = { e, appCtx ->
+	User.withTransaction {
+		def user = User.get(appCtx.springSecurityService.currentUser.id)
+		println "DEBUG: ${new Date()} user logged in: ${user.username}"
+//		try {
+//			user.lastLogin = new Date()
+//			println "DEBUG: ${user.lastLogin} trying to save user: ${user.username}"
+//			user.save()
+//		} catch(StaleObjectStateException ex) {
+//			user = user.merge()
+//			println "DEBUG: ${user.lastLogin} caught exception, merging user: ${user.username}"
+//		}
+	}
+}
+
+// Mail configs
+grails.mail.default.from='contact@starplayersleague.com'
