@@ -7,46 +7,6 @@
 	<body>
 		<div id="sc2banner"></div>
 		<div class="break"></div>
-		<h1>Code SP Standings</h1>
-		<p class="date">The Most Prestigious Code in the StarPlayers League</p>
-		<div class="list">
-	    	<table>
-	        	<col width="5%" />
-	            <col width="20%" />
-	            <col width="15%" />
-	            <col width="15%" />
-	            <col width="15%" />
-	            <col width="15%" />
-	            <col width="15%" />
-	          	<thead>
-	              	<tr>
-	                   	<th class="right">Rank</th>
-	                    <th>Battle.net ID</th>
-	                    <th>Race</th>
-						<th class="right">Matches Played</th>
-						<th class="right">Matches Won</th>
-						<th class="right">Matches Lost</th>
-	                    <th class="right">Game Diff.</th>
-	                </tr>
-	            </thead>
-	            <tbody>
-	             	<g:each in="${standingsInstanceList}" status="i" var="registrationInstance">
-	                    <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-	                      	<td class="right">${i+1}</td>
-	<%--                    <td><g:link action="show" id="${registrationInstance.id}">${fieldValue(bean: registrationInstance, field: "bnetId")}</g:link></td>--%>
-							<td>${fieldValue(bean: registrationInstance, field: "bnetId")}</td>
-	                        <td>${fieldValue(bean: registrationInstance, field: "race")}</td>
-	                        <td class="right">${fieldValue(bean: registrationInstance, field: "matchesPlayed")}</td>
-	                        <td class="right">${fieldValue(bean: registrationInstance, field: "matchesWon")}</td>
-	                        <td class="right">${fieldValue(bean: registrationInstance, field: "matchesLost")}</td>
-	                     	<td class="right">${fieldValue(bean: registrationInstance, field: "gameDiff")}</td>
-	                    </tr>
-	                </g:each>
-	            </tbody>
-	        </table>
-    	</div>
-    	<div class="break"></div>
-    	<div class="break"></div>
 		<h1>Latest News</h1>
 		<div class="break"></div>
 		<div class="mcontent">
