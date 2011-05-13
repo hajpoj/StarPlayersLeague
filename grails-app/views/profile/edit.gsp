@@ -30,16 +30,23 @@
 	    		<div class="infoleft">
 	    			<p>Username:</p>
 	    			<p>Email Address:</p>
-	    			<p>Email me when I receive a message:</p>
 	    		</div>
 	    		<div class="inforight">
 	    			<p><input type='text' class='text_' name='username' value='${userInstance?.username}'/></p>
 	    			<p><input type='text' class='text_' name='email' value='${userInstance?.email}'/></p>
-	    			<p></p>
-	    			<p><g:checkBox name='messagetNotification' value='${userInstance?.messageNotification}'/></p>
 	    		</div>
 	    	</div>
-	    	<div style="height: 10px;"></div>
+	    	<div class="break"></div>
+	    	<div class="mcontent">
+	    		<h2>Email Notifications</h2><br/>
+	    		<div class="infoleft">
+	    			<p>When I receive new messages:</p>
+	    		</div>
+	    		<div class="inforight">
+	    			<p><g:checkBox name="messageNotification" value="${userInstance?.messageNotification}" /></p>
+	    		</div>
+	    	</div>
+	    	<div class="break"></div>
 	    	<div class="mcontent">
 	    		<h2>Change Password</h2><br/>
 	    		<div class="infoleft">

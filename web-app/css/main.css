@@ -127,9 +127,10 @@ a:link, a:visited, a:hover {
 }
 .infoleft {
 	float: left;
-	width: 200px;
+	width: auto;
+	padding: 0 10px 0 0;
 	font-weight: bold;
-	line-height: 200%
+	line-height: 200%;
 }
 textarea.message_ {
 	width: 480px;

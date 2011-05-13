@@ -22,12 +22,23 @@
     		<div class="infoleft">
     			<p>Username:</p>
     			<p>Email Address:</p>
-    			<p>Email me when I receive a message:</p>
+    			<p>Battle.net ID:</p>
+    			<p>Battle.net Char Code:</p>
     		</div>
     		<div class="inforight">
     			<p>${userInstance.username}</p>
     			<p>${userInstance.email}</p>
-    			<p></p>
+    			<p>${userInstance.bnetId}</p>
+    			<p>${userInstance.bnetCharCode}</p>
+    		</div>
+    	</div>
+    	<div class="break"></div>
+    	<div class="mcontent">
+    		<h2>Email Notifications</h2><br/>
+    		<div class="infoleft">
+    			<p>When I receive new messages:</p>
+    		</div>
+    		<div class="inforight">
     			<g:if test="${userInstance.messageNotification}">
     				<p>Yes</p>
  				</g:if>
@@ -41,15 +52,11 @@
     	<div class="mcontent">
     		<h2>${fieldValue(bean: registrationInstance.group.division.code.season, field: "league")} (${fieldValue(bean: registrationInstance, field: "server")}) Information</h2><br/>
     		<div class="infoleft">
-    			<p>Battle.net ID:</p>
-    			<p>Battle.net Char Code:</p>
     			<p>Code:</p>
     			<p>Division:</p>
     			<p>Group:</p>
     		</div>
     		<div class="inforight">
-    			<p>${fieldValue(bean: registrationInstance, field: "bnetId")}</p>
-    			<p>${fieldValue(bean: registrationInstance, field: "bnetCharCode")}</p>
     			<p>Code ${fieldValue(bean: registrationInstance, field: "code")}</p>
     			<p>Division ${fieldValue(bean: registrationInstance, field: "division")}</p>
     			<p>Group ${fieldValue(bean: registrationInstance, field: "group")}</p>
