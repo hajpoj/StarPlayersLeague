@@ -6,6 +6,7 @@ class User extends AuthUser {
 	String bnetCharCode
 	String primaryRace
 	String primarySkillLevel
+	Boolean messageNotification = true
 	Date lastLogin
 	static hasMany = [registrations:Registration, threadsToMe:MessageThread, threadsFromMe:MessageThread]
 	static mappedBy = [threadsToMe:"toUser", threadsFromMe:"fromUser"] 

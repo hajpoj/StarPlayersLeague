@@ -129,6 +129,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="messageNotification"><g:message code="user.messageNotification.label" default="Message Notification" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'messageNotification', 'errors')}">
+                                    <g:checkBox name="messageNotification" value="${userInstance?.messageNotification}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="passwordExpired"><g:message code="user.passwordExpired.label" default="Password Expired" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'passwordExpired', 'errors')}">

@@ -107,6 +107,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="user.messageNotification.label" default="Message Notification" /></td>
+                            
+                            <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.messageNotification}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="user.passwordExpired.label" default="Password Expired" /></td>
                             
                             <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.passwordExpired}" /></td>

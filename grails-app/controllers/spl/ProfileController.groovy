@@ -29,6 +29,7 @@ class ProfileController {
 		def registrationList = user.registrations
 		user.username = params.username
 		user.email = params.email
+		user.messageNotification = params.messageNotification
 		if (   params.oldPassword != "" 
 			|| params.newPassword != "" 
 			|| params.confirmNewPassword != "") {
@@ -188,6 +189,8 @@ class ProfileController {
 		def thread = new MessageThread(fromUser: fromUser, toUser: toUser, subject: params.subject)
 		def message = new Message(fromUser: fromUser, toUser: toUser, text: params.body)
 		thread.addToMessages(message)
+		if (toUser.messageNotification) sendMailNotification(toUser, fromUser)
+		//BOZO: should add collision protection
 		if (!thread.hasErrors() && thread.save(flush: true)) {
 			flash.message = "Successfully sent message!"
 			redirect(action: "listMessages", id: thread.id)
@@ -204,11 +207,25 @@ class ProfileController {
 		def fromUser = User.get(params.fromUser)
 		def message = new Message(fromUser: fromUser, toUser: toUser, text:params.replyMessage, thread:thread)
 		thread.addToMessages(message)
+		if (toUser.messageNotification) sendMailNotification(toUser, fromUser)
+		//BOZO: should add collision protection
 		if (!thread.hasErrors() && thread.save(flush: true)) {
 			flash.message = "Successfully sent message!"
 			redirect(action: "listMessages", id: thread.id)
 		} else {
 			redirect(action: "addMessageToThread", id: thread.id)
+		}
+	}
+	
+	private void sendMailNotification(User toUser, User fromUser) {
+		def bodyText = "Hey ${toUser.username},\r\n\r\n"
+		bodyText += "You have a message from ${fromUser.username}. Please log in to www.starplayersleague.com to read your messages.\r\n\r\n"
+		bodyText += "StarPlayers Team"
+		sendMail {
+			to "${toUser.email}"
+			from "StarPlayers League <contact@starplayersleague.com>"
+			subject "You have a message from ${fromUser.username}"
+			body bodyText
 		}
 	}
 
