@@ -17,7 +17,7 @@ h1 {
 }
 h2 {
 	color: #444;
-	font-size: 18x;
+	font-size: 18px;
 	margin: 0;
 }
 h3 {
@@ -410,7 +410,7 @@ th.colracer {
 	width: 8%;
 }
 th.colbnetidr {
-	text-algin: left;
+	text-align: left;
 	width: 43%;
 }
 th.colbnetidr2 {
