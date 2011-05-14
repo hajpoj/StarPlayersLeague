@@ -10,7 +10,7 @@
 		<g:if test='${flash.message}'>
 				<div class='message'>${flash.message}</div>
 		</g:if>
-		<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
+		<form action='${postUrl}' method='post' id='loginForm' class='cssform'>
 			<div class="mcontent">
 				<div class='infoleft'>
 					<p><label for='username'>Username:</label></p>
@@ -31,7 +31,7 @@
 					</p>
 				</div>
 			</div>
-		<g:actionSubmit class="submitButton" type="submit" value="Login" />
+		<g:actionSubmit class="submitButton" value="Login" />
 		</form>
 		<script type='text/javascript'>
 			(function(){
