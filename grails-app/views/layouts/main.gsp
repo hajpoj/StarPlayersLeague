@@ -99,10 +99,9 @@
 					<h4>Please help keep our servers running!</h4>
 					<h4>We do not have enough minerals!</h4>
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-						<input type="hidden" name="cmd" value="_s-xclick" />
-						<input type="hidden" name="hosted_button_id" value="GDXYTK2B98MEQ" />
-						<input type="image" src="https://www.paypalobjects.com/WEBSCR-640-20110429-1/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" />
-						<img alt="" src="https://www.paypalobjects.com/WEBSCR-640-20110429-1/en_US/i/scr/pixel.gif" width="1" height="1" />
+						<p><input type="hidden" name="cmd" value="_s-xclick" /></p>
+						<p><input type="hidden" name="hosted_button_id" value="GDXYTK2B98MEQ" /></p>
+						<p><input type="image" src="${resource(dir:'images',file:'paypalbutton.png')}" name="submit" alt="PayPal" style="background: transparent; border: 0; padding: 0; margin: 10px 0;"/></p>
 					</form>
 				</div>
 			</div>
