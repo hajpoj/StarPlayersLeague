@@ -37,6 +37,9 @@ body {
     color: #444;
     font: 12px verdana, arial, helvetica, sans-serif;
 }
+img	{
+	border: 0;
+}
 
 /* WRAPPER */
 

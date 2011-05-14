@@ -34,7 +34,7 @@
    				<div style="text-align: center">
    					<h2>${fieldValue(bean: gameMapInstance, field: "name")}</h2>
    					<div class='break'></div>
-   					<img src="${resource(dir:'images/maps', file:gameMapInstance.mapImageFileName)}" alt="${gameMapInstance.name}" border="1px" border-color="#888888"/>
+   					<img src="${resource(dir:'images/maps', file:gameMapInstance.mapImageFileName)}" alt="${gameMapInstance.name}" />
 				</div>
 				<div class='break'></div>
 				<div class='break'></div>

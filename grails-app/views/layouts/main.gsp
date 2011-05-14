@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <%@ page import="spl.User" %>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
     <head>
         <title><g:layoutTitle default="StarPlayers League" /></title>
         <link rel="stylesheet" href="${resource(dir:'css',file:'main.css')}" />
@@ -33,9 +34,9 @@
         	<g:loginHeader/>
         </div>
         	<div id="splogo">
-				<a href="http://www.starplayersleague.com"><img src="${resource(dir:'images',file:'splogo.png')}" alt="StarPlayers Logo" border="0" /></a>
+				<a href="http://www.starplayersleague.com"><img src="${resource(dir:'images',file:'splogo.png')}" alt="StarPlayers Logo" /></a>
 			</div>
-        	<div id="splbanner"><a href="http://www.starplayersleague.com"><img src="${resource(dir:'images',file:'splbanner.png')}" alt="StarPlayers League" border="0" /></a></div>
+        	<div id="splbanner"><a href="http://www.starplayersleague.com"><img src="${resource(dir:'images',file:'splbanner.png')}" alt="StarPlayers League" /></a></div>
         	<div id="menubar">
 				<ul class="menuitems">
 				    <li class="controller"><g:link controller="navigation" action="welcome">Home</g:link></li>
@@ -98,10 +99,10 @@
 					<h4>Please help keep our servers running!</h4>
 					<h4>We do not have enough minerals!</h4>
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="hosted_button_id" value="GDXYTK2B98MEQ">
-						<input type="image" src="https://www.paypalobjects.com/WEBSCR-640-20110429-1/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-						<img alt="" border="0" src="https://www.paypalobjects.com/WEBSCR-640-20110429-1/en_US/i/scr/pixel.gif" width="1" height="1">
+						<input type="hidden" name="cmd" value="_s-xclick" />
+						<input type="hidden" name="hosted_button_id" value="GDXYTK2B98MEQ" />
+						<input type="image" src="https://www.paypalobjects.com/WEBSCR-640-20110429-1/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+						<img alt="" src="https://www.paypalobjects.com/WEBSCR-640-20110429-1/en_US/i/scr/pixel.gif" width="1" height="1" />
 					</form>
 				</div>
 			</div>

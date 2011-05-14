@@ -9,12 +9,12 @@
     <body>
     	<h1>Map Pack #${mapPackInstance.id}</h1>
     	<div class="break"></div>
+      	<p class="date">NOTE: Search for the maps in Battle.net using the Listed Name. Make sure the author of the map is correct to ensure map integrity.</p>        
         <g:if test="${flash.message}">
-        <div class="message">${flash.message}</div>
+        	<div class="message">${flash.message}</div>
         </g:if>
         <div class="list">
 			<table>
-			<p class="date">NOTE: Search for the maps in Battle.net using the Listed Name. Make sure the author of the map is correct to ensure map integrity.</p>
        			<tr>
        				<th>Game</th>
        				<th>Map Name</th>
@@ -38,7 +38,7 @@
    				<div style="text-align: center">
    					<h2>${fieldValue(bean: mapPackInstance, field: "name")}</h2>
    					<div class='break'></div>
-   					<img src="${resource(dir:'images/maps', file:mapPackInstance.mapImageFileName)}" alt="${mapPackInstance.name}" border="1px" border-color="#888888" align="middle" />
+   					<img src="${resource(dir:'images/maps', file:mapPackInstance.mapImageFileName)}" alt="${mapPackInstance.name}" />
 				</div>
 				<div class='break'></div>
 				<div class='break'></div>
