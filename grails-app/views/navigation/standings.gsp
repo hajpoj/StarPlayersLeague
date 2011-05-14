@@ -8,40 +8,64 @@
     <body>
         <div class="body">
         	<h1>Standings</h1>
+        	<div class="break"></div>
         	<g:javascript library="prototype" />
         	<g:form method="post" >
-                <div class="dialog">
-                    <table>
-						<tr class="prop">
-                    	    <td valign="top" class="name">
-                        		<label for="code">Code: </label><br/>
-                            	<g:select id="codeDropdown" 
+<%--                <div class="dialog">--%>
+<%--                    <table>--%>
+<%--						<tr class="prop">--%>
+<%--                    	    <td valign="top" class="name">--%>
+<%--                        		<label for="code">Code: </label><br/>--%>
+<%--                            	<g:select id="codeDropdown" --%>
+<%--                                          name="codeDropdown" --%>
+<%--                                          from="${codeInstanceList}" --%>
+<%--                                          optionKey="id"--%>
+<%--                                          noSelection="${['null': 'Select one...']}" --%>
+<%--                                          onchange="${remoteFunction(action:'newCode',--%>
+<%--                                         						     update:'divisionDropdown', --%>
+<%--                                         						   	 params:'\'code=\' + this.value')}"/>	--%>
+<%--                            </td>--%>
+<%--                    		<td valign="top" class="name">--%>
+<%--                    			<label for="division">Division: </label>--%>
+<%--                    			<div id="divisionDropdown">--%>
+<%--                    			--%>
+<%--                    			</div>--%>
+<%--                    		</td>--%>
+<%--                    		<td valign="top" class="name">--%>
+<%--                    			<label for="group">Group: </label>--%>
+<%--                    			<div id="groupDropdown">--%>
+<%--                    			--%>
+<%--                    			</div>--%>
+<%--                    		</td>--%>
+<%--                    		<td>--%>
+<%--                    		</td>--%>
+<%--                    		<td>--%>
+<%--                    		</td>--%>
+<%--                    	</tr>--%>
+<%--                    </table>--%>
+<%--            	</div>--%>
+            	<div class="mcontent">
+            		<p>View standings for a specific Code/Division/Group.</p>
+            		<br />
+            		<div class="infoleft">
+            			<p><label for="code">Code:</label></p>
+            			<p><label for="division">Division:</label></p>
+            			<p><label for="group">Group:</label></p>
+            		</div>
+            		<div style="line-height: 200%; height: 75px;">
+            			<p>
+            				<g:select id="codeDropdown" 
                                           name="codeDropdown" 
                                           from="${codeInstanceList}" 
                                           optionKey="id"
                                           noSelection="${['null': 'Select one...']}" 
                                           onchange="${remoteFunction(action:'newCode',
                                          						     update:'divisionDropdown', 
-                                         						   	 params:'\'code=\' + this.value')}"/>	
-                            </td>
-                    		<td valign="top" class="name">
-                    			<label for="division">Division: </label>
-                    			<div id="divisionDropdown">
-                    			
-                    			</div>
-                    		</td>
-                    		<td valign="top" class="name">
-                    			<label for="group">Group: </label>
-                    			<div id="groupDropdown">
-                    			
-                    			</div>
-                    		</td>
-                    		<td>
-                    		</td>
-                    		<td>
-                    		</td>
-                    	</tr>
-                    </table>
+                                         						   	 params:'\'code=\' + this.value')}"/>
+                    	</p>
+            			<div id="divisionDropdown"></div>
+            			<div id="groupDropdown"></div>
+            		</div>
             	</div>
             </g:form>
             <g:if test="${flash.message}">
