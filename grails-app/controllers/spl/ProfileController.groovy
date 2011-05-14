@@ -192,7 +192,7 @@ class ProfileController {
 		}
 		
 		def message = new Message(fromUser:user, toUser:other_user)
-		[threadInstance: thread, messageInstance: message]
+		render(template: "replyToThread", model: [threadInstance: thread, messageInstance: message])
 	}
 	
 	def newThread = {
@@ -209,9 +209,9 @@ class ProfileController {
 		def thread = new MessageThread(fromUser: fromUser, toUser: toUser, subject: params.subject)
 		def message = new Message(fromUser: fromUser, toUser: toUser, text: params.body)
 		thread.addToMessages(message)
-		if (toUser.messageNotification) sendMailNotification(toUser, fromUser)
 		//BOZO: should add collision protection
 		if (!thread.hasErrors() && thread.save(flush: true)) {
+			if (toUser.messageNotification) sendMailNotification(toUser, fromUser)
 			flash.message = "Successfully sent message!"
 			redirect(action: "listMessages", id: thread.id)
 		} else {
@@ -227,13 +227,14 @@ class ProfileController {
 		def fromUser = User.get(params.fromUser)
 		def message = new Message(fromUser: fromUser, toUser: toUser, text:params.replyMessage, thread:thread)
 		thread.addToMessages(message)
-		if (toUser.messageNotification) sendMailNotification(toUser, fromUser)
 		//BOZO: should add collision protection
 		if (!thread.hasErrors() && thread.save(flush: true)) {
+			if (toUser.messageNotification) sendMailNotification(toUser, fromUser)
 			flash.message = "Successfully sent message!"
 			redirect(action: "listMessages", id: thread.id)
 		} else {
-			redirect(action: "addMessageToThread", id: thread.id)
+			flash.message = "Body cannot be blank!"
+			redirect(action: "listMessages", id: thread.id)
 		}
 	}
 	
@@ -248,5 +249,4 @@ class ProfileController {
 			body bodyText
 		}
 	}
-
 }

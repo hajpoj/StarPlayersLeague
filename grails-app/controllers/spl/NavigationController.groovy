@@ -114,7 +114,7 @@ class NavigationController {
 			group = Group.get(params.group)
 			standingsList = group.entries.toArray().sort{[-it.matchesWon, it.matchesLost, -it.gameDiff]}
 			matchesList = group.matches.toArray().sort{[it.matchNumber]}
-			render(template: "table_template", model:[standingsInstanceList: standingsList, matchesInstanceList: matchesList])
+			render(template: "tableTemplate", model:[standingsInstanceList: standingsList, matchesInstanceList: matchesList])
 		}
 		
 	}

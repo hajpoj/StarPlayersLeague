@@ -73,7 +73,7 @@
             </g:if>
             <div class="break"></div>
             <div id="standingsTable">
-            	<g:render template="table_template" bean="${standingsInstanceList}" var= "standingsInstanceList"/> 
+            	<g:render template="tableTemplate" bean="${standingsInstanceList}" var= "standingsInstanceList"/> 
             </div>
         </div>
     </body>
