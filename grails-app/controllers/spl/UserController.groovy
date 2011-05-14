@@ -88,12 +88,14 @@ class UserController {
         def userInstance = User.get(params.id)
         if (userInstance) {
 			
+			def updateGroups = []
 			def userAuth = AuthUserAuthRole.findByAuthUser(userInstance)
-			userAuth.delete(flush: true)
+			if (userAuth) userAuth.delete(flush: true)
 			def tempCollection = []
 			def tempCollection2 = []
 			
 			for (_registration in userInstance.registrations) {
+				updateGroups << _registration.group.id
 				tempCollection = []
 				tempCollection += _registration.matches
 				for (_match in tempCollection) {
@@ -118,13 +120,6 @@ class UserController {
 				_message.delete(flush: true)
 			}
 
-//			for (_registration in userInstance.registrations) {
-//				for (_entry in _registration.group.entries) {
-//					_entry.updateMatchGameStats()
-//					_entry.user.save(flush: true)
-//				}
-//			}
-			
             try {
 				userInstance.delete(flush: true)
 				
@@ -135,6 +130,14 @@ class UserController {
                 flash.message = "${message(code: 'default.not.deleted.message', args: [message(code: 'user.label', default: 'User'), params.id])}"
                 redirect(action: "show", id: params.id)
             }
+			
+			for (_group in updateGroups) { 
+				for (_entry in Group.get(_group).entries) {
+					_entry.updateMatchGameStats()
+					_entry.save(flush: true)
+				}
+			}
+			
         }
         else {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'user.label', default: 'User'), params.id])}"
