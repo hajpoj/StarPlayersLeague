@@ -7,6 +7,6 @@
 	<body>
 		<h1>Access Denied</h1>
 		<div class="break"></div>
-		<div class='errors'>Sorry, you're not authorized to view this page.</div>
+		<div class='errors'>Sorry, you are not authorized to view this page.</div>
 	</body>
 </html>
