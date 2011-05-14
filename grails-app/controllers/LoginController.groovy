@@ -61,12 +61,12 @@ class LoginController {
 	def resetPassword = {
 		def user = User.findByUsernameLike(params.username)
 		if (!user) {
-			flash.message = "Couldn't find anyone with username: ${params.username}."
+			flash.message = "Couldn't find anyone with username: ${params.username}"
 		} else {
 			def rawPassword = RandomStringUtils.random(12, true, true)
 			user.password = springSecurityService.encodePassword(rawPassword)
 			def bodyText = "Hey ${user.username},\r\n\r\n"
-			bodyText += "We reset your password to ${rawPassword}. Please login and change your password.\r\n\r\n"
+			bodyText += "We reset your password to ${rawPassword}. Please log in and change your password.\r\n\r\n"
 			bodyText += "StarPlayers Team"
 			sendMail {
 				to "${user.email}"

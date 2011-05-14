@@ -121,7 +121,7 @@ ul.menuitems li a:hover {
 	width: 900px;
 	border: solid 1px #ccc;
 }
-.layoutImage {
+.rightimage {
 	float: right;
 	margin: 10px 0 10px 20px;
 	text-align: center;
@@ -285,8 +285,8 @@ div.errors {
     background: #fff3f3;
     border: 1px solid red;
     color: #cc0000;
-    margin: 10px 0 5px 0;
-    padding: 5px 0 5px 0;
+    margin: 0;
+    padding: 9px;
 }
 div.errors ul {
     list-style: none;

@@ -11,7 +11,7 @@
 			<h2>1v1 StarPlayers League Format</h2>
 			<br/>
 			<p>Layout</p>
-			<div class="layoutImage">
+			<div class="rightimage">
 				<img src="${resource(dir:'images', file:'1v1layout.png')}" alt="1v1 Layout"/>
 			</div>
 			<br/>
