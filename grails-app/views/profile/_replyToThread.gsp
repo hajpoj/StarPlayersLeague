@@ -1,4 +1,4 @@
-<br/>
+<div class="break"></div>
 <g:form method="POST">
 <div class="mcontent">
 	<g:hiddenField name="id" value="${threadInstance?.id}" />
