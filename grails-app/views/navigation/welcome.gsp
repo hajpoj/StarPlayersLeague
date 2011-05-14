@@ -21,10 +21,9 @@
 					<p class="date">Posted on ${noticeInstance.lastUpdated.format('MM-dd-yyyy, HH:mm z')}</p>
 					<div class="break"></div>
 			</g:each>
-			<div class="paginateButtons">
-				<div class="innerlinebreak"></div>
-				<g:paginate next="Next" prev="Previous" maxsteps="0" action="welcome" total="${noticeInstanceTotal}" />
-			</div>
+		</div>
+		<div class="paginateButtons">
+			<g:paginate next="Next" prev="Previous" maxsteps="0" action="welcome" total="${noticeInstanceTotal}" />
 		</div>
 	</body>
 

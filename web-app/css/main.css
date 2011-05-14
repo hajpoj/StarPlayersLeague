@@ -378,16 +378,24 @@ td a:link, td a:visited, td a:hover {
 /* PAGINATION */
 
 .paginateButtons {
-    background: #fff;
-    color: #444;
+    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    border-top: 0;
+    color: #666;
+    font-size: 10px;
     overflow: hidden;
+    padding: 10px 3px;
 }
 .paginateButtons a {
-    color: #00b4ff;
-	padding: 0 5px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-color: #ccc #aaa #aaa #ccc;
+    color: #666;
+    margin: 0 3px;
+    padding: 2px 6px;
 }
 .paginateButtons span {
-	padding: 0 5px;
+    padding: 2px 3px;
 }
 
 /* DIALOG */

@@ -38,11 +38,9 @@
 	                </tr>
 	        	</g:each>
         	</table>
-   		</div>  
-       	<div class="break"></div>
+   		</div>
        	<div class="paginateButtons">
-       		<g:paginate next="Next" prev="Previous"
-            		maxsteps="0" action="listThreads" total="${threadInstanceTotal}" />
+       		<g:paginate next="Next" prev="Previous" maxsteps="0" action="listThreads" total="${threadInstanceTotal}" />
         </div>
     </body>
 </html>
