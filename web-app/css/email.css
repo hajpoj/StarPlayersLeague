@@ -148,7 +148,7 @@ textarea.message_ {
 	height: 150px;
 }
 input.submitButton {
-	margin: 10px 0 0 0;
+	margin: 0;
 }
 .subject_ {
 	width: 480px;

@@ -36,7 +36,8 @@
         			</g:each>
         		</div>
         	</div>
-        <p><g:actionSubmit class="submitButton" action="submitScore" value="Submit" /></p>
+        	<div class="break"></div>
+        	<p><g:actionSubmit class="submitButton" action="submitScore" value="Submit" /></p>
         </g:form>
     </body>
 </html>

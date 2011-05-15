@@ -22,6 +22,7 @@
             		<p><input type='text' class='text_' name='username' /></p>
             	</div>
             </div>
+            <div class="break"></div>
 			<g:actionSubmit class="submitButton" controller="login" action="resetPassword" value="Reset Password" />
 		</g:form>
     </body>

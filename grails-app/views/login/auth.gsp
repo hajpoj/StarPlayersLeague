@@ -31,7 +31,8 @@
 					</p>
 				</div>
 			</div>
-		<g:actionSubmit class="submitButton" value="Login" />
+			<div class="break"></div>
+			<p><g:actionSubmit class="submitButton" value="Login" /></p>
 		</form>
 		<script type='text/javascript'>
 			(function(){

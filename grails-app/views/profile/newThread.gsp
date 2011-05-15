@@ -25,6 +25,7 @@
 	   			<p><span class="messagelabel">Subject: </span><g:textField class="subject_" name='subject'></g:textField></p><br/>
 	   			<p><span class="messagelabel">Body: </span><textarea class="message_" name='body'></textarea>
 	       	</div>
+	       	<div class="break"></div>
 	        <p><g:actionSubmit class="submitButton" action="saveThread" value="Send" /></p>
 	        </g:form>
     </body>

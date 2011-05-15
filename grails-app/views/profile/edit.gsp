@@ -3,14 +3,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <title>Edit Profile</title>
-        <style type='text/css' media='screen'>
-        input.text_ {
-			width: 150px;
-		}
-		input.submitButton {
-			margin: 10px 0 0 0;
-		}
-		</style>
     </head>
     
     <body>
@@ -60,6 +52,7 @@
 	    			<p><input type='password' class='text_' name='confirmNewPassword' /></p>
 	    		</div>
 	    	</div>
+	    	<div class="break"></div>
 	    	<p><g:actionSubmit class="submitButton" action="update" value="Update" /></p>
 	    </g:form>
     </body>
