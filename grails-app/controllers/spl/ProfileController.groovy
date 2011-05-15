@@ -1,6 +1,7 @@
 package spl
 
 import grails.plugins.springsecurity.Secured
+import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 
 @Secured(['ROLE_USER', 'ROLE_ADMIN'])
 class ProfileController {
@@ -67,12 +68,14 @@ class ProfileController {
 	def reportScore = {
 		def user = springSecurityService.currentUser
 		def match = Match.get(params.id)
-		if (!match.accessAllowed(user)) {
-			flash.message = "You are unauthorized to view this match"
-			redirect(action: "matches")
-		} else if (match.played) {
-			flash.message = "The score for this match has already been reported"
-			redirect(action: "matches")
+		if (!SpringSecurityUtils.ifAllGranted("ROLE_ADMIN")) {
+			if (!match.accessAllowed(user)) {
+				flash.message = "You are unauthorized to view this match"
+				redirect(action: "matches")
+			} else if (match.played) {
+				flash.message = "The score for this match has already been reported"
+				redirect(action: "matches")
+			}
 		}
 		[matchInstance: match]
 	}
