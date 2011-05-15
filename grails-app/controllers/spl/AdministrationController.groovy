@@ -1,9 +1,12 @@
 package spl
 
 import grails.plugins.springsecurity.Secured
+import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
+
 @Secured(['ROLE_ADMIN'])
 class AdministrationController {
-
+	def springSecurityService
+	
     def index = {
 		
 	}
@@ -38,6 +41,10 @@ class AdministrationController {
 			flash.message = "Please specify match ID to reset"
 			redirect(action: 'index')
 		}
+	}
+	
+	def messageUser = {
+		redirect(controller: 'profile', action: 'newThread', id: params.userId)	
 	}
 	
 }
