@@ -214,7 +214,7 @@ class ProfileController {
 		thread.addToMessages(message)
 		//BOZO: should add collision protection
 		if (!thread.hasErrors() && thread.save(flush: true)) {
-			if (toUser.messageNotification) sendMailNotification(toUser, fromUser)
+			if (toUser.messageNotification) sendMailNotification(message)
 			flash.message = "Successfully sent message!"
 			redirect(action: "listMessages", id: thread.id)
 		} else {
@@ -232,7 +232,7 @@ class ProfileController {
 		thread.addToMessages(message)
 		//BOZO: should add collision protection
 		if (!thread.hasErrors() && thread.save(flush: true)) {
-			if (toUser.messageNotification) sendMailNotification(toUser, fromUser)
+			if (toUser.messageNotification) sendMailNotification(message)
 			flash.message = "Successfully sent message!"
 			redirect(action: "listMessages", id: thread.id)
 		} else {
@@ -241,15 +241,13 @@ class ProfileController {
 		}
 	}
 	
-	private void sendMailNotification(User toUser, User fromUser) {
-		def bodyText = "Hey ${toUser.username},\r\n\r\n"
-		bodyText += "You have a message from ${fromUser.username}. Please log in to www.starplayersleague.com to read your messages.\r\n\r\n"
-		bodyText += "StarPlayers Team"
+	private void sendMailNotification(Message message) {
 		sendMail {
-			to "${toUser.email}"
+			to "${message.toUser}"
 			from "StarPlayers League <contact@starplayersleague.com>"
-			subject "You have a message from ${fromUser.username}"
-			body bodyText
+			subject "You have a message from ${message.fromUser}"
+			html( view:"/htmlEmails/sendMailNotificationTemplate",
+				model:[messageInstance: message])
 		}
 	}
 }
