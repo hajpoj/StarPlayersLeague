@@ -22,16 +22,34 @@
             		<div style="line-height: 200%; height: 75px;">
             			<p>
             				<g:select id="codeDropdown" 
-                                          name="codeDropdown" 
-                                          from="${codeInstanceList}" 
-                                          optionKey="id"
-                                          noSelection="${['null': 'Select one...']}" 
-                                          onchange="${remoteFunction(action:'newCode',
-                                         						     update:'divisionDropdown', 
-                                         						   	 params:'\'code=\' + this.value')}"/>
+                                      name="codeDropdown" 
+                                      from="${codeInstanceList}" 
+                                      optionKey="id"
+                                      noSelection="${['null': 'Select one...']}" 
+                                      onchange="${remoteFunction(action:'newCode',
+                                      						     update:'divisionDropdown', 
+                                       						   	 params:'\'code=\' + this.value')}"/>
                     	</p>
-            			<div id="divisionDropdown"></div>
-            			<div id="groupDropdown"></div>
+            			<div id="divisionDropdown">
+            				<g:select id="divisionDropdown" 
+                               	      name="divisionDropdown" 
+                                   	  from="${divisionInstanceList}" 
+                                   	  optionKey="id"
+                                   	  noSelection="${['null': 'Select one...']}" 
+                                   	  onchange="${remoteFunction(action:'newDivision',
+                                   							     update:'groupDropdown', 
+                                   							   	 params:'\'division=\' + this.value')}"/>
+            			</div>
+            			<div id="groupDropdown">
+            				<g:select id="groupDropdown" 
+                               	      name="groupDropdown" 
+                                   	  from="${groupInstanceList}" 
+                                   	  optionKey="id"
+                                   	  noSelection="${['null': 'Select one...']}" 
+                                   	  onchange="${remoteFunction(action:'newGroup',
+                                   							     update:'groupDropdown', 
+                                   							   	 params:'\'group=\' + this.value')}"/>
+            			</div>
             		</div>
             	</div>
             </g:form>
