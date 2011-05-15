@@ -10,11 +10,20 @@ hibernate {
 environments {
     development {
         dataSource {
+			
+			// if you don't have an internet connection use:
+			/*
 			driverClassName = "org.hsqldb.jdbcDriver"
 			username = "sa"
 			password = ""
             dbCreate = "create-drop" // one of 'create', 'create-drop','update'
 			url = "jdbc:hsqldb:mem:devDB"
+			*/
+			driverClassName = "com.mysql.jdbc.Driver"
+			username = "grails_app"
+			password = "G3ge3tA&"
+			dbCreate = "update"
+			url = "jdbc:mysql://starplayersleague.com/spl_backup?autoreconnect=true"
         }
     }
     test {

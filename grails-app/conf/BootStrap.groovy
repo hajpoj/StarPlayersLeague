@@ -13,28 +13,28 @@ class BootStrap {
 		switch(GrailsUtil.environment) {
 			case "development":
 				// create some initial posts to front page
-				def post
-				post = new Notice(title: "Welcome to the new site!!", text: "Hey, this is the first post! Look at the time stamp.").save()
-				post = new Notice(title: "Check out our cool new features!", text: "Hey, this is the second post!. Look at the time stamp.").save()
-		
-				for (_i in 1..25) {
-					post = new Notice(title: "Post #${_i}", text: "blah blah blah").save()
-				}
-			
-				// create user/admin roles and admin login
-				createRoles()
-			
-				// import maps/map pack from CSV
-				importMaps()
-				
-				// import league
-				importLeague()
-				
-				// simulate matches
-				simulateMatches()
-								
-				// simulate messages
-				simulateMessages()
+//				def post
+//				post = new Notice(title: "Welcome to the new site!!", text: "Hey, this is the first post! Look at the time stamp.").save()
+//				post = new Notice(title: "Check out our cool new features!", text: "Hey, this is the second post!. Look at the time stamp.").save()
+//		
+//				for (_i in 1..25) {
+//					post = new Notice(title: "Post #${_i}", text: "blah blah blah").save()
+//				}
+//			
+//				// create user/admin roles and admin login
+//				createRoles()
+//			
+//				// import maps/map pack from CSV
+//				importMaps()
+//				
+//				// import league
+//				importLeague()
+//				
+//				// simulate matches
+//				simulateMatches()
+//								
+//				// simulate messages
+//				simulateMessages()
 				break
 			case "test":				
 						
