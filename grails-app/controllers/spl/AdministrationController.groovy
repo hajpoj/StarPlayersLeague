@@ -44,7 +44,12 @@ class AdministrationController {
 	}
 	
 	def messageUser = {
-		redirect(controller: 'profile', action: 'newThread', id: params.userId)	
+		if (params.userId != 'null') {
+			redirect(controller: 'profile', action: 'newThread', id: params.userId)	
+		} else {
+			flash.message = "Please select someone to message"
+			redirect(action: 'index')
+		}
 	}
 	
 }
