@@ -322,7 +322,15 @@ td, th {
     line-height: 12px;
     padding: 5px 6px;
     text-align: left;
-    vertical-align: top;
+    vertical-align: middle;
+}
+td.winnerl {
+	text-align: right;
+	font-weight: bold;
+}
+td.winnerr {
+	text-align: left;
+	font-weight: bold;
 }
 th {
     background: #fff url(../images/skin/shadow.jpg);
@@ -359,8 +367,7 @@ th.desc a {
 
 td a:link, td a:visited, td a:hover {
 	color: #444;
-    font-weight: bold;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 /* TABLE COLUMN FORMATTING */
@@ -374,54 +381,51 @@ td.center {
 /* Standings Table */
 th.colstrank {
 	text-align: right;
-	width: 5%;
+	width: 30px;
 }
 th.colstbnetid {
 	text-align: left;
-	width: 20%;
 }
 th.colstrace {
 	text-align: left;
-	width: 15%;
+	width: 50px;
 }
 th.colstat {
 	text-align: right;
-	width: 15%;
+	width: 120px;
 }
 /* Match Table */
 th.colmatch {
 	text-align: right;
-	width: 5%;
+	width: 30px;
 }
 th.colbnetidl {
 	text-align: right;
-	width: 16%;
+	width: 150px;
 }
 th.colracel {
 	text-align: right;
-	width: 8%;
+	width: 20px;
 }
 th.colvs {
 	text-align: center;
-	width: 5%;
+	width: 30px;
 }
 th.colracer {
 	text-align: left;
-	width: 8%;
+	width: 20px;
 }
 th.colbnetidr {
 	text-align: left;
-	width: 43%;
 }
 th.colbnetidr2 {
 	text-align: left;
-	width: 28%;
 }
 th.colmappack {
-	width: 15%;
+	width: 120px;
 }
 th.colreportscore {
-	width: 15%;
+	width: 120px;
 }
 /* Thread Table */
 th.colconvowith {
@@ -444,7 +448,6 @@ th.collastmessage {
     margin: 10px 0 0 0;
 }
 .list th, .list td {
-	
 }
 .list tr:hover {
     background: #ffeecc;

@@ -21,18 +21,33 @@
 		       	<table>
 		       		<tr> 
 		       			<th class="colmatch">Match</th>
-		       			<th class="colbnetidl">Battle.net ID</th>
-		       			<th class="colracel">Race</th>
+		       			<th class="colbnetidl">Player</th>
+		       			<th class="colracel"></th>
 		       			<th class="colvs">vs</th>
-		       			<th class="colracer">Race</th>
-		       			<th class="colbnetidr2">Battle.net ID</th>
+		       			<th class="colracer"></th>
+		       			<th class="colbnetidr2">Player</th>
 		       			<th class="colmappack"></th>
 		       			<th class="colreportscore"></th>
 		       		</tr>
 		       		<g:each in="${matchesInstanceList}" status="i" var="matchesInstance">
 		           		<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 		           			<td class="right">${fieldValue(bean: matchesInstance, field: "matchNumber")}</td>
-							<td class="right">${fieldValue(bean: entryInstance, field: "bnetId")}</td><td class="right">${fieldValue(bean: entryInstance, field: "race")}</td>
+							
+							<%--	Winner Designation (left side)	           			--%>
+		           			<g:if test="${matchesInstance.played == false}">
+								<td class="right">${fieldValue(bean: entryInstance, field: "bnetId")}</td>
+							</g:if>
+							<g:else>
+								<g:if test="${entryInstance.id == matchesInstance.winner.id}">
+									<td class="winnerl">${fieldValue(bean: entryInstance, field: "bnetId")}</td>
+								</g:if>
+								<g:else>
+									<td class="right">${fieldValue(bean: entryInstance, field: "bnetId")}</td>
+								</g:else>
+							</g:else>
+							
+							<td class="right"><img class="icons" src="${resource(dir:'images/icons', file:entryInstance.race.concat('.png'))}" 
+								alt="${entryInstance.race}" /></td>
 							<g:if test="${matchesInstance.played == false}">
 								<td class="center">vs</td>
 							</g:if>
@@ -46,8 +61,22 @@
 							</g:else>
 							<g:each in="${matchesInstance.entries}" status="j" var="entry">
 		               			<g:if test="${entry.id != entryInstance.id}">
-		               				<td>${fieldValue(bean: entry, field: "race")}</td>
-		               				<td><g:link action="newThread" id="${entry.user.id}">${fieldValue(bean: entry, field: "bnetId")}</g:link></td>
+		               				<td class="left"><img class="icons" src="${resource(dir:'images/icons', file:entry.race.concat('.png'))}" 
+										alt="${entry.race}" /></td>
+										
+								<%--		Winner Designation (right side)							--%>
+									<g:if test="${matchesInstance.played == false}">
+										<td class="left"><g:link action="newThread" id="${entry.user.id}">${fieldValue(bean: entry, field: "bnetId")}</g:link></td>
+									</g:if>
+									<g:else>
+										<g:if test="${entry.id == matchesInstance.winner.id}">
+											<td class="winnerr"><g:link action="newThread" id="${entry.user.id}">${fieldValue(bean: entry, field: "bnetId")}</g:link></td>
+										</g:if>
+										<g:else>
+											<td class="left"><g:link action="newThread" id="${entry.user.id}">${fieldValue(bean: entry, field: "bnetId")}</g:link></td>
+										</g:else>
+									</g:else>
+									
 		               			</g:if>
 		               		</g:each>
 		               		<td class="right"><g:link controller="navigation" action="mapPack" id="${matchesInstance.mapPack.id}">${matchesInstance.mapPack}</g:link></td>
