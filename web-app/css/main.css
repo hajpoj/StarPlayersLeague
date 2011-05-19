@@ -114,6 +114,12 @@ ul.menuitems li a:hover {
 	width: 920px;
 	height: 250px;
 }
+.edit {
+	float: right;
+	margin: 13px 0 0 0;
+	width: 550px;
+	text-align: left;
+}
 .mcontent {
 	background: transparent;
 	margin: 0;

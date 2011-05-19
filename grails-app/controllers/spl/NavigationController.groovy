@@ -167,4 +167,15 @@ class NavigationController {
 	def faq = {
 		
 	}
+	
+	// PROFILE VIEW
+	def profile = {
+		def user = User.get(params.id)
+		def registrationList = user.registrations
+		[userInstance: user, registrationInstanceList: registrationList]
+	}
+	
+	def myProfile = {
+		redirect(action: "profile", id:springSecurityService.currentUser.id)
+	}
 }

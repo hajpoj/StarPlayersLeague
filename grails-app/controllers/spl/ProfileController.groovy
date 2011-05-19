@@ -8,23 +8,23 @@ class ProfileController {
 	def springSecurityService
 	
 	def index = {
-		redirect(action: "profile")
+		redirect(action: "account")
 	}
 	
-	// VIEW PROFILE
-	def profile = {
+	// VIEW ACCOUNT
+	def account = {
 		def user = springSecurityService.currentUser
 		def registrationList = user.registrations
 		[userInstance: user, registrationInstanceList: registrationList]
 	}
 	
-	// EDIT PROFILE
+	// EDIT ACCOUNT
 	def edit = {
 		def user = springSecurityService.currentUser
 		[userInstance: user]
 	}
 	
-	// UPDATE PROFILE
+	// UPDATE ACCOUNT
 	def update = {
 		def user = springSecurityService.currentUser
 		def registrationList = user.registrations
@@ -40,15 +40,15 @@ class ProfileController {
 				params.newPassword == params.confirmNewPassword &&
 				!user.hasErrors() && user.save(flush: true)) {
 					user.password = springSecurityService.encodePassword(params.newPassword)
-					flash.message = "Your profile information has been updated."
-					redirect(action: "profile")
+					flash.message = "Your account information has been updated."
+					redirect(action: "account")
 			} else {
 				flash.message = "Either your old password is incorrect, or your new password is invalid."
 				redirect(action: "edit")
 			}
 		} else if (!user.hasErrors() && user.save(flush: true)) {
-			flash.message = "Your profile information has been updated."
-			redirect(action: "profile")
+			flash.message = "Your account information has been updated."
+			redirect(action: "account")
 		}
 	}
 	

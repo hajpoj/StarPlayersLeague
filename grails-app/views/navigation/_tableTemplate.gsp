@@ -19,7 +19,7 @@
 	                <td class="right">${i+1}</td>
 	                <td class="right"><img class="icons" src="${resource(dir:'images/icons', file:registrationInstance.race.concat('.png'))}" 
 						alt="${registrationInstance.race}" /></td>
-					<td>${fieldValue(bean: registrationInstance, field: "bnetId")}</td>
+					<td><g:link controller="navigation" action="profile" id="${registrationInstance.user.id}">${fieldValue(bean: registrationInstance, field: "bnetId")}</g:link></td>
 	                <td class="right">${fieldValue(bean: registrationInstance, field: "matchesPlayed")}</td>
 	                <td class="right">${fieldValue(bean: registrationInstance, field: "matchesWon")}</td>
 	                <td class="right">${fieldValue(bean: registrationInstance, field: "matchesLost")}</td>
@@ -46,16 +46,20 @@
 	        	<tr class="${(matchesInstance.matchNumber % 2) == 0 ? 'odd' : 'even'}">
 	            	<td class="right">${fieldValue(bean: matchesInstance, field: "matchNumber")}</td>
 	            	<g:if test="${matchesInstance.played == false}">
-						<td class="right">${fieldValue(bean: matchesInstance.entries.toArray().getAt(0), field: "bnetId")}</td>
+						<td class="right">
 					</g:if>
 					<g:else>
 						<g:if test="${matchesInstance.entries.toArray().getAt(0).id == matchesInstance.winner.id}">
-							<td class="winnerl">${fieldValue(bean: matchesInstance.entries.toArray().getAt(0), field: "bnetId")}</td>
+							<td class="winnerl">
 						</g:if>
 						<g:else>
-							<td class="right">${fieldValue(bean: matchesInstance.entries.toArray().getAt(0), field: "bnetId")}</td>
+							<td class="right">
 						</g:else>
 					</g:else>
+								<g:link controller="navigation" action="profile" id="${matchesInstance.entries.toArray().getAt(0).user.id}">
+									${fieldValue(bean: matchesInstance.entries.toArray().getAt(0), field: "bnetId")}
+								</g:link>
+							</td>
 					<td class="right"><img class="icons" src="${resource(dir:'images/icons', file:matchesInstance.entries.toArray().getAt(0).race.concat('.png'))}" 
 						alt="${matchesInstance.entries.toArray().getAt(0).race}" /></td>
 					<g:if test="${matchesInstance.played == false}">
@@ -72,16 +76,20 @@
 	                <td class="left"><img class="icons" src="${resource(dir:'images/icons', file:matchesInstance.entries.toArray().getAt(1).race.concat('.png'))}" 
 						alt="${matchesInstance.entries.toArray().getAt(1).race}" /></td>
 	                <g:if test="${matchesInstance.played == false}">
-						<td class="left">${fieldValue(bean: matchesInstance.entries.toArray().getAt(1), field: "bnetId")}</td>
+						<td class="left">
 					</g:if>
 					<g:else>
 						<g:if test="${matchesInstance.entries.toArray().getAt(1).id == matchesInstance.winner.id}">
-							<td class="winnerr">${fieldValue(bean: matchesInstance.entries.toArray().getAt(1), field: "bnetId")}</td>
+							<td class="winnerr">
 						</g:if>
 						<g:else>
-							<td class="left">${fieldValue(bean: matchesInstance.entries.toArray().getAt(1), field: "bnetId")}</td>
+							<td class="left">
 						</g:else>
 					</g:else>
+								<g:link controller="navigation" action="profile" id="${matchesInstance.entries.toArray().getAt(1).user.id}">
+									${fieldValue(bean: matchesInstance.entries.toArray().getAt(1), field: "bnetId")}
+								</g:link>
+							</td>
 	                <td class="right"><g:link controller="navigation" action="mapPack" id="${matchesInstance.mapPack.id}">${matchesInstance.mapPack}</g:link></td>
 	            </tr>
 			</g:each>
