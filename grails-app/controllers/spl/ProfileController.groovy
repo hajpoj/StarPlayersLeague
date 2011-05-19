@@ -245,7 +245,7 @@ class ProfileController {
 		sendMail {
 			to "${message.toUser.email}"
 			from "No-Reply <no-reply@starplayersleague.com>"
-			subject "You have a message from ${message.fromUser.username}"
+			subject "StarPlayers League: You have a message from ${message.fromUser.username}"
 			html( view:"/htmlEmails/sendMailNotificationTemplate",
 				model:[messageInstance: message])
 		}

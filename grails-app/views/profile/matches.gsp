@@ -53,10 +53,10 @@
 							</g:if>
 							<g:else>
 								<g:if test="${entryInstance.id == matchesInstance.winner.id}">
-									<td class="center">${(Integer)matchesInstance.bestOf/2+1}-${matchesInstance.loserScore}</td>
+									<td class="matchscore">${(Integer)matchesInstance.bestOf/2+1}-${matchesInstance.loserScore}</td>
 								</g:if>
 								<g:else>
-									<td class="center">${matchesInstance.loserScore}-${(Integer)matchesInstance.bestOf/2+1}</td>
+									<td class="matchscore">${matchesInstance.loserScore}-${(Integer)matchesInstance.bestOf/2+1}</td>
 								</g:else>
 							</g:else>
 							<g:each in="${matchesInstance.entries}" status="j" var="entry">

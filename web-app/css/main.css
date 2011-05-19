@@ -332,6 +332,10 @@ td.winnerr {
 	text-align: left;
 	font-weight: bold;
 }
+td.matchscore {
+	text-align: center;
+	font-weight: bold;
+}
 th {
     background: #fff url(../images/skin/shadow.jpg);
     color: #444;
