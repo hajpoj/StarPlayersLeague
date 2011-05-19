@@ -8,6 +8,7 @@ class Match {
 	Integer loserScore
 	Boolean played = false
 	Group leagueGroup
+	Boolean forfeit
 	List<Game> games
 	static belongsTo = Registration
 	static hasMany = [games:Game, entries:Registration]

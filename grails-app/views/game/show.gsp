@@ -51,6 +51,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="game.linkToVod.label" default="Link To Vod" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: gameInstance, field: "linkToVod")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="game.entries.label" default="Entries" /></td>
                             
                             <td valign="top" style="text-align: left;" class="value">

@@ -84,7 +84,7 @@
 		               			<td class="right"><g:link controller="profile" action="reportScore" id="${matchesInstance.id}">Report Score</g:link></td>
 		               		</g:if>
 		               		<g:else>
-		               			<td class="right"><g:link controller="profile" action="disputeScore" id="${matchesInstance.id}">Dispute Score</g:link></td>
+		               			<td class="right"><g:link controller="profile" action="disputeScore" id="${matchesInstance.id}">Match Details</g:link></td>
 		               		</g:else>
 		           		</tr>
 		        	</g:each>

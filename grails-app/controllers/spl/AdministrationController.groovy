@@ -26,6 +26,7 @@ class AdministrationController {
 			match.winner = null
 			match.loserScore = null
 			match.played = false
+			match.forfeit = false
 			for (_game in match.games) {
 				_game.winner = null
 			}

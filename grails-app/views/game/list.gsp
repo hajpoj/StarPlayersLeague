@@ -30,6 +30,8 @@
                         
                             <th><g:message code="game.map.label" default="Map" /></th>
                         
+                            <g:sortableColumn property="linkToVod" title="${message(code: 'game.linkToVod.label', default: 'Link To Vod')}" />
+                        
                             <th><g:message code="game.match.label" default="Match" /></th>
                         
                         </tr>
@@ -45,6 +47,8 @@
                             <td>${fieldValue(bean: gameInstance, field: "winner")}</td>
                         
                             <td>${fieldValue(bean: gameInstance, field: "map")}</td>
+                        
+                            <td>${fieldValue(bean: gameInstance, field: "linkToVod")}</td>
                         
                             <td>${fieldValue(bean: gameInstance, field: "match")}</td>
                         

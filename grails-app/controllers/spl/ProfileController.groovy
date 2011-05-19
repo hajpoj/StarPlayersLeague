@@ -92,43 +92,62 @@ class ProfileController {
 		def gameWinnerId = new String[match.bestOf] 
 		def expectNull = false
 		def foundScoreError = false
+		def forfeitWinner = null
 		Integer winThreshold = (match.bestOf/2) + 1
 		Integer[] playerWins
 		playerWins = new Integer[players.size()]
 		for (_i in 0..players.size()-1) {
 			playerWins[_i] = 0
 		}
-		
-		for (_game in 1..match.bestOf) {
-			if (!foundScoreError
-				&& (    expectNull && (params."game${_game}" != 'null')
-				    || !expectNull && (params."game${_game}" == 'null'))) {
-				flash.message = "Please fix the result for game ${_game}"
+		if (params.forfeit) {
+			for (_game in 1..match.bestOf) {
+				if (params."game${_game}" != 'null') {
+					flash.message = "If your opponent forfeited, please change all winner columns to \'Not Played\'"
+					foundScoreError = true
+				}
+			}	
+			if (params.forfeitWinner == 'null') {
+				flash.message = "Please specify a winner of the forfeited match"
 				foundScoreError = true
 			}
-			if (!foundScoreError) {
-				if (params."game${_game}" != 'null') {
-					for (_i in 0..players.size()-1) {
-						if (players[_i].id == Registration.get(params."game${_game}").id) {
-							playerWins[_i]++
+		} else {
+			for (_game in 1..match.bestOf) {
+				if (!foundScoreError
+					&& (    expectNull && (params."game${_game}" != 'null')
+					    || !expectNull && (params."game${_game}" == 'null'))) {
+					flash.message = "Please fix the result for game ${_game}"
+					foundScoreError = true
+				}
+				if (!foundScoreError) {
+					if (params."game${_game}" != 'null') {
+						for (_i in 0..players.size()-1) {
+							if (players[_i].id == Registration.get(params."game${_game}").id) {
+								playerWins[_i]++
+							}
+							if (playerWins[_i] >= winThreshold) {
+								expectNull = true
+							}
 						}
-						if (playerWins[_i] >= winThreshold) {
-							expectNull = true
-						}
+						gameWinnerId[_game-1] = params."game${_game}" 
 					}
-					gameWinnerId[_game-1] = params."game${_game}" 
 				}
 			}
 		}
-		
 		if (foundScoreError) {
 			redirect(action: "reportScore", id: match.id)
 		} else {
 			for (_i in 0..match.bestOf-1) {
 				match.games[_i].winner = Registration.get(gameWinnerId[_i])
+				match.games[_i].linkToVod = params."linkToVod${_i+1}"
 			}
+			match.forfeit = params.forfeit
 			match.played = true
-			match.updateResult()
+			if (params.forfeit) {
+				match.winner = Registration.get(params.forfeitWinner)
+				match.loserScore = 0
+			} else {
+				match.updateResult()
+			}
 			if (match.hasErrors() || !match.save(flush: true)) {
 				flash.message = "Unable to save match results, please contact admin"
 				redirect(action: "reportScore", id: match.id)
@@ -136,12 +155,12 @@ class ProfileController {
 				for (_entry in match.entries) {
 					_entry.updateMatchGameStats()
 					if (_entry.hasErrors() || !_entry.save(flush: true)) {
-						flash.message = "Unale to update player stats after results reported, please contact admin"
+						flash.message = "Unable to update player stats after results reported, please contact admin"
 					} else {
 						flash.message = "Successfully reported match result"
 					}
 				}
-				redirect(action: "matches")
+				redirect(controller: "navigation", action: "matchDetails", id: params.id)
 			}
 		}
 	}

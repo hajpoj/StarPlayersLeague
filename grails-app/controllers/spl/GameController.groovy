@@ -1,7 +1,6 @@
 package spl
 
 import grails.plugins.springsecurity.Secured
-
 @Secured(['ROLE_ADMIN'])
 class GameController {
 
@@ -69,10 +68,6 @@ class GameController {
             }
             gameInstance.properties = params
             if (!gameInstance.hasErrors() && gameInstance.save(flush: true)) {
-				gameInstance.match.updateResult()
-				for (_player in gameInstance.entries) {
-					_player.updateMatchGameStats()
-				}
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'game.label', default: 'Game'), gameInstance.id])}"
                 redirect(action: "show", id: gameInstance.id)
             }

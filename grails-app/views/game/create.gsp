@@ -57,6 +57,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="linkToVod"><g:message code="game.linkToVod.label" default="Link To Vod" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: gameInstance, field: 'linkToVod', 'errors')}">
+                                    <g:textField name="linkToVod" value="${gameInstance?.linkToVod}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="match"><g:message code="game.match.label" default="Match" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: gameInstance, field: 'match', 'errors')}">

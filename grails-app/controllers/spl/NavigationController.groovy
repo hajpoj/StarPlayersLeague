@@ -149,6 +149,11 @@ class NavigationController {
 		[codeInstanceList: codeList, standingsInstanceList: standingsList, matchesInstanceList: matchesList]
 	}
 	
+	def matchDetails = {
+		def match = Match.get(params.id)
+		[matchInstance: match]
+	}
+	
 	// REGISTRATION VIEW
 	def register = {
 		
