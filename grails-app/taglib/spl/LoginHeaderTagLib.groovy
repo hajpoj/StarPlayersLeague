@@ -16,7 +16,9 @@ class LoginHeaderTagLib {
 				out << g.link(controller:"administration", action:"index", "Admin")
 				out << " | "
 			}
-			out << g.link(controller:"profile", action:"profile", "Profile")
+			out << g.link(controller:"profile", action:"account", "Account")
+			out << " | "
+			out << g.link(controller:"navigation", action:"myProfile", "Profile")
 			out << " | " 
 			out << g.link(controller:"profile", action:"matches", "Matches")
 			out << " | "

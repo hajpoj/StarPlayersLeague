@@ -7,7 +7,7 @@
     
     <body>
 	   	<g:form method="POST">
-	    	<h1>Edit Profile</h1>
+	    	<h1>Edit Account</h1>
 	    	<div class="break"></div>
 	    	<g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
