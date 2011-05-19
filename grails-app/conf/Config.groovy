@@ -102,10 +102,10 @@ grails.plugins.springsecurity.useSecurityEventListener = true
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'spl.AuthUser'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'spl.AuthUserAuthRole'
 grails.plugins.springsecurity.authority.className = 'spl.AuthRole'
-grails.plugins.springsecurity.onInteractiveAuthenticationSuccessEvent = { e, appCtx ->
-	User.withTransaction {
-		def user = User.get(appCtx.springSecurityService.currentUser.id)
-		println "DEBUG: ${new Date()} user logged in: ${user.username}"
+//grails.plugins.springsecurity.onInteractiveAuthenticationSuccessEvent = { e, appCtx ->
+//	User.withTransaction {
+//		def user = User.get(appCtx.springSecurityService.currentUser.id)
+//		println "DEBUG: ${new Date()} user logged in: ${user.username}"
 //		try {
 //			user.lastLogin = new Date()
 //			println "DEBUG: ${user.lastLogin} trying to save user: ${user.username}"
@@ -114,8 +114,7 @@ grails.plugins.springsecurity.onInteractiveAuthenticationSuccessEvent = { e, app
 //			user = user.merge()
 //			println "DEBUG: ${user.lastLogin} caught exception, merging user: ${user.username}"
 //		}
-	}
-}
+//}
 
 // Mail configs
 grails.mail.default.from='contact@starplayersleague.com'
