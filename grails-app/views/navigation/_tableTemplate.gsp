@@ -63,10 +63,10 @@
 					</g:if>
 					<g:else>
 						<g:if test="${matchesInstance.entries.toArray().getAt(0).id == matchesInstance.winner.id}">
-							<td class="center">${(Integer)matchesInstance.bestOf/2+1}-${matchesInstance.loserScore}</td>
+							<td class="matchscore">${(Integer)matchesInstance.bestOf/2+1}-${matchesInstance.loserScore}</td>
 						</g:if>
 						<g:else>
-							<td class="center">${matchesInstance.loserScore}-${(Integer)matchesInstance.bestOf/2+1}</td>
+							<td class="matchscore">${matchesInstance.loserScore}-${(Integer)matchesInstance.bestOf/2+1}</td>
 						</g:else>
 					</g:else>
 	                <td class="left"><img class="icons" src="${resource(dir:'images/icons', file:matchesInstance.entries.toArray().getAt(1).race.concat('.png'))}" 

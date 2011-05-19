@@ -93,7 +93,7 @@
 				<div class="flinks">
 					<h4>SPL Community</h4>
 					<ul class="flinks">
-						<li><a href="https://www.facebook.com/pages/StarPlayers-League/214953398529055">Facebook</a></li>
+						<li><g:link controller="navigation" action="contact">Contact Us</g:link></li>
 						<li><a href="http://twitter.com/#!/StarPlayersSC">Twitter</a></li>
 					</ul>
 				</div>
