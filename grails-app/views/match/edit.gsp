@@ -78,6 +78,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="forfeit"><g:message code="match.forfeit.label" default="Forfeit" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: matchInstance, field: 'forfeit', 'errors')}">
+                                    <g:checkBox name="forfeit" value="${matchInstance?.forfeit}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                   <label for="entries"><g:message code="match.entries.label" default="Entries" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: matchInstance, field: 'entries', 'errors')}">

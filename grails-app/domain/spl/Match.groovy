@@ -22,6 +22,7 @@ class Match {
 		bestOf(nullable:false, blank:false, min:1)
 		winner(nullable:true)
 		loserScore(nullable:true, blank:true, min:0)
+		forfeit(nullable:true)
     }
 		
 	public void createGames() {

@@ -149,6 +149,9 @@ class ProfileController {
 				match.updateResult()
 			}
 			if (match.hasErrors() || !match.save(flush: true)) {
+				match.errors.each {
+					println it
+				}
 				flash.message = "Unable to save match results, please contact admin"
 				redirect(action: "reportScore", id: match.id)
 			} else {

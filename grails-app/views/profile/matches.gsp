@@ -8,6 +8,9 @@
         <h1>Matches</h1>
        	<div class="list">
 	       	<g:if test="${matchesInstanceList.size() == 0}">
+	       		<g:if test="${flash.message}">
+		        	<div class="message">${flash.message}</div>
+		        </g:if>
 	       		<p>No matches to show!</p>
 	       	</g:if>
 	       	<g:else>
@@ -84,7 +87,7 @@
 		               			<td class="right"><g:link controller="profile" action="reportScore" id="${matchesInstance.id}">Report Score</g:link></td>
 		               		</g:if>
 		               		<g:else>
-		               			<td class="right"><g:link controller="profile" action="disputeScore" id="${matchesInstance.id}">Match Details</g:link></td>
+		               			<td class="right"><g:link controller="profile" action="disputeScore" id="${matchesInstance.id}">Dispute Score</g:link></td>
 		               		</g:else>
 		           		</tr>
 		        	</g:each>

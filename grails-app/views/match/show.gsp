@@ -65,6 +65,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="match.forfeit.label" default="Forfeit" /></td>
+                            
+                            <td valign="top" class="value"><g:formatBoolean boolean="${matchInstance?.forfeit}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="match.entries.label" default="Entries" /></td>
                             
                             <td valign="top" style="text-align: left;" class="value">

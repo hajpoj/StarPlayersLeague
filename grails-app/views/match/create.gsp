@@ -75,6 +75,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="forfeit"><g:message code="match.forfeit.label" default="Forfeit" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: matchInstance, field: 'forfeit', 'errors')}">
+                                    <g:checkBox name="forfeit" value="${matchInstance?.forfeit}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="leagueGroup"><g:message code="match.leagueGroup.label" default="League Group" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: matchInstance, field: 'leagueGroup', 'errors')}">
