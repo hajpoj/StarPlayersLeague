@@ -25,9 +25,9 @@
 		       		<tr> 
 		       			<th class="colmatch">Match</th>
 		       			<th class="colbnetidl">Player</th>
-		       			<th class="colracel"></th>
+		       			<th class="colrace"></th>
 		       			<th class="colvs">vs</th>
-		       			<th class="colracer"></th>
+		       			<th class="colrace"></th>
 		       			<th class="colbnetidr2">Player</th>
 		       			<th class="colmappack"></th>
 		       			<th class="colreportscore"></th>

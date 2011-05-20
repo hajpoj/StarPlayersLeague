@@ -413,16 +413,12 @@ th.colbnetidl {
 	text-align: right;
 	width: 150px;
 }
-th.colracel {
-	text-align: right;
-	width: 20px;
-}
 th.colvs {
 	text-align: center;
 	width: 30px;
 }
-th.colracer {
-	text-align: left;
+th.colrace {
+	text-align: center;
 	width: 20px;
 }
 th.colbnetidr {

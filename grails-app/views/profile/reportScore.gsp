@@ -7,17 +7,16 @@
     </head>
     <body>
         <h1>Report Score</h1>
-        <h2>Match ${fieldValue(bean: matchInstance, field:"matchNumber")}</h2> 
-       	<h3><g:each in="${matchInstance.entries}" status="i" var="entry">
-       			<g:if test="${i > 0}">vs.</g:if> 
+        
+        <h2>Match ${fieldValue(bean: matchInstance, field:"matchNumber")}: <g:each in="${matchInstance.entries}" status="i" var="entry">
+       			<g:if test="${i > 0}">vs</g:if> 
        			${fieldValue(bean: entry, field:"bnetId")}
-        	</g:each>
-        </h3>
-        <div class="break"></div>
+        	</g:each></h2>
         <g:if test="${flash.message}">
+        	<div class="break"></div>
         	<div class="message">${flash.message}</div>
         </g:if>
-        <g:uploadForm method="POST">
+        <g:uploadForm method="post">
         	<g:hiddenField name="id" value="${matchInstance?.id}" />
         	<div class="list">
         		<table>
@@ -38,7 +37,7 @@
         						      	  from="${matchInstance.entries}"
         					  		  	  optionKey="id"
         					  		   	  value="${game?.winner?.id}"
-        					  		      noSelection="${['null': 'Not Played']}"/>
+        					  		      noSelection="${['null': 'none']}"/>
         					</td>
         					<td>${game.map}</td>
         					<td>
@@ -52,17 +51,19 @@
         		</table>
         	</div>
         	<div class="break"></div>
-        	        	<div class="infoleft">
-        		<p>Was this match a forfeit:</p>
-        		<p>Winner of the forfeited match:</p> 
-        	</div>
-        	<div class="inforight">
-        		<p><g:checkBox name="forfeit" value="${matchInstance?.forfeit}" /></p>
-        		<p><g:select id="forfeitWinner"
+        	<div class="mcontent">
+        	    <div class="infoleft">
+	        		<p>Was this match a forfeit?</p>
+	        		<p>Winner of the forfeited match:</p> 
+        		</div>
+        		<div class="inforight">
+	        		<p><g:checkBox name="forfeit" value="${matchInstance?.forfeit}" /></p>
+	        		<p><g:select id="forfeitWinner"
        		 				 name="forfeitWinner"
         					 from="${matchInstance.entries}"
         					 optionKey="id"
         					 noSelection="${['null': 'N/A']}"/></p>
+        		</div>
         	</div>
         	<div class="break"></div>
         	<p><g:actionSubmit class="submitButton" action="submitScore" value="Submit" /></p>

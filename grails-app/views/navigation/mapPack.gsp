@@ -23,7 +23,7 @@
        			</tr>
 	       		<g:each in="${mapPackInstance.maps}" status="i" var="mapPackInstance">
 	            	<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-	            		<td>Game ${i+1}</td>
+	            		<td>${i+1}</td>
 	            		<td>${fieldValue(bean: mapPackInstance, field: "name")}</td>
 						<td>${fieldValue(bean: mapPackInstance, field: "listedName")}</td>
 						<td>${fieldValue(bean: mapPackInstance, field: "author")}</td>
