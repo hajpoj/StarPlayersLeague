@@ -183,7 +183,7 @@ class ProfileController {
 				}
 				match.games[_i].winner = Registration.get(gameWinnerId[_i])
 			}
-			match.forfeit = params.forfeit
+			match.forfeit = params.forfeit ? true : false
 			match.played = true
 			if (params.forfeit) {
 				match.winner = Registration.get(params.forfeitWinner)
