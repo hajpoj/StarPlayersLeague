@@ -17,7 +17,7 @@
         <g:if test="${flash.message}">
         	<div class="message">${flash.message}</div>
         </g:if>
-        <g:form method="POST">
+        <g:uploadForm method="POST">
         	<g:hiddenField name="id" value="${matchInstance?.id}" />
         	<div class="list">
         		<table>
@@ -25,7 +25,7 @@
         				<th>Game</th>
         				<th>Winner</th>
         				<th>Map</th>
-<%--        				<th>Upload Replay</th>--%>
+        				<th>Upload Replay</th>
         				<th>Link To VOD</th>
         			</tr>
         			
@@ -41,7 +41,9 @@
         					  		      noSelection="${['null': 'Not Played']}"/>
         					</td>
         					<td>${game.map}</td>
-<%--        					<td>Coming Soon!</td>--%>
+        					<td>
+        						<input type="file" id="replay${i+1}" name="replay${i+1}" />
+        					</td>
         					<td>
 								http://<g:textField name="linkToVod${i+1}" value="${gameInstance?.linkToVod}" />        					
         					</td>
@@ -64,6 +66,6 @@
         	</div>
         	<div class="break"></div>
         	<p><g:actionSubmit class="submitButton" action="submitScore" value="Submit" /></p>
-        </g:form>
+        </g:uploadForm>
     </body>
 </html>

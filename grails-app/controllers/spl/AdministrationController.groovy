@@ -22,14 +22,8 @@ class AdministrationController {
 	
 	def resetMatchResult = {
 		def match = Match.get(params.resetMatchId)
-		if (params.resetMatchId) {
-			match.winner = null
-			match.loserScore = null
-			match.played = false
-			match.forfeit = false
-			for (_game in match.games) {
-				_game.winner = null
-			}
+		if (match) {
+			match.reset()
 			match.save(flush: true)
 		
 			for (_entry in match.entries) {

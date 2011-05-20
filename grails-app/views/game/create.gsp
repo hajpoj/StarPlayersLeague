@@ -66,6 +66,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="pathToReplay"><g:message code="game.pathToReplay.label" default="Path To Replay" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: gameInstance, field: 'pathToReplay', 'errors')}">
+                                    <g:textField name="pathToReplay" value="${gameInstance?.pathToReplay}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="match"><g:message code="game.match.label" default="Match" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: gameInstance, field: 'match', 'errors')}">

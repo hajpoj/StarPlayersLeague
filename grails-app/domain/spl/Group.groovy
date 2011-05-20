@@ -12,6 +12,6 @@ class Group {
 	}
 	
 	String toString() {
-		return "${name}"
+		return "Group ${name}"
 	}
 }

@@ -10,6 +10,6 @@ class Season {
     }
 	
 	String toString() {
-		return "${name}"
+		return "Season ${name}"
 	}
 }

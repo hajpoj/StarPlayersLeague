@@ -12,6 +12,6 @@ class Code {
     }
 	
 	String toString() {
-		return "${name}"
+		return "Code ${name}"
 	}
 }

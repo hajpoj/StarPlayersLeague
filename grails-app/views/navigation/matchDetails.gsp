@@ -26,7 +26,7 @@
 		   			<th>Game</th>
 			   		<th>Winner</th>
 			   		<th>Map</th>
-<%--			   		<th>Replay</th>--%>
+			   		<th>Replay</th>
 			   		<th>Link To VOD</th>
 		   		</tr>
         	
@@ -38,10 +38,12 @@
         					<g:else>${game.winner}</g:else>
         				</td>
         				<td>${game.map}</td>
-<%--        				<td>--%>
-<%--        					<g:if test="${!game.replay}">Not available</g:if>--%>
-<%--        					<g:else>${game.replay}</g:else>--%>
-<%--        				</td>--%>
+        				<td>
+        					<g:if test="${!game.pathToReplay}">Not available</g:if>
+        					<g:else>
+        						<a href="${game.pathToReplay}">Replay</a>
+        					</g:else>
+        				</td>
         				<td>
         					<g:if test="${!game.linkToVod}">
         						Not available

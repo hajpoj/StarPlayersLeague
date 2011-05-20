@@ -70,6 +70,18 @@ class Match {
 		return false
 	}
 	
+	public void reset() {
+		this.winner = null
+		this.loserScore = null
+		this.played = false
+		this.forfeit = false
+		for (_game in this.games) {
+			_game.winner = null
+			_game.pathToReplay = null
+			_game.linkToVod = null
+		}
+	}
+	
 	String toString() {
 		return "${this.id}"
 	}

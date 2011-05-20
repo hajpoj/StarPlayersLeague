@@ -10,6 +10,6 @@ class Division {
     }
 	
 	String toString() {
-		return "${name}"
+		return "Division ${name}"
 	}
 }

@@ -133,12 +133,37 @@ class ProfileController {
 				}
 			}
 		}
+		
 		if (foundScoreError) {
 			redirect(action: "reportScore", id: match.id)
 		} else {
 			for (_i in 0..match.bestOf-1) {
 				match.games[_i].winner = Registration.get(gameWinnerId[_i])
 				match.games[_i].linkToVod = params."linkToVod${_i+1}"
+				
+				def uploadedFile = request.getFile("replay${_i+1}")
+				if (!uploadedFile.empty && match.games[_i].winner) {
+					def filename = "match${match.games[_i].match.matchNumber}_"
+					for (_entry in match.games[_i].entries) {
+						filename += "${_entry.bnetId}_"
+					}
+					filename += "game${match.games[_i].gameNumber}"
+					filename += ".SC2Replay"
+					
+					def group = match.games[_i].match.leagueGroup
+					def division = group.division
+					def code = division.code
+					def season = code.season
+					def league = season.league
+					def server = league.server
+					
+					def webRootDir = servletContext.getRealPath("/")
+					def groupDir = new File(webRootDir, "/spl_replays/${server}/${league}/${season}/${code}/${division}/${group}")
+					groupDir.mkdirs()
+					def fullPath = new File(groupDir, filename)
+					uploadedFile.transferTo(fullPath)
+					match.games[_i].pathToReplay = fullPath
+				}
 			}
 			match.forfeit = params.forfeit
 			match.played = true

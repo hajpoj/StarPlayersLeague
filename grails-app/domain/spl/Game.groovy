@@ -4,7 +4,7 @@ class Game {
 	Integer gameNumber
 	Registration winner
 	GameMap map
-	//Byte[] replay
+	String pathToReplay
 	String linkToVod
 	static belongsTo = [match:Match]
 	static hasMany = [entries:Registration]
@@ -14,7 +14,7 @@ class Game {
 		winner (nullable:true)
 		map(nullable:false)
 		linkToVod(nullable:true)
-		//replay(nullable:true)
+		pathToReplay(nullable:true)
     }
 	
 	String toString() {
