@@ -37,9 +37,9 @@
     			<p>Group:</p>
     		</div>
     		<div class="inforight">
-    			<p>Code ${fieldValue(bean: registrationInstance, field: "code")}</p>
-    			<p>Division ${fieldValue(bean: registrationInstance, field: "division")}</p>
-    			<p>Group ${fieldValue(bean: registrationInstance, field: "group")}</p>
+    			<p>${fieldValue(bean: registrationInstance.code, field: "name")}</p>
+    			<p>${fieldValue(bean: registrationInstance.division, field: "name")}</p>
+    			<p>${fieldValue(bean: registrationInstance.group, field: "name")}</p>
     		</div>
     	</div>
     	</g:each>

@@ -12,7 +12,7 @@
 	<div>
 		<p>
 			Do not reply to this email. Click <g:link absolute="true" controller="profile" action="listMessages" params="[id:messageInstance.thread.id]">here</g:link> to respond to this message. 
-			To turn off email notifications, log onto <a href="http://www.starplayersleague.com">www.starplayersleague.com</a>, view your profile, click on the edit profile link, 
+			To turn off email notifications, log onto <a href="http://www.starplayersleague.com">www.starplayersleague.com</a>, view your account, click the edit account link, 
 			and uncheck the email notifications box for receiving new messages.
 		</p>
 	</div>

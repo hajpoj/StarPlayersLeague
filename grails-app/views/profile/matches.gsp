@@ -14,9 +14,9 @@
 	       		<p>No matches to show!</p>
 	       	</g:if>
 	       	<g:else>
-		   		<h2>Code ${fieldValue(bean: entryInstance, field: "code")} 
-		   			- Division ${fieldValue(bean: entryInstance, field: "division")} 
-		   			- Group ${fieldValue(bean: entryInstance, field: "group")}
+		   		<h2>${fieldValue(bean: entryInstance, field: "code")} / 
+		   			${fieldValue(bean: entryInstance, field: "division")} / 
+		   			${fieldValue(bean: entryInstance, field: "group")}
 		   		</h2>
 		   		<g:if test="${flash.message}">
 		        	<div class="message">${flash.message}</div>

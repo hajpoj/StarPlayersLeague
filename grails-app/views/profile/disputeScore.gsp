@@ -14,7 +14,7 @@
 	        <p>Please send an email to <a href="mailto:contact@starplayersleague.com">contact@starplayersleague.com</a> if the score reported is incorrect. Please attach the replay file and include the following match number in the subject: ${matchInstance.id}</p>
 	        <br/>
 	        <p>Thanks,</p>
-	        <p>StarPlayersLeague Team</p>
+	        <p>StarPlayers Team</p>
         </div>
     </body>
 </html>

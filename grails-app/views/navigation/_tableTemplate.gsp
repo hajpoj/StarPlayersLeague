@@ -1,8 +1,8 @@
 <g:if test="${standingsInstanceList.size() > 0}">
 	<div class="break"></div>
-	<h2>Code ${fieldValue(bean: standingsInstanceList.first(), field: "code")} - 
-    	Division ${fieldValue(bean: standingsInstanceList.first(), field: "division")} - 
-		Group ${fieldValue(bean: standingsInstanceList.first(), field: "group")}</h2>
+	<h2>${fieldValue(bean: standingsInstanceList.first(), field: "code")} /
+	${fieldValue(bean: standingsInstanceList.first(), field: "division")} / 
+	${fieldValue(bean: standingsInstanceList.first(), field: "group")}</h2>
 	<div class="list">
     	<table>
             <tr>
