@@ -26,7 +26,6 @@
         				<th>Winner</th>
         				<th>Map</th>
         				<th>Upload Replay</th>
-        				<th>Link To VOD</th>
         			</tr>
         			
         			<g:each in="${matchInstance.games}" status="i" var="game">
@@ -43,9 +42,6 @@
         					<td>${game.map}</td>
         					<td>
         						<input type="file" id="replay${i+1}" name="replay${i+1}" />
-        					</td>
-        					<td>
-								http://<g:textField name="linkToVod${i+1}" value="${gameInstance?.linkToVod}" />        					
         					</td>
         				</tr>
         			</g:each>

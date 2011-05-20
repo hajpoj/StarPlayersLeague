@@ -2,6 +2,7 @@ package spl
 
 import grails.plugins.springsecurity.Secured
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
+import org.springframework.web.multipart.commons.CommonsMultipartFile
 
 @Secured(['ROLE_USER', 'ROLE_ADMIN'])
 class ProfileController {
@@ -99,6 +100,20 @@ class ProfileController {
 		for (_i in 0..players.size()-1) {
 			playerWins[_i] = 0
 		}
+		def replayFile = new CommonsMultipartFile[match.bestOf]
+		for (_i in 0..match.bestOf-1) {
+			replayFile[_i] = request.getFile("replay${_i+1}")
+			if (!replayFile[_i].empty) {
+				if (replayFile[_i].size > 1048576) {
+					flash.message = "Replay for game #${_i+1} is too large (1 MB maximum)"
+					foundScoreError = true
+				}
+				if (!(replayFile[_i].originalFilename =~ /.*SC2Replay$/)) {
+					flash.message = "Replay must have .SC2Replay file extension"
+					foundScoreError = true
+				}
+			}
+		}
 		if (params.forfeit) {
 			for (_game in 1..match.bestOf) {
 				if (params."game${_game}" != 'null') {
@@ -120,6 +135,10 @@ class ProfileController {
 				}
 				if (!foundScoreError) {
 					if (params."game${_game}" != 'null') {
+						if (replayFile[_game-1].empty) {
+							flash.message = "Must provide a replay to report score"
+							foundScoreError = true
+						}
 						for (_i in 0..players.size()-1) {
 							if (players[_i].id == Registration.get(params."game${_game}").id) {
 								playerWins[_i]++
@@ -138,11 +157,9 @@ class ProfileController {
 			redirect(action: "reportScore", id: match.id)
 		} else {
 			for (_i in 0..match.bestOf-1) {
-				match.games[_i].winner = Registration.get(gameWinnerId[_i])
-				match.games[_i].linkToVod = params."linkToVod${_i+1}"
 				
-				def uploadedFile = request.getFile("replay${_i+1}")
-				if (!uploadedFile.empty && match.games[_i].winner) {
+				if (!replayFile[_i].empty && gameWinnerId[_i]) {
+					
 					def filename = "match${match.games[_i].match.matchNumber}_"
 					for (_entry in match.games[_i].entries) {
 						filename += "${_entry.bnetId}_"
@@ -161,9 +178,10 @@ class ProfileController {
 					def groupDir = new File(webRootDir, "/spl_replays/${server}/${league}/${season}/${code}/${division}/${group}")
 					groupDir.mkdirs()
 					def fullPath = new File(groupDir, filename)
-					uploadedFile.transferTo(fullPath)
+					replayFile[_i].transferTo(fullPath)
 					match.games[_i].pathToReplay = filename
 				}
+				match.games[_i].winner = Registration.get(gameWinnerId[_i])
 			}
 			match.forfeit = params.forfeit
 			match.played = true
