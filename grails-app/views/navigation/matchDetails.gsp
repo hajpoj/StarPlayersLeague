@@ -17,6 +17,68 @@
         <g:if test="${flash.message}">
         	<div class="message">${flash.message}</div>
         </g:if>
+<%--        <div class="list">--%>
+<%--	   		<table>--%>
+<%--		       	<tr>--%>
+<%--					<th class="colmatch">Match</th>--%>
+<%--		       		<th class="colbnetidl">Player</th>--%>
+<%--		       		<th class="colracel"></th>--%>
+<%--	       			<th class="colvs">vs</th>--%>
+<%--	       			<th class="colracer"></th>--%>
+<%--	       			<th class="colbentidr">Player</th>--%>
+<%--	       			<th class="colmappack"></th>--%>
+<%--       			</tr>--%>
+<%--       			<tr>--%>
+<%--	       			<td class="right">${fieldValue(bean: matchesInstance, field: "matchNumber")}</td>--%>
+<%--	            	<g:if test="${matchesInstance.played == false}">--%>
+<%--						<td class="right">--%>
+<%--					</g:if>--%>
+<%--					<g:else>--%>
+<%--						<g:if test="${matchesInstance.entries.toArray().getAt(0).id == matchesInstance.winner.id}">--%>
+<%--							<td class="winnerl">--%>
+<%--						</g:if>--%>
+<%--						<g:else>--%>
+<%--							<td class="right">--%>
+<%--						</g:else>--%>
+<%--					</g:else>--%>
+<%--								<g:link controller="navigation" action="profile" id="${matchesInstance.entries.toArray().getAt(0).user.id}">--%>
+<%--									${fieldValue(bean: matchesInstance.entries.toArray().getAt(0), field: "bnetId")}--%>
+<%--								</g:link>--%>
+<%--							</td>--%>
+<%--					<td class="right"><img class="icons" src="${resource(dir:'images/icons', file:matchesInstance.entries.toArray().getAt(0).race.concat('.png'))}" --%>
+<%--						alt="${matchesInstance.entries.toArray().getAt(0).race}" /></td>--%>
+<%--					<g:if test="${matchesInstance.played == false}">--%>
+<%--						<td class="center">vs</td>--%>
+<%--					</g:if>--%>
+<%--					<g:else>--%>
+<%--						<g:if test="${matchesInstance.entries.toArray().getAt(0).id == matchesInstance.winner.id}">--%>
+<%--							<td class="matchscore">${(Integer)matchesInstance.bestOf/2+1}-${matchesInstance.loserScore}</td>--%>
+<%--						</g:if>--%>
+<%--						<g:else>--%>
+<%--							<td class="matchscore">${matchesInstance.loserScore}-${(Integer)matchesInstance.bestOf/2+1}</td>--%>
+<%--						</g:else>--%>
+<%--					</g:else>--%>
+<%--	                <td class="left"><img class="icons" src="${resource(dir:'images/icons', file:matchesInstance.entries.toArray().getAt(1).race.concat('.png'))}" --%>
+<%--						alt="${matchesInstance.entries.toArray().getAt(1).race}" /></td>--%>
+<%--	                <g:if test="${matchesInstance.played == false}">--%>
+<%--						<td class="left">--%>
+<%--					</g:if>--%>
+<%--					<g:else>--%>
+<%--						<g:if test="${matchesInstance.entries.toArray().getAt(1).id == matchesInstance.winner.id}">--%>
+<%--							<td class="winnerr">--%>
+<%--						</g:if>--%>
+<%--						<g:else>--%>
+<%--							<td class="left">--%>
+<%--						</g:else>--%>
+<%--					</g:else>--%>
+<%--								<g:link controller="navigation" action="profile" id="${matchesInstance.entries.toArray().getAt(1).user.id}">--%>
+<%--									${fieldValue(bean: matchesInstance.entries.toArray().getAt(1), field: "bnetId")}--%>
+<%--								</g:link>--%>
+<%--							</td>--%>
+<%--	                <td class="right"><g:link controller="navigation" action="mapPack" id="${matchesInstance.mapPack.id}">${matchesInstance.mapPack}</g:link></td>--%>
+<%--	            </tr>--%>
+<%--   			</table>--%>
+		
         <g:if test="${matchInstance.forfeit}">
         	<p>** Match winner by forfeit: ${matchInstance.winner} **</p>
         </g:if>
@@ -41,7 +103,7 @@
         				<td>
         					<g:if test="${!game.pathToReplay}">Not available</g:if>
         					<g:else>
-        						<a href="${game.pathToReplay}">Replay</a>
+        						<a href="<g:resource dir="${groupDirInstance}" file="${game.pathToReplay}" absolute="true" />">Replay</a>
         					</g:else>
         				</td>
         				<td>

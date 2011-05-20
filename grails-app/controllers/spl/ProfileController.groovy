@@ -150,7 +150,7 @@ class ProfileController {
 					filename += "game${match.games[_i].gameNumber}"
 					filename += ".SC2Replay"
 					
-					def group = match.games[_i].match.leagueGroup
+					def group = match.leagueGroup
 					def division = group.division
 					def code = division.code
 					def season = code.season
@@ -162,7 +162,7 @@ class ProfileController {
 					groupDir.mkdirs()
 					def fullPath = new File(groupDir, filename)
 					uploadedFile.transferTo(fullPath)
-					match.games[_i].pathToReplay = fullPath
+					match.games[_i].pathToReplay = filename
 				}
 			}
 			match.forfeit = params.forfeit

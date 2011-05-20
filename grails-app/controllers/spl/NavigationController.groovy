@@ -151,7 +151,14 @@ class NavigationController {
 	
 	def matchDetails = {
 		def match = Match.get(params.id)
-		[matchInstance: match]
+		def group = match.leagueGroup
+		def division = group.division
+		def code = division.code
+		def season = code.season
+		def league = season.league
+		def server = league.server
+		def groupDir = "spl_replays/${server}/${league}/${season}/${code}/${division}/${group}"
+		[matchInstance: match, groupDirInstance: groupDir]
 	}
 	
 	// REGISTRATION VIEW
