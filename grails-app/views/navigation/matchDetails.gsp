@@ -77,7 +77,7 @@
 		</div>
 		
         <g:if test="${matchInstance.forfeit}">
-        	<p class="date">*Note: match winner by forfeit</p>
+        	<p class="note">*Note: match winner by forfeit</p>
         </g:if>
         <div class="list">
         	<div class="break"></div>
@@ -125,6 +125,5 @@
         		</g:each>
 			</table>
 		</div>
-        <div class="break"></div>
     </body>
 </html>

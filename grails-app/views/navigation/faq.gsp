@@ -22,13 +22,15 @@
 				</p><br/><p><a href="#11">How do I view which maps to play on for my match?</a>
 				</p><br/><p><a href="#15">Who wins when a player disconnects from the game?</a>
 				</p><br/><p><a href="#12">Is there a StarPlayers League channel on Battle.net?</a>
-<%--			</p><br/><p><a href="#13">How can I help out the StarPlayers League?</a>--%>
+				</p><br/><p><a href="#13">How can I help out the StarPlayers League?</a>
+				</p><br/>
 		</div>
 		<div class="break"></div>
 		<div class="mcontent">		
+<div class="break"></div>
 <h3 id="14">What is the StarPlayers League?</h3>
 <div class="break"></div>
-    <p>The StarPlayers League allows StarCraft2 players of all skill levels to engage in a friendly competition against others. Our goal is to provide players with a more intimate league compared to the Battle.net ladder. In our league, you may find worthy opponents, develop rivalries, and even scout your opponent's play-style before your match. Most importantly, we want to expand StarCraft2 e-sports to anyone who wants to play.</p>
+    <p>The StarPlayers League allows StarCraft2 players of all skill levels to engage in a friendly competition against others. Our goal is to provide players with a more intimate league compared to the Battle.net ladder. In our league, you may find worthy opponents, develop rivalries, and even be able to scout your opponent's play-style before your match. Most importantly, we want to expand StarCraft2 e-sports to anyone who wants to play.</p>
 <div class="innerlinebreak"></div>
 
 <h3 id="1">I registered, but why have I not received any emails?</h3>
@@ -100,12 +102,12 @@
 <div class="break"></div>
 <p>Yes, check out Battle.net channels: StarPlayers League, StarPlayers League 2, StarPlayers League 3, etc.</p>
 <div class="break"></div>
-<%--<div class="innerlinebreak"></div>--%>
-<%----%>
-<%--<h3 id="13">How can I help out the StarPlayers League?</h3>--%>
-<%--<div class="break"></div>--%>
-<%--<p>You can donate via PayPal to help keep our servers running. Every donation is greatly appreciated.</p>--%>
-<%--<div class="break"></div>--%>
+<div class="innerlinebreak"></div>
+
+<h3 id="13">How can I help out the StarPlayers League?</h3>
+<div class="break"></div>
+<p>You can donate via PayPal to help keep our servers running. Every donation is greatly appreciated.</p>
+<div class="break"></div>
 		</div>
 	</body>
 </html>

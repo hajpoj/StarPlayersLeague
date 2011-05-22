@@ -1,19 +1,16 @@
 <html>
 	<head>
-		<title>League Info</title>
+		<title>League Information</title>
 		<meta name="layout" content="main" />
 	</head>
 	
 	<body>
-		<h1>League Info</h1>
+		<h1>League Information</h1>
 		<div class="break"></div>
 		<div class="mcontent">
 			<h2>1v1 StarPlayers League Format</h2>
 			<br/>
 			<p>Layout</p>
-			<div class="rightimage">
-				<img src="${resource(dir:'images', file:'1v1layout.png')}" alt="1v1 Layout"/>
-			</div>
 			<br/>
 			<ul class="normal">
 				<li>The league separates players by Code and Division.</li>
@@ -23,7 +20,7 @@
 				<li>Games that result in draws must be played again.</li>
 				<li>Maps for each match will be given ahead of time.</li>
 				<li>At the end of a season, the top 3 players in each group are promoted to a higher code or division, and the 
-				bottom 3 players in each group are relegated to a lower code or division based on final standings.</li>
+					bottom 3 players in each group are relegated to a lower code or division based on final standings.</li>
 				<li>The bottom 6 players of Code SP are relegated after each season.</li>
 				<li>The bottom 4 players of each group in Code S are relegated after each season.</li>
 			</ul>

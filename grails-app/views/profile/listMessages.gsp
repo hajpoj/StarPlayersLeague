@@ -24,7 +24,7 @@
 		       	<br />
 		       	<p>${fieldValue(bean: messageInstance, field: "text")}</p>
 		       	<br />
-		       	<p class="date">Sent on ${messageInstance.dateCreated.format('MM-dd-yyyy, HH:mm z')}</p>
+		       	<p class="note">Sent on ${messageInstance.dateCreated.format('MM-dd-yyyy, HH:mm z')}</p>
 		    </div>
 	    </g:each>
         <div id="replyBox"></div>

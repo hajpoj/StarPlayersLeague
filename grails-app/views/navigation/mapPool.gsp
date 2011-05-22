@@ -8,7 +8,7 @@
     <body>
     	<h1>Map Pool</h1>
     	<div class="break"></div>
-    	<p class="date">NOTE: Search for the maps in Battle.net using the Listed Name. Make sure the author of the map is correct to ensure map integrity.</p>
+    	<p class="note">NOTE: Search for the maps in Battle.net using the Listed Name. Make sure the author of the map is correct to ensure map integrity.</p>
     	<div class="break"></div>
         <h2>1v1 StarPlayers League Maps</h2>
 			<div class="list">

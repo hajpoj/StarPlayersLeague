@@ -1,48 +1,36 @@
-html * {
-    margin: 0;
-    /*padding: 0; SELECT NOT DISPLAYED CORRECTLY IN FIREFOX */
+html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, a, abbr, acronym, address, big,
+	cite, code, del, dfn, em, font, img,
+	ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, dl ,dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	center, u, b, i, marquee {
+	margin: 0; padding: 0px; border: 0px; outline: 0px;
 }
 
-/* GENERAL */
-
-.spinner {
-    padding: 5px;
-    position: absolute;
-    right: 0;
+body {
+	background:#dddddd url('../images/background.png') repeat-x center top;
+	color: #444444;
+    font: 12px verdana, arial, helvetica, sans-serif;
 }
 h1 {
+	padding: 10px 0 0;
     color: #ff4b00;
-    font-size: 26px;
-    margin: 0;
+    font-size: 32px;
 }
 h2 {
-	color: #444;
-	font-size: 18px;
-	margin: 0;
+	color: #444444;
+	font: 18px;
 }
 h3 {
-	font-size: 12px;
+	color: #444444;
+	font: 12px;
 }
 h4 {
 	margin: 0 0 3px 0;
-	color: #fff;
-	font-size: 14px;
-}
-body {
-    background:#dddddd url('../images/background.png') repeat-x center top;
-    color: #444;
-    font: 12px verdana, arial, helvetica, sans-serif;
-}
-img	{
-	border: 0;
-}
-a:link, a:visited, a:hover {
-    color: #00a4dd;
-    text-decoration: underline;
-}
-p.date {
-	color: #888;
-	font-style: italic;
+	color: #ffffff;
+	font: 14px;
 }
 
 /* WRAPPER */
@@ -53,17 +41,23 @@ p.date {
 	width: 960px;
 }
 
-/* HEADER */
+/* HEADERS AND NAVIGATION BAR*/
 
 #loginheader {
 	float: left;
 	margin: 10px 20px;
 	height: 10px;
 	width: 720px;
-	color: #fff;
+	color: #ffffff;
+}
+#loginheader a {
+	color: #00b4ff;
+    text-decoration: none;
+}
+#loginheader a:hover {
+	text-decoration: underline;
 }
 #splbanner {
-	margin: 0;
 	padding: 30px 0 0 0;
 	height: 100px; 
 	width: 760px;
@@ -71,27 +65,25 @@ p.date {
 #splogo {
 	float: right;
 }
-#menubar {
+#navigationbar {
 	background: transparent;
-	margin: 0;
 	height: 30px;
 	width: 760px;
 }
 ul.menuitems {
 	margin: 0 0 0 30px;
-	padding: 0;
 }
 ul.menuitems li {
 	margin: 0 auto;
 	padding: 0 2px;
 	display: inline;
-	color: #fff;
+	color: #ffffff;
 	font-size: 14px;
 	height: 30px;
 	line-height: 30px;
 }
 ul.menuitems li a {
-	color: #fff;
+	color: #ffffff;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -102,22 +94,29 @@ ul.menuitems li a:hover {
 /* PAGE CONTENT */
 
 #container {
-	background: #fff;
+	background: #ffffff;
 	margin: 20px 9px;
-	padding: 10px;
+	padding: 10px 10px 20px;
 	width: 920px;
-	border: solid 1px #888;
+	border: solid 1px #888888;
+}
+#container a {
+	color: #444444;
+    text-decoration: underline;
 }
 #sc2banner{
 	background: url('../images/sc2banner.jpg') no-repeat center center;
-	margin: 0;
 	width: 920px;
 	height: 250px;
 }
+.note {
+	color: #888888;
+	font-style: italic;
+}
 .edit {
 	float: right;
-	margin: 13px 0 0 0;
-	width: 550px;
+	margin: 29px 0 0 0;
+	width: 500px;
 	text-align: left;
 }
 .mcontent {
@@ -126,11 +125,6 @@ ul.menuitems li a:hover {
 	padding: 9px;
 	width: 900px;
 	border: solid 1px #ccc;
-}
-.rightimage {
-	float: right;
-	margin: 10px 0 10px 20px;
-	text-align: center;
 }
 .inforight {
 	line-height: 200%
@@ -145,6 +139,12 @@ ul.menuitems li a:hover {
 .break {
 	height: 10px;
 }
+.innerlinebreak {
+	background: url('../images/innerlinebreak.png') no-repeat center;
+	height: 41px;
+	width: 880px;
+}
+
 
 /* MESSAGES */
 
@@ -153,7 +153,6 @@ textarea.message_ {
 	height: 150px;
 }
 input.submitButton {
-	margin: 0;
 }
 .subject_ {
 	width: 480px;
@@ -169,19 +168,6 @@ input.submitButton {
 .threadlabel {
 	display: inline-block;
 	width: 150px;
-}
-
-/* LINEBREAK */
-
-.linebreak {
-	background: url('../images/linebreak.png') no-repeat center;
-	height: 1px;
-	width: 960px;
-}
-.innerlinebreak {
-	background: url('../images/innerlinebreak.png') no-repeat center;
-	height: 21px;
-	width: 880px;
 }
 
 /* FOOTER */

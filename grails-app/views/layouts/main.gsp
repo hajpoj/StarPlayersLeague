@@ -10,7 +10,6 @@
         <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
         <g:layoutHead />
         <g:javascript library="application" />
-        
         <!-- Google Analytics -->
 	    <script type="text/javascript">
 	
@@ -28,18 +27,15 @@
 		<!-- End Google Analytics -->
     </head>
     <body>
-        <div id="spinner" class="spinner" style="display:none;">
-            <img src="${resource(dir:'images',file:'spinner.gif')}" alt="${message(code:'spinner.alt',default:'Loading...')}" />
-        </div>
         <div id="wrapper">
         <div id="loginheader">
         	<g:loginHeader/>
         </div>
         	<div id="splogo">
-				<a href="http://www.starplayersleague.com"><img src="${resource(dir:'images',file:'splogo.png')}" alt="StarPlayers Logo" /></a>
+				<g:link controller="navigation" action="welcome"><img src="${resource(dir:'images',file:'splogo.png')}" alt="StarPlayers Logo" /></g:link>
 			</div>
-        	<div id="splbanner"><a href="http://www.starplayersleague.com"><img src="${resource(dir:'images',file:'splbanner.png')}" alt="StarPlayers League" /></a></div>
-        	<div id="menubar">
+        	<div id="splbanner"><g:link controller="navigation" action="welcome"><img src="${resource(dir:'images',file:'splbanner.png')}" alt="StarPlayers League" /></g:link></div>
+        	<div id="navigationbar">
 				<ul class="menuitems">
 				    <li class="controller"><g:link controller="navigation" action="welcome">Home</g:link></li>
 					<li>|</li>
@@ -56,17 +52,11 @@
 					<li class="controller"><g:link controller="navigation" action="contact">Contact Us</g:link></li>
 				</ul>
 			</div>
-			
 			<!-- content -->
-			
 			<div id="container">
         		<g:layoutBody />
         	</div>
-        	
         	<!-- footer -->
-        	
-        	<div class="linebreak"></div>
-        	
 	        <div id="footer">
 				<div class="flinks">
 					<h4>SC2 Resources</h4>
