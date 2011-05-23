@@ -9,7 +9,8 @@
     <body>
     	<h1>Map Pack #${mapPackInstance.id}</h1>
     	<div class="break"></div>
-      	<p class="note">NOTE: Search for the maps in Battle.net using the Listed Name. Make sure the author of the map is correct to ensure map integrity.</p>        
+      	<p class="note">NOTE: Search for the maps in Battle.net using the Listed Name. Make sure the author of the map is correct to ensure map integrity.</p>
+        <div class="break"></div>        
         <g:if test="${flash.message}">
         	<div class="message">${flash.message}</div>
         </g:if>

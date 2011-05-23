@@ -3,6 +3,7 @@
 	<h2>${fieldValue(bean: standingsInstanceList.first(), field: "code")} /
 	${fieldValue(bean: standingsInstanceList.first(), field: "division")} / 
 	${fieldValue(bean: standingsInstanceList.first(), field: "group")}</h2>
+	<div class="break"></div>
 	<div class="list">
     	<table>
             <tr>
@@ -31,6 +32,7 @@
     <div class="break"></div>
     <div class="break"></div>
     <h2>Group Matches</h2>
+    <div class="break"></div>
     <div class="list">
 	    <table>
 	       	<tr>
@@ -40,6 +42,7 @@
 	       		<th class="colvs">vs</th>
 	       		<th class="colrace"></th>
 	       		<th class="colbentidr">Player</th>
+	       		<th class="colmappack"></th>
 	       		<th class="colmappack"></th>
 	       	</tr>
 	       	<g:each in="${matchesInstanceList}" status="i" var="matchesInstance">
@@ -68,12 +71,12 @@
 					<g:else>
 						<g:if test="${matchesInstance.entries.toArray().getAt(0).id == matchesInstance.winner.id}">
 							<td class="matchscore">
-								<g:link controller="navigation" action="matchDetails" id="${matchesInstance.id}">${(Integer)matchesInstance.bestOf/2+1}-${matchesInstance.loserScore}</g:link>
+								${(Integer)matchesInstance.bestOf/2+1}-${matchesInstance.loserScore}
 							</td>
 						</g:if>
 						<g:else>
 							<td class="matchscore">
-								<g:link controller="navigation" action="matchDetails" id="${matchesInstance.id}">${matchesInstance.loserScore}-${(Integer)matchesInstance.bestOf/2+1}</g:link>
+								${matchesInstance.loserScore}-${(Integer)matchesInstance.bestOf/2+1}
 							</td>
 						</g:else>
 					</g:else>
@@ -95,6 +98,7 @@
 								</g:link>
 							</td>
 	                <td class="right"><g:link controller="navigation" action="mapPack" id="${matchesInstance.mapPack.id}">${matchesInstance.mapPack}</g:link></td>
+	                <td class="right"><g:link controller="navigation" action="matchDetails" id="${matchesInstance.id}">Match Details</g:link></td>
 	            </tr>
 			</g:each>
 		</table>

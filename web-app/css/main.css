@@ -5,7 +5,7 @@ html, body, div, span, applet, object, iframe,
 	ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, dl ,dt, dd, ol, ul, li,
 	fieldset, form, label, legend,
 	table, caption, tbody, tfoot, thead, tr, th, td,
-	center, u, b, i, marquee {
+	center, u, b, i, marquee, select, input {
 	margin: 0; padding: 0px; border: 0px; outline: 0px;
 }
 
@@ -31,6 +31,11 @@ h4 {
 	margin: 0 0 3px 0;
 	color: #ffffff;
 	font: 14px;
+}
+a {
+	
+	color: #444444;
+    text-decoration: underline;
 }
 
 /* WRAPPER */
@@ -100,10 +105,6 @@ ul.menuitems li a:hover {
 	width: 920px;
 	border: solid 1px #888888;
 }
-#container a {
-	color: #444444;
-    text-decoration: underline;
-}
 #sc2banner{
 	background: url('../images/sc2banner.jpg') no-repeat center center;
 	width: 920px;
@@ -153,6 +154,7 @@ textarea.message_ {
 	height: 150px;
 }
 input.submitButton {
+	cursor: pointer;
 }
 .subject_ {
 	width: 480px;
@@ -330,14 +332,14 @@ td.matchscore {
 }
 th {
     background: #fff url(../images/skin/shadow.jpg);
-    color: #444;
+    color: #444444;
     font-size: 11px;
     font-weight: bold;
     line-height: 17px;
     padding: 2px 6px;
 }
 th a:link, th a:visited, th a:hover {
-    color: #444;
+    color: #444444;
     display: block;
     font-size: 10px;
     text-decoration: none;
@@ -361,9 +363,12 @@ th.desc a {
     background: #fff;
 }
 
-td a:link, td a:visited, td a:hover {
+td a:link {
 	color: #444;
-    text-decoration: underline;
+    text-decoration: none;
+}
+td a:hover {
+	text-decoration: underline;
 }
 
 /* TABLE COLUMN FORMATTING */
@@ -374,7 +379,9 @@ td.right {
 td.center {
 	text-align: center;
 }
+
 /* Standings Table */
+
 th.colstrank {
 	text-align: right;
 	width: 30px;
@@ -390,7 +397,9 @@ th.colstat {
 	text-align: right;
 	width: 120px;
 }
+
 /* Match Table */
+
 th.colmatch {
 	text-align: right;
 	width: 30px;
@@ -419,7 +428,9 @@ th.colmappack {
 th.colreportscore {
 	width: 120px;
 }
+
 /* Thread Table */
+
 th.colconvowith {
 	text-align: left;
 	width: 25%;
@@ -437,7 +448,6 @@ th.collastmessage {
 
 .list table {
     border-collapse: collapse;
-    margin: 10px 0 0 0;
 }
 .list th, .list td {
 }
@@ -484,6 +494,7 @@ th.collastmessage {
 .prop .value {
     text-align: left;
 }
+
 /* ACTION BUTTONS */
 
 .buttons {
@@ -493,7 +504,6 @@ th.collastmessage {
     font-size: 10px;
     margin-top: 5px;
     overflow: hidden;
-    padding: 0;
 }
 
 .buttons input {

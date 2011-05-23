@@ -6,21 +6,23 @@
     </head>
     <body>
         <h1>Matches</h1>
-       	<div class="list">
-	       	<g:if test="${matchesInstanceList.size() == 0}">
-	       		<g:if test="${flash.message}">
-		        	<div class="message">${flash.message}</div>
-		        </g:if>
-	       		<p>No matches to show!</p>
-	       	</g:if>
-	       	<g:else>
-		   		<h2>${fieldValue(bean: entryInstance, field: "code")} / 
-		   			${fieldValue(bean: entryInstance, field: "division")} / 
-		   			${fieldValue(bean: entryInstance, field: "group")}
-		   		</h2>
-		   		<g:if test="${flash.message}">
-		        	<div class="message">${flash.message}</div>
-		        </g:if>
+        <div class="break"></div>
+       	<g:if test="${matchesInstanceList.size() == 0}">
+       		<g:if test="${flash.message}">
+	        	<div class="message">${flash.message}</div>
+	   		</g:if>
+       		<h2>No matches to show!</h2>
+       	</g:if>
+       	<g:else>
+	   		<h2>${fieldValue(bean: entryInstance, field: "code")} / 
+	   			${fieldValue(bean: entryInstance, field: "division")} / 
+	   			${fieldValue(bean: entryInstance, field: "group")}
+	   		</h2>
+	   		<div class="break"></div>
+	   		<g:if test="${flash.message}">
+	        	<div class="message">${flash.message}</div>
+	        </g:if>
+	        <div class="list">
 		       	<table>
 		       		<tr> 
 		       			<th class="colmatch">Match</th>
@@ -96,7 +98,7 @@
 		           		</tr>
 		        	</g:each>
 		        </table>
-	        </g:else>
-        </div>
+	        </div>
+        </g:else>
     </body>
 </html>

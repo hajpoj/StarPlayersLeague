@@ -6,7 +6,7 @@
     </head>
     
     <body>
-    	<g:form method="POST">
+    	<g:form method="post">
 	    	<h1>New message to ${fieldValue(bean: threadInstance, field: "toUser")}</h1>
 	    	<div class="break"></div>
 	    	<g:if test="${flash.message}">

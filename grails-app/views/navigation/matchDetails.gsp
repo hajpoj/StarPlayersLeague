@@ -6,14 +6,12 @@
         <g:javascript library="prototype" />
     </head>
     <body>
-        <h1>Match Details</h1>        
-        <div class="list">
-        <div class="break"></div>
+        <h1>Match Details</h1>
+       	<div class="break"></div>
         <g:if test="${flash.message}">
         	<div class="message">${flash.message}</div>
         </g:if>
-        <div class="break"></div>
-        <h3>Match Result</h3>
+        <div class="list">
 	   		<table>
 		       	<tr>
 					<th class="colmatch">Match</th>
@@ -75,22 +73,19 @@
 	            </tr>
    			</table>
 		</div>
-		
         <g:if test="${matchInstance.forfeit}">
         	<p class="note">*Note: match winner by forfeit</p>
         </g:if>
+        <div class="break"></div>
         <div class="list">
-        	<div class="break"></div>
-        	<div class="break"></div>
-       		<h3>Game Results</h3>
         	<table>
 		   		<tr> 
 		   			<th class="colmatch">Game</th>
-		   			<th style="width: 150px;">Map</th>
-		   			<th class="race"></th>
+		   			<th class="colmappack">Map</th>
+		   			<th class="colrace"></th>
 			   		<th>Winner</th>
-			   		<th>Replay</th>
-			   		<th>Link To VOD</th>
+			   		<th class="colmappack">Replay</th>
+			   		<th class="colmappack">VOD</th>
 		   		</tr>
         	
         		<g:each in="${matchInstance.games}" status="i" var="game">

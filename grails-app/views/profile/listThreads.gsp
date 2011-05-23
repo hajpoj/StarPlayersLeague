@@ -9,8 +9,8 @@
        	<div class="break"></div>
        	<g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
-            </g:if>
-            <g:hasErrors bean="${threadInstance}">
+        </g:if>
+        <g:hasErrors bean="${threadInstance}">
             <div class="errors">
                 <g:renderErrors bean="${threadInstance}" as="list" />
             </div>

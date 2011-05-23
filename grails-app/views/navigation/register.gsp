@@ -8,7 +8,7 @@
 		<h1>Registration</h1>
 		<div class="break"></div>
 		<div class="mcontent">
-			<h2>1v1 StarPlayers League (NA)</h2>
+			<h2>1v1 League (NA Server)</h2>
 			<br/>
 			<p>Registration closed on 04-15-2011, 23:59 EDT.</p>
 		</div>

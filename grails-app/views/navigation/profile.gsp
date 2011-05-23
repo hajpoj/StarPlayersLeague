@@ -30,7 +30,7 @@
     	<g:each in="${registrationInstanceList}" status="i" var="registrationInstance">
     	<div class="break"></div>
     	<div class="mcontent">
-    		<h2>${fieldValue(bean: registrationInstance.group.division.code.season, field: "league")} (${fieldValue(bean: registrationInstance, field: "server")}) Information</h2><br/>
+    		<h2>${fieldValue(bean: registrationInstance.group.division.code.season, field: "league")} (${fieldValue(bean: registrationInstance, field: "server")} Server) Information</h2><br/>
     		<div class="infoleft">
     			<p>Code:</p>
     			<p>Division:</p>
