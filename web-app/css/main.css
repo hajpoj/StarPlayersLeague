@@ -8,11 +8,14 @@ html, body, div, span, applet, object, iframe,
 	center, u, b, i, marquee, select, input {
 	margin: 0; padding: 0px; border: 0px; outline: 0px;
 }
-
+html {
+	height: 100%;
+}
 body {
 	background:#dddddd url('../images/background.png') repeat-x center top;
 	color: #444444;
     font: 12px verdana, arial, helvetica, sans-serif;
+    height: 100%;
 }
 h1 {
 	padding: 10px 0 0;
@@ -42,8 +45,11 @@ a {
 
 #wrapper { 
 	background: transparent;
-	margin: 0 auto;
+	margin: 0 auto -150px;
 	width: 960px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
 }
 
 /* HEADERS AND NAVIGATION BAR*/
@@ -60,7 +66,7 @@ a {
     text-decoration: none;
 }
 #loginheader a:hover {
-	text-decoration: underline;
+	color: #ffb400;
 }
 #splbanner {
 	padding: 30px 0 0 0;
@@ -174,12 +180,18 @@ input.submitButton {
 
 /* FOOTER */
 
+#push {
+	height: 150px;
+}
 #footer {
-	background: url('../images/footerbar.png') repeat-x;
-	height: 120px;
-	width: 920px;
-	margin: 10px;
+	background: #000000;
+	border-top: solid 5px #888888;
+	height: 145px;
+}
+#footerwrap {
+	margin: 0 auto;
 	padding: 10px;
+	width: 920px;
 }
 div.donate {
 	float: right;
@@ -198,7 +210,7 @@ ul.flinks li {
 	font-size: 11px;
 }
 ul.flinks li a {
-	color: #fff;
+	color: #00b4ff;
 	text-decoration: none;
 }
 ul.flinks li a:hover {

@@ -53,12 +53,17 @@
 				</ul>
 			</div>
 			<!-- content -->
+			<div class="break"></div>
 			<div id="container">
         		<g:layoutBody />
         	</div>
+        	<div class="break"></div>
+        	<div id="push"></div>
+       	</div>
         	<!-- footer -->
 	        <div id="footer">
-				<div class="flinks">
+	        	<div id="footerwrap">
+	        		<div class="flinks">
 					<h4>SC2 Resources</h4>
 					<ul class="flinks">
 						<li><a href="http://www.battle.net/sc2">Battle.net</a></li>
@@ -68,35 +73,35 @@
 						<li><a href="http://www.wellplayed.org">Well-Played</a></li>
 						<li><a href="http://www.reddit.com/r/starcraft">r/StarCraft</a></li>
 					</ul>
-				</div>
-				<div class="flinks">
-					<h4>Professional SC2</h4>
-					<ul class="flinks">
-						<li><a href="http://www.gomtv.net">Global SC2 League</a></li>
-						<li><a href="http://www.ign.com/ipl">IGN Pro League</a></li>
-						<li><a href="http://www.majorleaguegaming.com">Major League Gaming</a></li>
-						<li><a href="http://nasl.tv">N.A. Star League</a></li>
-						<li><a href="http://www.pokerstrategytsl3.com">TL Star League</a></li>
-						<li><a href="http://screddit.com">SCReddit Open</a></li>
-					</ul>
-				</div>
-				<div class="flinks">
-					<h4>SPL Community</h4>
-					<ul class="flinks">
-						<li><g:link controller="navigation" action="contact">Contact Us</g:link></li>
-						<li><a href="http://twitter.com/#!/StarPlayersSC">Twitter</a></li>
-					</ul>
-				</div>
-				<div class="donate">
-					<h4>Please help keep our servers running!</h4>
-					<h4>We do not have enough minerals!</h4>
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-						<p><input type="hidden" name="cmd" value="_s-xclick" /></p>
-						<p><input type="hidden" name="hosted_button_id" value="GDXYTK2B98MEQ" /></p>
-						<p><input type="image" src="${resource(dir:'images',file:'paypalbutton.png')}" name="submit" alt="PayPal" style="background: transparent; border: 0; padding: 0; margin: 10px 0;"/></p>
-					</form>
-				</div>
+					</div>
+					<div class="flinks">
+						<h4>Professional SC2</h4>
+						<ul class="flinks">
+							<li><a href="http://www.gomtv.net">Global SC2 League</a></li>
+							<li><a href="http://www.ign.com/ipl">IGN Pro League</a></li>
+							<li><a href="http://www.majorleaguegaming.com">Major League Gaming</a></li>
+							<li><a href="http://nasl.tv">N.A. Star League</a></li>
+							<li><a href="http://www.pokerstrategytsl3.com">TL Star League</a></li>
+							<li><a href="http://screddit.com">SCReddit Open</a></li>
+						</ul>
+					</div>
+					<div class="flinks">
+						<h4>SPL Community</h4>
+						<ul class="flinks">
+							<li><g:link controller="navigation" action="contact">Contact Us</g:link></li>
+							<li><a href="http://twitter.com/#!/StarPlayersSC">Twitter</a></li>
+						</ul>
+					</div>
+					<div class="donate">
+						<h4>Please help keep our servers running!</h4>
+						<h4>We do not have enough minerals!</h4>
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+							<p><input type="hidden" name="cmd" value="_s-xclick" /></p>
+							<p><input type="hidden" name="hosted_button_id" value="GDXYTK2B98MEQ" /></p>
+							<p><input type="image" src="${resource(dir:'images',file:'paypalbutton.png')}" name="submit" alt="PayPal" style="background: transparent; border: 0; padding: 0; margin: 10px 0;"/></p>
+						</form>
+					</div>
+	        	</div>
 			</div>
-		</div>
     </body>
 </html>
