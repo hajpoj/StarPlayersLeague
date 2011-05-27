@@ -23,9 +23,8 @@
 				</p><br/><p><a href="#15">Who wins when a player disconnects from the game?</a>
 				</p><br/><p><a href="#12">Is there a StarPlayers League channel on Battle.net?</a>
 				</p><br/><p><a href="#13">How can I help out the StarPlayers League?</a>
-				</p><br/>
+				</p>
 		</div>
-		<div class="break"></div>
 		<div class="majorlinebreak"><span class="accent"></span></div>
 		<div class="mcontent">
 		<h1>Answers</h1>		
