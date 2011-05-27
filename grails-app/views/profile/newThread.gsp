@@ -21,12 +21,17 @@
 	   			<g:hiddenField name="toUser" value="${threadInstance?.toUser.id}" />
 	   			<g:hiddenField name="fromUser" value="${threadInstance?.fromUser.id}" />
 	   			<p><span class="messagelabel">To: </span>${fieldValue(bean: messageInstance, field: "toUser")} (${messageInstance.toUser.bnetId}.${messageInstance.toUser.bnetCharCode})</p>
-        		<p><span class="messagelabel">From: </span>${fieldValue(bean: messageInstance, field: "fromUser")} (${messageInstance.fromUser.bnetId}.${messageInstance.fromUser.bnetCharCode})</p><br/>
-	   			<p><span class="messagelabel">Subject: </span><g:textField class="subject_" name='subject'></g:textField></p><br/>
-	   			<p><span class="messagelabel">Body: </span><textarea class="message_" name='body'></textarea>
+				<div class="break"></div>
+        		<p><span class="messagelabel">From: </span>${fieldValue(bean: messageInstance, field: "fromUser")} (${messageInstance.fromUser.bnetId}.${messageInstance.fromUser.bnetCharCode})</p>
+	   			<div class="break"></div>
+	   			<p><span class="messagelabel">Subject: </span><g:textField class="subject_" name='subject'></g:textField></p>
+	   			<div class="break"></div>
+	   			<p><span class="messagelabel">Body: </span><textarea class="message_" name='body'></textarea></p>
+	   			<div class="break"></div>
+	   			<p><span class="messagelabel"></span><g:actionSubmit class="submitButton" action="saveThread" value="Send" /></p>
 	       	</div>
 	       	<div class="break"></div>
-	        <p><g:actionSubmit class="submitButton" action="saveThread" value="Send" /></p>
+	        
 	        </g:form>
     </body>
     

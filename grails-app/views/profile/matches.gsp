@@ -33,6 +33,7 @@
 		       			<th class="colbnetidr2">Player</th>
 		       			<th class="colmappack"></th>
 		       			<th class="colreportscore"></th>
+		       			<th class="colmappack"></th>
 		       		</tr>
 		       		<g:each in="${matchesInstanceList}" status="i" var="matchesInstance">
 		           		<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
@@ -59,12 +60,12 @@
 							<g:else>
 								<g:if test="${entryInstance.id == matchesInstance.winner.id}">
 									<td class="matchscore">
-										<g:link controller="navigation" action="matchDetails" id="${matchesInstance.id}">${(Integer)matchesInstance.bestOf/2+1}-${matchesInstance.loserScore}</g:link>
+										${(Integer)matchesInstance.bestOf/2+1}-${matchesInstance.loserScore}
 									</td>
 								</g:if>
 								<g:else>
 									<td class="matchscore">
-										<g:link controller="navigation" action="matchDetails" id="${matchesInstance.id}">${matchesInstance.loserScore}-${(Integer)matchesInstance.bestOf/2+1}</g:link>
+										${matchesInstance.loserScore}-${(Integer)matchesInstance.bestOf/2+1}
 									</td>
 								</g:else>
 							</g:else>
@@ -95,6 +96,7 @@
 		               		<g:else>
 		               			<td class="right"><g:link controller="profile" action="disputeScore" id="${matchesInstance.id}">Dispute Score</g:link></td>
 		               		</g:else>
+		               		<td class="right"><g:link controller="navigation" action="matchDetails" id="${matchesInstance.id}">Match Details</g:link></td>
 		           		</tr>
 		        	</g:each>
 		        </table>

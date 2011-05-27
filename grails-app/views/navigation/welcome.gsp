@@ -6,6 +6,9 @@
 	</head>
 	<body>
 		<div id="sc2banner"></div>
+		<div class="majorlinebreak"><span class="accent"></span></div>
+		<h1>What is the StarPlayers League?</h1>
+		<div class="break"></div>
 		<div class="mcontent">
 			<p>
 				The StarPlayers League allows StarCraft2 players of all skill levels to engage in a friendly competition against others. 
@@ -14,11 +17,10 @@
 				we want to expand StarCraft2 e-sports to anyone who wants to play.
 			</p>
 		</div>
-		<div class="break"></div>
+		<div class="majorlinebreak"><span class="accent"></span></div>
 		<h1>Latest News</h1>
 		<div class="break"></div>
 		<div class="mcontent">
-			<div class="break"></div>
 			<g:each in="${noticeInstanceList}" status="i" var="noticeInstance">
 				<g:if test="${i > 0}">
 					<div class="innerlinebreak"></div>
@@ -30,7 +32,7 @@
 					<p class="note">Posted on ${noticeInstance.lastUpdated.format('MM-dd-yyyy, HH:mm z')}</p>
 			</g:each>
 		</div>
-		<div class="paginateButtons">
+		<div class="paginateLinks">
 			<g:paginate next="Next" prev="Previous" action="welcome" total="${noticeInstanceTotal}" />
 		</div>
 	</body>

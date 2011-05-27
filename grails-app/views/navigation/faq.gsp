@@ -4,9 +4,9 @@
 		<meta name="layout" content="main" />
 	</head>
 	<body>
-		<h1>Frequently Asked Questions</h1>
-		<div class="break"></div>
 		<div class="mcontent">
+			<h1>Frequently Asked Questions</h1>
+			<div class="break"></div>
 				<p><a href="#14">What is the StarPlayers League?</a>
 				</p><br/><p><a href="#1">I registered, but why have I not received any emails?</a>
 				</p><br/><p><a href="#2">May I change races after the league has started?</a>
@@ -26,7 +26,9 @@
 				</p><br/>
 		</div>
 		<div class="break"></div>
-		<div class="mcontent">		
+		<div class="majorlinebreak"><span class="accent"></span></div>
+		<div class="mcontent">
+		<h1>Answers</h1>		
 <div class="break"></div>
 <h3 id="14">What is the StarPlayers League?</h3>
 <div class="break"></div>

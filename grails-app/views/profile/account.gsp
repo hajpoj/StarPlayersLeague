@@ -6,10 +6,8 @@
     </head>
     
     <body>
-    	<div class="edit">
-    		<p>(<g:link action="edit">Edit Account</g:link>)</p>
-   		</div>
     	<h1>My Account</h1>
+    	<p>(<g:link action="edit">Edit Account</g:link>)</p>
     	<div class="break"></div>
     	<g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -20,7 +18,8 @@
             </div>
         </g:hasErrors>
     	<div class="mcontent">
-    		<h2>Account Information</h2><br/>
+    		<h2>Account Information</h2>
+			<div class="break"></div>
     		<div class="infoleft">
     			<p>Username:</p>
     			<p>Email Address:</p>
@@ -36,9 +35,10 @@
     			<p>${userInstance.primaryRace}</p>
     		</div>
     	</div>
-    	<div class="break"></div>
+    	<div class="innerlinebreak"></div>
     	<div class="mcontent">
-    		<h2>Email Notifications</h2><br/>
+    		<h2>Email Notifications</h2>
+			<div class="break"></div>
     		<div class="infoleft">
     			<p>When I receive new messages:</p>
     		</div>

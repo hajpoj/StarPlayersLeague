@@ -31,9 +31,9 @@
         <div id="loginheader">
         	<g:loginHeader/>
         </div>
-        	<div id="splogo">
-				<g:link controller="navigation" action="welcome"><img src="${resource(dir:'images',file:'splogo.png')}" alt="StarPlayers Logo" /></g:link>
-			</div>
+<%--        	<div id="splogo">--%>
+<%--				<g:link controller="navigation" action="welcome"><img src="${resource(dir:'images',file:'splogo.png')}" alt="StarPlayers Logo" /></g:link>--%>
+<%--			</div>--%>
         	<div id="splbanner"><g:link controller="navigation" action="welcome"><img src="${resource(dir:'images',file:'splbanner.png')}" alt="StarPlayers League" /></g:link></div>
         	<div id="navigationbar">
 				<ul class="menuitems">
@@ -54,9 +54,15 @@
 			</div>
 			<!-- content -->
 			<div class="break"></div>
-			<div id="container">
-        		<g:layoutBody />
-        	</div>
+			<div id="containertop">
+			</div>
+			<div id="containermid">
+				<div id="container">
+	        		<g:layoutBody />
+	        	</div>
+			</div>
+			<div id="containerbottom">
+			</div>
         	<div class="break"></div>
         	<div id="push"></div>
        	</div>

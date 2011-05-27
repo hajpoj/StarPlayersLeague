@@ -34,7 +34,7 @@ class NavigationController {
 		matchesList = group.matches.toArray().toList().sort{[it.matchNumber]}
 		[codeInstanceList: codeList, standingsInstanceList: standingsList, matchesInstanceList: matchesList]
 		
-		if (!params.max) params.max = 3
+		if (!params.max) params.max = 5
 		if (!params.offset) params.offset = 0
 		if (total > 0) {
 			if (params.offset.toInteger()+params.max.toInteger() > total) {

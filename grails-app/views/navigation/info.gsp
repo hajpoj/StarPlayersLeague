@@ -5,11 +5,11 @@
 	</head>
 	
 	<body>
-		<h1>League Information</h1>
-		<div class="break"></div>
 		<div class="mcontent">
-			<h2>1v1 StarPlayers League Format</h2>
-			<br/>
+			<h1>League Information</h1>
+			<div class="break"></div>
+			<h2>1v1 League Format</h2>
+			<div class="break"></div>
 			<p>Layout</p>
 			<br/>
 			<ul class="normal">

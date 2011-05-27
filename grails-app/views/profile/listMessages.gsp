@@ -18,7 +18,6 @@
             </div>
         </g:hasErrors>
 	    <g:each in="${messageInstanceList}" status="i" var="messageInstance">
-		   	<g:if test="${i > 0}"><div class="break"></div></g:if>
 		   	<div class="mcontent">
 		       	<p class="messageperson">${fieldValue(bean: messageInstance, field: "fromUser")} (${messageInstance.fromUser.bnetId}.${messageInstance.fromUser.bnetCharCode})</p>
 		       	<br />
@@ -26,9 +25,9 @@
 		       	<br />
 		       	<p class="note">Sent on ${messageInstance.dateCreated.format('MM-dd-yyyy, HH:mm z')}</p>
 		    </div>
+		    <div class="innerlinebreak"></div>
 	    </g:each>
         <div id="replyBox"></div>
-        <div class="break"></div>
         <p><g:remoteLink action="addMessageToThread" params="[id:threadInstance.id]" update="replyBox">Reply</g:remoteLink></p>
 <%--        <p><g:link action="addMessageToThread" params="[id:threadInstance.id]">Reply</g:link></p>--%>
         <div class="break"></div>

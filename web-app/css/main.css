@@ -12,13 +12,12 @@ html {
 	height: 100%;
 }
 body {
-	background:#dddddd url('../images/background.png') repeat-x center top;
+	background:#eeeeee url('../images/background.png') repeat-x center top;
 	color: #444444;
     font: 12px verdana, arial, helvetica, sans-serif;
     height: 100%;
 }
 h1 {
-	padding: 10px 0 0;
     color: #ff4b00;
     font-size: 32px;
 }
@@ -56,10 +55,12 @@ a {
 
 #loginheader {
 	float: left;
-	margin: 10px 20px;
+	margin: 10px auto;
+	padding: 0 10px;
 	height: 10px;
-	width: 720px;
+	width: 920px;
 	color: #ffffff;
+	text-align: left;
 }
 #loginheader a {
 	color: #00b4ff;
@@ -69,9 +70,10 @@ a {
 	color: #ffb400;
 }
 #splbanner {
+	margin: 0 auto;
 	padding: 30px 0 0 0;
 	height: 100px; 
-	width: 760px;
+	width: 900px;
 }
 #splogo {
 	float: right;
@@ -79,14 +81,14 @@ a {
 #navigationbar {
 	background: transparent;
 	height: 30px;
-	width: 760px;
+	width: 960px;
 }
 ul.menuitems {
-	margin: 0 0 0 30px;
+	text-align: center;
 }
 ul.menuitems li {
 	margin: 0 auto;
-	padding: 0 2px;
+	padding: 0 3px;
 	display: inline;
 	color: #ffffff;
 	font-size: 14px;
@@ -105,51 +107,64 @@ ul.menuitems li a:hover {
 /* PAGE CONTENT */
 
 #container {
-	background: #ffffff;
-	margin: 20px 9px;
-	padding: 10px 10px 20px;
-	width: 920px;
-	border: solid 1px #888888;
+	background: transparent;
+	margin: 0 auto;
+	padding: 10px 20px 20px;
+	width: 900px;
 }
+#containermid {
+	background: url('../images/containermid.png') repeat-y center top;
+}
+#containertop {
+	background: url('../images/containertop.png') center bottom;
+	height: 30px;
+}
+#containerbottom {
+	background: url('../images/containerbottom.png') center top;
+	height: 30px;
+}
+	
 #sc2banner{
 	background: url('../images/sc2banner.jpg') no-repeat center center;
-	width: 920px;
+	width: 900px;
 	height: 250px;
+	margin: 0 0 -20px 0;
 }
 .note {
 	color: #888888;
 	font-style: italic;
 }
-.edit {
-	float: right;
-	margin: 29px 0 0 0;
-	width: 500px;
-	text-align: left;
-}
 .mcontent {
-	background: transparent;
-	margin: 0;
-	padding: 9px;
-	width: 900px;
-	border: solid 1px #ccc;
+	width: 100%;
 }
 .inforight {
+	color: #888888;
 	line-height: 200%
 }
 .infoleft {
 	float: left;
 	width: auto;
 	padding: 0 10px 0 0;
-	font-weight: bold;
 	line-height: 200%;
 }
 .break {
 	height: 10px;
 }
+.majorlinebreak {
+	background: #cccccc;
+	margin: 50px 0 10px;
+	height: 2px;
+}
+.accent {
+	display: block;
+	background: #888888;
+	height: 2px;
+	width: 50px;
+}
 .innerlinebreak {
 	background: url('../images/innerlinebreak.png') no-repeat center;
 	height: 41px;
-	width: 880px;
+	width: 900px;
 }
 
 
@@ -488,6 +503,20 @@ th.collastmessage {
 }
 .paginateButtons span {
     padding: 2px 3px;
+}
+
+.paginateLinks {
+    color: #444444;
+    font-size: 11px;
+    overflow: hidden;
+    padding: 20px 5px 0 0;
+}
+.paginateLinks a {
+    color: #444444;
+    padding: 0 5px 0 0;
+}
+.paginateLinks span {
+	padding: 0 5px 0 0;
 }
 
 /* DIALOG */

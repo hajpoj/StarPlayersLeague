@@ -17,7 +17,8 @@
             </div>
         </g:hasErrors>
     	<div class="mcontent">
-    		<h2>General Information</h2><br/>
+    		<h2>General Information</h2>
+    		<div class="break"></div>
     		<div class="infoleft">
     			<p>Battle.net ID:</p>
     			<p>Primary Race:</p>
@@ -28,9 +29,10 @@
     		</div>
     	</div>
     	<g:each in="${registrationInstanceList}" status="i" var="registrationInstance">
-    	<div class="break"></div>
+    	<div class="innerlinebreak"></div>
     	<div class="mcontent">
-    		<h2>${fieldValue(bean: registrationInstance.group.division.code.season, field: "league")} (${fieldValue(bean: registrationInstance, field: "server")} Server) Information</h2><br/>
+    		<h2>${fieldValue(bean: registrationInstance.group.division.code.season, field: "league")} (${fieldValue(bean: registrationInstance, field: "server")} Server) Information</h2>
+    		<div class="break"></div>
     		<div class="infoleft">
     			<p>Code:</p>
     			<p>Division:</p>

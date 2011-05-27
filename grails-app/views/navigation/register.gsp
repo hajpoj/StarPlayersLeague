@@ -12,7 +12,7 @@
 			<br/>
 			<p>Registration closed on 04-15-2011, 23:59 EDT.</p>
 		</div>
-		<div class="break"></div>
+		<div class="innerlinebreak"></div>
 		<div class="mcontent">
 			<p>Join our <a href="http://eepurl.com/dCOs6">mailing list</a> to receive updates when new league season and tournament registrations open!</p>
 		</div>
