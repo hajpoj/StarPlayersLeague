@@ -109,7 +109,7 @@ ul.menuitems li a:hover {
 #container {
 	background: transparent;
 	margin: 0 auto;
-	padding: 10px 20px 20px;
+	padding: 0 20px 20px;
 	width: 900px;
 }
 #containermid {
