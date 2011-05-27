@@ -12,29 +12,7 @@ class BootStrap {
 
 		switch(GrailsUtil.environment) {
 			case "development":
-				// create some initial posts to front page
-//				def post
-//				post = new Notice(title: "Welcome to the new site!!", text: "Hey, this is the first post! Look at the time stamp.").save()
-//				post = new Notice(title: "Check out our cool new features!", text: "Hey, this is the second post!. Look at the time stamp.").save()
-//		
-//				for (_i in 1..25) {
-//					post = new Notice(title: "Post #${_i}", text: "blah blah blah").save()
-//				}
-//			
-//				// create user/admin roles and admin login
-//				createRoles()
-//			
-//				// import maps/map pack from CSV
-//				importMaps()
-//				
-//				// import league
-//				importLeague()
-//				
-//				// simulate matches
-//				simulateMatches()
-//								
-//				// simulate messages
-//				simulateMessages()
+			
 				break
 			case "test":				
 						
@@ -48,6 +26,49 @@ class BootStrap {
 	}
 	
 	def destroy = {
+	}
+	
+	private void printInactives() {
+		List<User> played0 = []
+		List<User> played1 = []
+		List<User> played2 = []
+		List<User> played3 = []
+		
+		def userList = User.list()
+		def count = 0
+		for (_user in userList) {
+			def matchesPlayed = 0
+			for (_reg in _user.registrations) {
+				matchesPlayed = _reg.matchesPlayed
+			}
+			
+			if (matchesPlayed == 0) {
+				played0.push(_user)
+			} else if (matchesPlayed == 1) {
+				played1.push(_user)
+			} else if (matchesPlayed == 2) {
+				played2.push(_user)
+			} else if (matchesPlayed == 3) {
+				played3.push(_user)
+			}
+		}
+		
+		println "The following players played 0 matches"
+		for (_user in played0) {
+			println "${_user.email}"
+		}
+		println "The following players played 1 matches"
+		for (_user in played1) {
+			println "${_user.email}"
+		}
+		println "The following players played 2 matches"
+		for (_user in played2) {
+			println "${_user.email}"
+		}
+		println "The following players played 3 matches"
+		for (_user in played3) {
+			println "${_user.email}"
+		}
 	}
 	
 	private void createRoles() {
