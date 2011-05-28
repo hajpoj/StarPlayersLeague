@@ -71,10 +71,10 @@ class ProfileController {
 		def match = Match.get(params.id)
 		if (!SpringSecurityUtils.ifAllGranted("ROLE_ADMIN")) {
 			if (!match.accessAllowed(user)) {
-				flash.message = "You are unauthorized to view this match"
+				flash.message = "You are unauthorized to view this match."
 				redirect(action: "matches")
 			} else if (match.played) {
-				flash.message = "The score for this match has already been reported"
+				flash.message = "The score for this match has already been reported."
 				redirect(action: "matches")
 			}
 		}
@@ -105,11 +105,11 @@ class ProfileController {
 			replayFile[_i] = request.getFile("replay${_i+1}")
 			if (!replayFile[_i].empty) {
 				if (replayFile[_i].size > 1048576) {
-					flash.message = "Replay for game #${_i+1} is too large (1 MB maximum)"
+					flash.message = "Replay for game #${_i+1} is too large (1 MB maximum)."
 					foundScoreError = true
 				}
 				if (!(replayFile[_i].originalFilename =~ /.*SC2Replay$/)) {
-					flash.message = "Replay must have .SC2Replay file extension"
+					flash.message = "Replay must have a .SC2Replay file extension."
 					foundScoreError = true
 				}
 			}
@@ -117,12 +117,12 @@ class ProfileController {
 		if (params.forfeit) {
 			for (_game in 1..match.bestOf) {
 				if (params."game${_game}" != 'null') {
-					flash.message = "If your opponent forfeited, please change all winner columns to \'Not Played\'"
+					flash.message = "If your opponent forfeited, please leave the winner selection for each game blank."
 					foundScoreError = true
 				}
 			}	
 			if (params.forfeitWinner == 'null') {
-				flash.message = "Please specify a winner of the forfeited match"
+				flash.message = "Please specify a winner of the forfeited match."
 				foundScoreError = true
 			}
 		} else {
@@ -130,13 +130,13 @@ class ProfileController {
 				if (!foundScoreError
 					&& (    expectNull && (params."game${_game}" != 'null')
 					    || !expectNull && (params."game${_game}" == 'null'))) {
-					flash.message = "Please fix the result for game ${_game}"
+					flash.message = "Please fix the result for game ${_game}."
 					foundScoreError = true
 				}
 				if (!foundScoreError) {
 					if (params."game${_game}" != 'null') {
 						if (replayFile[_game-1].empty) {
-							flash.message = "Must provide a replay to report score"
+							flash.message = "You must provide a replay to report the score."
 							foundScoreError = true
 						}
 						for (_i in 0..players.size()-1) {
@@ -195,15 +195,15 @@ class ProfileController {
 				match.errors.each {
 					println it
 				}
-				flash.message = "Unable to save match results, please contact admin"
+				flash.message = "We were unable to save the match results, please contact admin."
 				redirect(action: "reportScore", id: match.id)
 			} else {
 				for (_entry in match.entries) {
 					_entry.updateMatchGameStats()
 					if (_entry.hasErrors() || !_entry.save(flush: true)) {
-						flash.message = "Unable to update player stats after results reported, please contact admin"
+						flash.message = "We were unable to update player stats after reporting the results, please contact admin."
 					} else {
-						flash.message = "Successfully reported match result"
+						flash.message = "You successfully reported the match result."
 					}
 				}
 				redirect(controller: "navigation", action: "matchDetails", id: params.id)
@@ -280,10 +280,10 @@ class ProfileController {
 		//BOZO: should add collision protection
 		if (!thread.hasErrors() && thread.save(flush: true)) {
 			if (toUser.messageNotification) sendMailNotification(message)
-			flash.message = "Successfully sent message!"
+			flash.message = "We successfully sent your message."
 			redirect(action: "listMessages", id: thread.id)
 		} else {
-			flash.message = "Subject/Body cannot be blank!"
+			flash.message = "Subject/Body cannot be blank."
 			redirect(action: "newThread", id: toUser.id)
 		}
 	}
@@ -298,10 +298,10 @@ class ProfileController {
 		//BOZO: should add collision protection
 		if (!thread.hasErrors() && thread.save(flush: true)) {
 			if (toUser.messageNotification) sendMailNotification(message)
-			flash.message = "Successfully sent message!"
+			flash.message = "We successfully sent your message."
 			redirect(action: "listMessages", id: thread.id)
 		} else {
-			flash.message = "Body cannot be blank!"
+			flash.message = "Body cannot be blank."
 			redirect(action: "listMessages", id: thread.id)
 		}
 	}

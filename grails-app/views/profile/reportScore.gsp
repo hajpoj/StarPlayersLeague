@@ -96,7 +96,7 @@
         						      	  from="${matchInstance.entries}"
         					  		  	  optionKey="id"
         					  		   	  value="${game?.winner?.id}"
-        					  		      noSelection="${['null': 'none']}"/>
+        					  		      noSelection="${['null': '']}"/>
         					</td>
         					<td>
         						<input type="file" name="replay${i+1}" />
@@ -117,7 +117,7 @@
        		 				 name="forfeitWinner"
         					 from="${matchInstance.entries}"
         					 optionKey="id"
-        					 noSelection="${['null': 'N/A']}"/></p>
+        					 noSelection="${['null': '']}"/></p>
         		</div>
         	</div>
         	<div class="break"></div>

@@ -7,6 +7,7 @@
 		<div class="mcontent">
 			<h1>Frequently Asked Questions</h1>
 			<div class="break"></div>
+			<div class="break"></div>
 				<p><a href="#14">What is the StarPlayers League?</a>
 				</p><br/><p><a href="#1">I registered, but why have I not received any emails?</a>
 				</p><br/><p><a href="#2">May I change races after the league has started?</a>
@@ -61,12 +62,12 @@
 
 <h3 id="6">When do our matches for the week need to be played by?</h3>
 <div class="break"></div>
-    <p>The due date for reporting scores each week for BOTH matches is Sunday at 23:59 EDT. The order of which you play the two matches does not matter.</p>
+    <p>The due date for reporting scores each week for BOTH matches is Sunday at 11:59 PM EDT. The order of which you play the two matches does not matter.</p>
 <div class="innerlinebreak"></div>
 
 <h3 id="7">What if my opponent is unresponsive to my messages?</h3>
 <div class="break"></div>
-    <p>If your opponent does not respond to your message by the week's due date, you may report a 2-0 forfeit on your opponent's behalf.</p>
+    <p>If your opponent does not respond to your message by the week's due date, you may report a forfeit on your opponent's behalf.</p>
 <div class="innerlinebreak"></div>
 
 <h3 id="8">What if my opponent responds just before the due date where there is not enough time to play or schedule a match?</h3>
@@ -76,7 +77,7 @@
 
 <h3 id="9">What if my opponent and I schedule a match time, but he doesn't show up? How long should I wait?</h3>
 <div class="break"></div>
-    <p>If the opponent does not show up within 15 minutes of the scheduled game time, it is an automatic forfeit on his behalf. You may report the score as a 2-0 win.</p>
+    <p>If the opponent does not show up within 15 minutes of the scheduled game time, it is an automatic forfeit on his behalf.</p>
 <div class="innerlinebreak"></div>
 
 <h3 id="14">Who should report the score?</h3>
@@ -86,12 +87,12 @@
 
 <h3 id="10">What if my opponent reports an incorrect score?</h3>
 <div class="break"></div>
-    <p>The winner should report the score. If the score is reported incorrectly, you can dispute the score in your Matches view. Each reported score will have a Dispute Score link next to them. You will then be prompted to email us with the match number provided along with the replay files.</p>
+    <p>If the score is reported incorrectly, you can dispute the score in your Matches view. Each reported score will have a Dispute Score link next to them. You will then be prompted to email us with the match number provided along with the replay files.</p>
 <div class="innerlinebreak"></div>
 
 <h3 id="11">How do I view which maps to play on for my match?</h3>
 <div class="break"></div>
-    <p>After you log in, click on the Matches link at the top of the page. To view the maps for a specific match, click the Map Pack link.</p>
+    <p>Click on the "View Details" link next to the specific match.</p>
 <div class="innerlinebreak"></div>
 
 <h3 id="15">Who wins when a player disconnects from the game?</h3>

@@ -15,7 +15,7 @@ class AdministrationController {
 		if (params.modifyMatchId) {
 			redirect(controller: 'profile', action: 'reportScore', id: params.modifyMatchId)
 		} else {
-			flash.message = "Please specify match ID to modify"
+			flash.message = "Please specify a match ID to modify."
 			redirect(action: 'index')
 		}
 	}
@@ -30,10 +30,10 @@ class AdministrationController {
 				_entry.updateMatchGameStats()
 				_entry.save(flush: true)
 			}
-			flash.message = "Reset result of match ID ${params.resetMatchId} successful"
+			flash.message = "You successfully reset the result of match ID ${params.resetMatchId}."
 			redirect(action: 'index')
 		} else {
-			flash.message = "Please specify match ID to reset"
+			flash.message = "Please specify match ID to reset."
 			redirect(action: 'index')
 		}
 	}
@@ -42,7 +42,7 @@ class AdministrationController {
 		if (params.userId != 'null') {
 			redirect(controller: 'profile', action: 'newThread', id: params.userId)	
 		} else {
-			flash.message = "Please select someone to message"
+			flash.message = "Please select someone to message."
 			redirect(action: 'index')
 		}
 	}
