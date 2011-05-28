@@ -31,9 +31,8 @@
 		       			<th class="colvs">vs</th>
 		       			<th class="colrace"></th>
 		       			<th class="colbnetidr2">Player</th>
-		       			<th class="colmappack"></th>
 		       			<th class="colreportscore"></th>
-		       			<th class="colmappack"></th>
+		       			<th class="colviewdetails"></th>
 		       		</tr>
 		       		<g:each in="${matchesInstanceList}" status="i" var="matchesInstance">
 		           		<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
@@ -89,14 +88,13 @@
 									
 		               			</g:if>
 		               		</g:each>
-		               		<td class="right"><g:link controller="navigation" action="mapPack" id="${matchesInstance.mapPack.id}">${matchesInstance.mapPack}</g:link></td>
 		               		<g:if test="${matchesInstance.played == false}">
 		               			<td class="right"><g:link controller="profile" action="reportScore" id="${matchesInstance.id}">Report Score</g:link></td>
 		               		</g:if>
 		               		<g:else>
 		               			<td class="right"><g:link controller="profile" action="disputeScore" id="${matchesInstance.id}">Dispute Score</g:link></td>
 		               		</g:else>
-		               		<td class="right"><g:link controller="navigation" action="matchDetails" id="${matchesInstance.id}">Match Details</g:link></td>
+		               		<td class="right"><g:link controller="navigation" action="matchDetails" id="${matchesInstance.id}">View Details</g:link></td>
 		           		</tr>
 		        	</g:each>
 		        </table>

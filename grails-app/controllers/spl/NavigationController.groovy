@@ -158,6 +158,7 @@ class NavigationController {
 		def league = season.league
 		def server = league.server
 		def groupDir = "spl_replays/${server}/${league}/${season}/${code}/${division}/${group}"
+		def mapPackInstance = match.mapPack
 		[matchInstance: match, groupDirInstance: groupDir]
 	}
 	

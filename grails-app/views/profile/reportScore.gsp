@@ -74,6 +74,7 @@
    			</table>
 		</div>
 		<div class="break"></div>
+		<div class="break"></div>
         <g:uploadForm method="post">
         	<g:hiddenField name="id" value="${matchInstance?.id}" />
         	<div class="list">

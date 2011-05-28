@@ -2,15 +2,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <title>Match Details</title>
+        <title>${fieldValue(bean: matchInstance.entries.toArray().getAt(0), field: "bnetId")} vs ${fieldValue(bean: matchInstance.entries.toArray().getAt(1), field: "bnetId")}</title>
         <g:javascript library="prototype" />
     </head>
     <body>
-        <h1>Match Details</h1>
+        <h1>${fieldValue(bean: matchInstance.entries.toArray().getAt(0), field: "bnetId")} vs ${fieldValue(bean: matchInstance.entries.toArray().getAt(1), field: "bnetId")}</h1>
        	<div class="break"></div>
         <g:if test="${flash.message}">
         	<div class="message">${flash.message}</div>
         </g:if>
+        <h2>Match Details</h2>
+        <div class="break"></div>
         <div class="list">
 	   		<table>
 		       	<tr>
@@ -20,7 +22,6 @@
 	       			<th class="colvs">vs</th>
 	       			<th class="colrace"></th>
 	       			<th class="colbentidr">Player</th>
-	       			<th class="colmappack"></th>
        			</tr>
        			<tr>
 	       			<td class="right">${fieldValue(bean: matchInstance, field: "matchNumber")}</td>
@@ -69,13 +70,13 @@
 									${fieldValue(bean: matchInstance.entries.toArray().getAt(1), field: "bnetId")}
 								</g:link>
 							</td>
-	                <td class="right"><g:link controller="navigation" action="mapPack" id="${matchInstance.mapPack.id}">${matchInstance.mapPack}</g:link></td>
 	            </tr>
    			</table>
 		</div>
         <g:if test="${matchInstance.forfeit}">
-        	<p class="note">*Note: match winner by forfeit</p>
+        	<p class="note">*match winner by forfeit</p>
         </g:if>
+        <div class="break"></div>
         <div class="break"></div>
         <div class="list">
         	<table>
@@ -120,5 +121,42 @@
         		</g:each>
 			</table>
 		</div>
+		 <div class="break"></div>
+		<div class="innerlinebreak"></div>
+		<h2>Map Details</h2>
+		<div class="break"></div>
+      	<p class="note">Search for the maps in Battle.net using "+Listed Name" in Battle.net. Make sure the author of the map is correct to ensure map integrity.</p>
+        <div class="break"></div>
+        <div class="list">
+			<table>
+       			<tr>
+       				<th>Game</th>
+       				<th>Map Name</th>
+       				<th>Listed Name in Battle.net</th>
+       				<th>Author</th>
+       			</tr>
+	       		<g:each in="${matchInstance.mapPack.maps}" status="i" var="mapPackInstance">
+	            	<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+	            		<td>${i+1}</td>
+	            		<td>${fieldValue(bean: mapPackInstance, field: "name")}</td>
+						<td>${fieldValue(bean: mapPackInstance, field: "listedName")}</td>
+						<td>${fieldValue(bean: mapPackInstance, field: "author")}</td>
+	                </tr>
+	        	</g:each>
+        	</table>
+   		</div>
+   		<div class='break'></div>
+   		<div class="mcontent">
+   		<div class='break'></div>
+   			<g:each in="${matchInstance.mapPack.maps}" status="i" var="mapPackInstance">
+   				<div style="text-align: center">
+   					<h2>${fieldValue(bean: mapPackInstance, field: "name")}</h2>
+   					<div class='break'></div>
+   					<img src="${resource(dir:'images/maps', file:mapPackInstance.mapImageFileName)}" alt="${mapPackInstance.name}" />
+				</div>
+				<div class='break'></div>
+				<div class='break'></div>
+			</g:each>
+   		</div>
     </body>
 </html>
