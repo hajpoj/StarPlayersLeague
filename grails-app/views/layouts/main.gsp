@@ -31,29 +31,22 @@
         <div id="loginheader">
         	<g:loginHeader/>
         </div>
-        	<div id="splogo">
-				<g:link controller="navigation" action="welcome"><img src="${resource(dir:'images',file:'splogo.png')}" alt="StarPlayers Logo" /></g:link>
-			</div>
+<%--        	<div id="splogo">--%>
+<%--				<g:link controller="navigation" action="welcome"><img src="${resource(dir:'images',file:'splogo.png')}" alt="StarPlayers Logo" /></g:link>--%>
+<%--			</div>--%>
         	<div id="splbanner"><g:link controller="navigation" action="welcome"><img src="${resource(dir:'images',file:'splbanner.png')}" alt="StarPlayers League" /></g:link></div>
         	<div id="navigationbar">
 				<ul class="menuitems">
 				    <li class="controller"><g:link controller="navigation" action="welcome">Home</g:link></li>
-					<li>|</li>
 					<li class="controller"><g:link controller="navigation" action="info">League Info</g:link></li>
-					<li>|</li>
 					<li class="controller"><g:link controller="navigation" action="mapPool">Map Pool</g:link></li>
-					<li>|</li>
 					<li class="controller"><g:link controller="navigation" action="standings">Standings</g:link></li>
-					<li>|</li>
 					<li class="controller"><g:link controller="navigation" action="register">Registration</g:link></li>
-					<li>|</li>
 					<li class="controller"><g:link controller="navigation" action="faq">FAQ</g:link></li>
-					<li>|</li>
 					<li class="controller"><g:link controller="navigation" action="contact">Contact Us</g:link></li>
 				</ul>
 			</div>
 			<!-- content -->
-			<div class="break"></div>
 			<div id="containertop">
 			</div>
 			<div id="containermid">

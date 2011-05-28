@@ -69,38 +69,40 @@ a {
 	color: #ffb400;
 }
 #splbanner {
+	margin: 0 auto;
 	padding: 30px 0 0 0;
-	height: 100px; 
-	width: 830px;
+	height: 100px;
+	width: 860px;
 }
 #splogo {
 	float: right;
+	margin: 10px 0 0 0;
 	width: 130px;
 }
 #navigationbar {
-	background: transparent;
-	height: 30px;
-	width: 960px;
+	margin: 15px 0 0;
+	
 }
 ul.menuitems {
 	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 0 0 5px 0; /* set padding (tab size) as desired; THIRD number must change with respect to padding-top (X) above */
 }
 ul.menuitems li {
-	margin: 0 auto;
-	padding: 0 3px;
 	display: inline;
-	color: #ffffff;
-	font-size: 14px;
-	height: 30px;
-	line-height: 30px;
 }
+
 ul.menuitems li a {
-	color: #ffffff;
+	padding: 5px 10px; /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above */
+	border: 1px solid #888888;
+	background-color: #ffffff;
+	color: #444444;
 	text-decoration: none;
-	font-weight: bold;
 }
-ul.menuitems li a:hover {
-	color: #ffb400;
+ 
+ul.menuitems a:hover {
+	background: #ffeecc;
 }
 
 /* PAGE CONTENT */
@@ -116,7 +118,7 @@ ul.menuitems li a:hover {
 }
 #containertop {
 	background: url('../images/containertop.png') center bottom;
-	height: 30px;
+	height: 21px;
 }
 #containerbottom {
 	background: url('../images/containerbottom.png') center top;
