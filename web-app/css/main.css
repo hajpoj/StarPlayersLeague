@@ -132,14 +132,13 @@ ul.menuitems a:hover {
 	margin: 0 0 -20px 0;
 }
 .note {
-	color: #888888;
+	color: #777777;
 	font-style: italic;
 }
 .mcontent {
 	width: 100%;
 }
 .inforight {
-	color: #888888;
 	line-height: 200%
 }
 .infoleft {
@@ -147,6 +146,7 @@ ul.menuitems a:hover {
 	width: auto;
 	padding: 0 10px 0 0;
 	line-height: 200%;
+	font-weight: bold;
 }
 .break {
 	height: 10px;
