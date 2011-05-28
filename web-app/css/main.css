@@ -58,7 +58,6 @@ a {
 	margin: 10px auto;
 	padding: 0 10px;
 	height: 10px;
-	width: 920px;
 	color: #ffffff;
 	text-align: left;
 }
@@ -70,13 +69,13 @@ a {
 	color: #ffb400;
 }
 #splbanner {
-	margin: 0 auto;
 	padding: 30px 0 0 0;
 	height: 100px; 
-	width: 900px;
+	width: 830px;
 }
 #splogo {
 	float: right;
+	width: 130px;
 }
 #navigationbar {
 	background: transparent;
@@ -507,7 +506,7 @@ th.collastmessage {
 
 .paginateLinks {
     color: #444444;
-    font-size: 11px;
+    font-size: 12px;
     overflow: hidden;
     padding: 20px 5px 0 0;
 }

@@ -31,9 +31,9 @@
         <div id="loginheader">
         	<g:loginHeader/>
         </div>
-<%--        	<div id="splogo">--%>
-<%--				<g:link controller="navigation" action="welcome"><img src="${resource(dir:'images',file:'splogo.png')}" alt="StarPlayers Logo" /></g:link>--%>
-<%--			</div>--%>
+        	<div id="splogo">
+				<g:link controller="navigation" action="welcome"><img src="${resource(dir:'images',file:'splogo.png')}" alt="StarPlayers Logo" /></g:link>
+			</div>
         	<div id="splbanner"><g:link controller="navigation" action="welcome"><img src="${resource(dir:'images',file:'splbanner.png')}" alt="StarPlayers League" /></g:link></div>
         	<div id="navigationbar">
 				<ul class="menuitems">
