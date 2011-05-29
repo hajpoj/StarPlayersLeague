@@ -19,8 +19,7 @@ body {
 }
 h1 {
     color: #ff4b00;
-    font-size: 24px;
-    font-weight: normal;
+    font-size: 20px;
 }
 h2 {
 	color: #444444;
@@ -167,8 +166,8 @@ ul.menuitems a:hover {
 }
 #editaccount {
 	float: right;
-	margin: 11px;
-	width: 725px;
+	margin: 9px;
+	width: 740px;
 }
 .break {
 	height: 10px;
