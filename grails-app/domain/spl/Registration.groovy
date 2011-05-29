@@ -18,7 +18,7 @@ class Registration {
 	Division division
 	Group group
 	static belongsTo = [user:User]
-	static hasMany = [matches:Match, playoffMatches:PlayoffMatch]
+	static hasMany = [matches:Match]
 	
     static constraints = {
 		bnetId(nullable:false, blank:false)
