@@ -43,6 +43,7 @@
 					<li class="controller"><g:link controller="navigation" action="standings">Standings</g:link></li>
 					<li class="controller"><g:link controller="navigation" action="register">Registration</g:link></li>
 					<li class="controller"><g:link controller="navigation" action="faq">FAQ</g:link></li>
+					<li class="controller"><a href="http://starplayersleague.tumblr.com">Blog</a></li>
 					<li class="controller"><g:link controller="navigation" action="contact">Contact Us</g:link></li>
 				</ul>
 			</div>
@@ -87,6 +88,7 @@
 					<div class="flinks">
 						<h4>SPL Community</h4>
 						<ul class="flinks">
+							<li><a href="http://starplayersleague.tumblr.com">Blog</a></li>
 							<li><g:link controller="navigation" action="contact">Contact Us</g:link></li>
 							<li><a href="http://twitter.com/#!/StarPlayersSC">Twitter</a></li>
 						</ul>
