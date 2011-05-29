@@ -56,7 +56,7 @@ a {
 #loginheader {
 	float: left;
 	margin: 10px auto;
-	padding: 0 10px;
+	padding: 0 30px;
 	height: 10px;
 	color: #ffffff;
 	text-align: left;
@@ -106,7 +106,12 @@ ul.menuitems a:hover {
 }
 
 /* PAGE CONTENT */
-
+#sidebar {
+	float: right;
+	width: 240px;
+	margin: 50px 0 0 20px;
+	padding: 0 10px 10px;
+}
 #container {
 	background: transparent;
 	margin: 0 auto;
@@ -137,6 +142,9 @@ ul.menuitems a:hover {
 }
 .mcontent {
 	width: 100%;
+}
+.mcontainer {
+	width: 620px;
 }
 .inforight {
 	padding: 1px 0 0;
@@ -169,6 +177,7 @@ ul.menuitems a:hover {
 	background: #cccccc;
 	margin: 50px 0 10px;
 	height: 2px;
+	width: 100%
 }
 .accent {
 	display: block;
@@ -177,9 +186,10 @@ ul.menuitems a:hover {
 	width: 50px;
 }
 .innerlinebreak {
-	background: url('../images/innerlinebreak.png') no-repeat center;
-	height: 41px;
-	width: 900px;
+	background: #dddddd;
+	margin: 20px;
+	height: 1px;
+	width: auto;
 }
 
 

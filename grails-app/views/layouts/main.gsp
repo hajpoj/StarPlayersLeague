@@ -88,9 +88,10 @@
 					<div class="flinks">
 						<h4>SPL Community</h4>
 						<ul class="flinks">
-							<li><a href="http://starplayersleague.tumblr.com">Blog</a></li>
+							<li><a href="http://starplayersleague.tumblr.com">SPL Blog</a></li>
 							<li><g:link controller="navigation" action="contact">Contact Us</g:link></li>
 							<li><a href="http://twitter.com/#!/StarPlayersSC">Twitter</a></li>
+							<li><a href="http://starplayersleague.tumblr.com/rss">RSS Feed</a></li>
 						</ul>
 					</div>
 					<div class="donate">
