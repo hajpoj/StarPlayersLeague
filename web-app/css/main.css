@@ -190,7 +190,43 @@ ul.menuitems a:hover {
 	height: 1px;
 	width: auto;
 }
+.icons {
+	margin: 0 2px;
+	vertical-align: middle;
+}
 
+/* BRACKET */
+
+div.bracket {
+	position: relative;
+	background: url('../images/bracket.png') no-repeat center center;
+	width: 900px;
+	height: 500px;
+	font-size: 11px;
+}
+.r0101 {line-height: 30px; position: absolute; left: 20px; top: 30px; padding: 0 10px; width: 180px;} 
+.r0102 {line-height: 30px; position: absolute; left: 20px; top: 71px; padding: 0 10px; width: 180px;}
+.r0103 {line-height: 30px; position: absolute; left: 20px; top: 130px; padding: 0 10px; width: 180px;}
+.r0104 {line-height: 30px; position: absolute; left: 20px; top: 171px; padding: 0 10px; width: 180px;}
+.r0105 {line-height: 30px; position: absolute; left: 20px; top: 230px; padding: 0 10px; width: 180px;}
+.r0106 {line-height: 30px; position: absolute; left: 20px; top: 271px; padding: 0 10px; width: 180px;}
+.r0107 {line-height: 30px; position: absolute; left: 20px; top: 330px; padding: 0 10px; width: 180px;}
+.r0108 {line-height: 30px; position: absolute; left: 20px; top: 371px; padding: 0 10px; width: 180px;}
+.r0201 {line-height: 30px; position: absolute; left: 240px; top: 80px; padding: 0 10px; width: 180px;}
+.r0202 {line-height: 30px; position: absolute; left: 240px; top: 121px; padding: 0 10px; width: 180px;}
+.r0203 {line-height: 30px; position: absolute; left: 240px; top: 280px; padding: 0 10px; width: 180px;}
+.r0204 {line-height: 30px; position: absolute; left: 240px; top: 321px; padding: 0 10px; width: 180px;}
+.r0301 {line-height: 30px; position: absolute; left: 460px; top: 180px; padding: 0 10px; width: 180px;}
+.r0302 {line-height: 30px; position: absolute; left: 460px; top: 221px; padding: 0 10px; width: 180px;}
+.r0303 {line-height: 30px; position: absolute; left: 460px; top: 410px; padding: 0 10px; width: 180px;}
+.r0304 {line-height: 30px; position: absolute; left: 460px; top: 451px; padding: 0 10px; width: 180px;}
+.r0401 {line-height: 30px; position: absolute; left: 680px; top: 200px; padding: 0 10px; width: 180px;}
+.r0402 {line-height: 30px; position: absolute; left: 680px; top: 301px; padding: 0 10px; width: 180px;}
+.r0403 {line-height: 30px; position: absolute; left: 680px; top: 430px; padding: 0 10px; width: 180px;}
+
+.bracketscore {
+	float: right;
+}
 
 /* MESSAGES */
 
@@ -440,10 +476,6 @@ th.colstrank {
 th.colstbnetid {
 	text-align: left;
 }
-th.colstrace {
-	text-align: left;
-	width: 50px;
-}
 th.colstat {
 	text-align: right;
 	width: 120px;
@@ -461,11 +493,11 @@ th.colbnetidl {
 }
 th.colvs {
 	text-align: center;
-	width: 30px;
+	width: 50px;
 }
-th.colrace {
+th.colgap {
 	text-align: center;
-	width: 20px;
+	width: 5px;
 }
 th.colbnetidr {
 	text-align: left;

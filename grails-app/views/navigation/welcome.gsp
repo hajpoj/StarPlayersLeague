@@ -24,15 +24,16 @@
 	    		<table>
 		            <tr>
 			            <th class="colstrank">Rank</th>
-			            <th class="colstrace"></th>
+			            <th class="colgap"></th>
 			            <th class="colstandingid">Player</th>
 		            </tr>
 		            <g:each in="${standingsInstanceList}" status="i" var="registrationInstance">
 		            	<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 			                <td class="right">${i+1}</td>
-			                <td class="right"><img class="icons" src="${resource(dir:'images/icons', file:registrationInstance.race.concat('.png'))}" 
-								alt="${registrationInstance.race}" /></td>
-							<td><g:link controller="navigation" action="profile" id="${registrationInstance.user.id}">${fieldValue(bean: registrationInstance, field: "bnetId")}</g:link></td>
+			                <td></td>
+							<td><img class="icons" src="${resource(dir:'images/icons', file:registrationInstance.race.concat('.png'))}" 
+								alt="${registrationInstance.race}" />
+								<g:link controller="navigation" action="profile" id="${registrationInstance.user.id}">${fieldValue(bean: registrationInstance, field: "bnetId")}</g:link></td>
 		                </tr>
 		        	</g:each>
 	        	</table>

@@ -18,9 +18,7 @@
 		       	<tr>
 					<th class="colmatch">Match</th>
 		       		<th class="colbnetidl">Player</th>
-		       		<th class="colrace"></th>
 	       			<th class="colvs">vs</th>
-	       			<th class="colrace"></th>
 	       			<th class="colbentidr">Player</th>
        			</tr>
        			<tr>
@@ -39,9 +37,8 @@
 								<g:link controller="navigation" action="profile" id="${matchInstance.entries.toArray().getAt(0).user.id}">
 									${fieldValue(bean: matchInstance.entries.toArray().getAt(0), field: "bnetId")}
 								</g:link>
-							</td>
-					<td class="right"><img class="icons" src="${resource(dir:'images/icons', file:matchInstance.entries.toArray().getAt(0).race.concat('.png'))}" 
-						alt="${matchInstance.entries.toArray().getAt(0).race}" /></td>
+								<img class="icons" src="${resource(dir:'images/icons', file:matchInstance.entries.toArray().getAt(0).race.concat('.png'))}" 
+									alt="${matchInstance.entries.toArray().getAt(0).race}" /></td>
 					<g:if test="${matchInstance.played == false}">
 						<td class="center">vs</td>
 					</g:if>
@@ -53,8 +50,6 @@
 							<td class="matchscore">${matchInstance.loserScore}-${(Integer)matchInstance.bestOf/2+1}</td>
 						</g:else>
 					</g:else>
-	                <td class="left"><img class="icons" src="${resource(dir:'images/icons', file:matchInstance.entries.toArray().getAt(1).race.concat('.png'))}" 
-						alt="${matchInstance.entries.toArray().getAt(1).race}" /></td>
 	                <g:if test="${matchInstance.played == false}">
 						<td class="left">
 					</g:if>
@@ -66,6 +61,8 @@
 							<td class="left">
 						</g:else>
 					</g:else>
+								<img src="${resource(dir:'images/icons', file:matchInstance.entries.toArray().getAt(1).race.concat('.png'))}" 
+									alt="${matchInstance.entries.toArray().getAt(1).race}" />
 								<g:link controller="navigation" action="profile" id="${matchInstance.entries.toArray().getAt(1).user.id}">
 									${fieldValue(bean: matchInstance.entries.toArray().getAt(1), field: "bnetId")}
 								</g:link>
@@ -83,7 +80,6 @@
 		   		<tr> 
 		   			<th class="colmatch">Game</th>
 		   			<th class="colviewdetails">Map</th>
-		   			<th class="colrace"></th>
 			   		<th>Winner</th>
 			   		<th class="colmappack">Replay</th>
 			   		<th class="colmappack">VOD</th>
@@ -93,13 +89,10 @@
         			<tr>
         				<td class="right">${i+1}</td>
         				<td>${game.map}</td>
-        				<td class="right">
+        				<td class="left">
         					<g:if test="${!game.winner}"></g:if>
         					<g:else><img class="icons" src="${resource(dir:'images/icons', file:game.winner.race.concat('.png'))}" 
 								alt="${game.winner.race}" /></g:else>
-        					
-						</td>
-        				<td>
         					<g:if test="${!game.winner}">-</g:if>
         					<g:else>${game.winner}</g:else>
         				</td>

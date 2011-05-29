@@ -16,9 +16,7 @@
 		       	<tr>
 					<th class="colmatch">Match</th>
 		       		<th class="colbnetidl">Player</th>
-		       		<th class="colrace"></th>
 	       			<th class="colvs">vs</th>
-	       			<th class="colrace"></th>
 	       			<th class="colbentidr">Player</th>
 	       			<th class="colmappack"></th>
        			</tr>
@@ -38,9 +36,9 @@
 								<g:link controller="navigation" action="profile" id="${matchInstance.entries.toArray().getAt(0).user.id}">
 									${fieldValue(bean: matchInstance.entries.toArray().getAt(0), field: "bnetId")}
 								</g:link>
+								<img class="icons" src="${resource(dir:'images/icons', file:matchInstance.entries.toArray().getAt(0).race.concat('.png'))}" 
+									alt="${matchInstance.entries.toArray().getAt(0).race}" />
 							</td>
-					<td class="right"><img class="icons" src="${resource(dir:'images/icons', file:matchInstance.entries.toArray().getAt(0).race.concat('.png'))}" 
-						alt="${matchInstance.entries.toArray().getAt(0).race}" /></td>
 					<g:if test="${matchInstance.played == false}">
 						<td class="center">vs</td>
 					</g:if>
@@ -52,8 +50,6 @@
 							<td class="matchscore">${matchInstance.loserScore}-${(Integer)matchInstance.bestOf/2+1}</td>
 						</g:else>
 					</g:else>
-	                <td class="left"><img class="icons" src="${resource(dir:'images/icons', file:matchInstance.entries.toArray().getAt(1).race.concat('.png'))}" 
-						alt="${matchInstance.entries.toArray().getAt(1).race}" /></td>
 	                <g:if test="${matchInstance.played == false}">
 						<td class="left">
 					</g:if>
@@ -65,6 +61,8 @@
 							<td class="left">
 						</g:else>
 					</g:else>
+								<img class="icons" src="${resource(dir:'images/icons', file:matchInstance.entries.toArray().getAt(1).race.concat('.png'))}" 
+									alt="${matchInstance.entries.toArray().getAt(1).race}" />
 								<g:link controller="navigation" action="profile" id="${matchInstance.entries.toArray().getAt(1).user.id}">
 									${fieldValue(bean: matchInstance.entries.toArray().getAt(1), field: "bnetId")}
 								</g:link>

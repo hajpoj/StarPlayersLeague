@@ -27,9 +27,7 @@
 		       		<tr> 
 		       			<th class="colmatch">Match</th>
 		       			<th class="colbnetidl">Player</th>
-		       			<th class="colrace"></th>
 		       			<th class="colvs">vs</th>
-		       			<th class="colrace"></th>
 		       			<th class="colbnetidr2">Player</th>
 		       			<th class="colreportscore"></th>
 		       			<th class="colviewdetails"></th>
@@ -40,19 +38,19 @@
 							
 							<%--	Winner Designation (left side)	           			--%>
 		           			<g:if test="${matchesInstance.played == false}">
-								<td class="right">${fieldValue(bean: entryInstance, field: "bnetId")}</td>
+								<td class="right">
 							</g:if>
 							<g:else>
 								<g:if test="${entryInstance.id == matchesInstance.winner.id}">
-									<td class="winnerl">${fieldValue(bean: entryInstance, field: "bnetId")}</td>
+									<td class="winnerl">
 								</g:if>
 								<g:else>
-									<td class="right">${fieldValue(bean: entryInstance, field: "bnetId")}</td>
+									<td class="right">
 								</g:else>
 							</g:else>
-							
-							<td class="right"><img class="icons" src="${resource(dir:'images/icons', file:entryInstance.race.concat('.png'))}" 
-								alt="${entryInstance.race}" /></td>
+										${fieldValue(bean: entryInstance, field: "bnetId")}
+										<img class="icons" src="${resource(dir:'images/icons', file:entryInstance.race.concat('.png'))}" 
+											alt="${entryInstance.race}" /></td>
 							<g:if test="${matchesInstance.played == false}">
 								<td class="center">vs</td>
 							</g:if>
@@ -70,21 +68,22 @@
 							</g:else>
 							<g:each in="${matchesInstance.entries}" status="j" var="entry">
 		               			<g:if test="${entry.id != entryInstance.id}">
-		               				<td class="left"><img class="icons" src="${resource(dir:'images/icons', file:entry.race.concat('.png'))}" 
-										alt="${entry.race}" /></td>
-										
 								<%--		Winner Designation (right side)							--%>
 									<g:if test="${matchesInstance.played == false}">
-										<td class="left"><g:link action="newThread" id="${entry.user.id}">${fieldValue(bean: entry, field: "bnetId")}</g:link></td>
+										<td class="left">
 									</g:if>
 									<g:else>
 										<g:if test="${entry.id == matchesInstance.winner.id}">
-											<td class="winnerr"><g:link action="newThread" id="${entry.user.id}">${fieldValue(bean: entry, field: "bnetId")}</g:link></td>
+											<td class="winnerr">
 										</g:if>
 										<g:else>
-											<td class="left"><g:link action="newThread" id="${entry.user.id}">${fieldValue(bean: entry, field: "bnetId")}</g:link></td>
+											<td class="left">
 										</g:else>
 									</g:else>
+												<img class="icons" src="${resource(dir:'images/icons', file:entry.race.concat('.png'))}" 
+													alt="${entry.race}" />
+												<g:link action="newThread" id="${entry.user.id}">${fieldValue(bean: entry, field: "bnetId")}</g:link>
+											</td>
 									
 		               			</g:if>
 		               		</g:each>
