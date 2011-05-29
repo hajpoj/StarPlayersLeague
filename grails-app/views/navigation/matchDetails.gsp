@@ -122,7 +122,7 @@
 			</table>
 		</div>
 		 <div class="break"></div>
-		<div class="innerlinebreak"></div>
+		<div class="break"></div>
 		<h2>Map Details</h2>
 		<div class="break"></div>
       	<p class="note">Search for the maps using "+Listed Name" in Battle.net. Make sure the author of the map is correct to ensure map integrity.</p>

@@ -6,8 +6,10 @@
     </head>
     
     <body>
+    	<div id="editaccount">
+    		<p>(<g:link action="edit">Edit Account</g:link>)</p>
+    	</div>
     	<h1>My Account</h1>
-    	<p>(<g:link action="edit">Edit Account</g:link>)</p>
     	<div class="break"></div>
     	<g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -20,7 +22,7 @@
     	<div class="mcontent">
     		<h2>Account Information</h2>
 			<div class="break"></div>
-    		<div class="infoleft">
+    		<div class="infoleftgrey">
     			<p>Username:</p>
     			<p>Email Address:</p>
     			<p>Battle.net ID:</p>
@@ -39,7 +41,7 @@
     	<div class="mcontent">
     		<h2>Email Notifications</h2>
 			<div class="break"></div>
-    		<div class="infoleft">
+    		<div class="infoleftgrey">
     			<p>When I receive new messages:</p>
     		</div>
     		<div class="inforight">

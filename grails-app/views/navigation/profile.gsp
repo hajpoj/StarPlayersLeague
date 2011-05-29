@@ -19,7 +19,7 @@
     	<div class="mcontent">
     		<h2>General Information</h2>
     		<div class="break"></div>
-    		<div class="infoleft">
+    		<div class="infoleftgrey">
     			<p>Battle.net ID:</p>
     			<p>Primary Race:</p>
     		</div>
@@ -33,7 +33,7 @@
     	<div class="mcontent">
     		<h2>${fieldValue(bean: registrationInstance.group.division.code.season, field: "league")} (${fieldValue(bean: registrationInstance, field: "server")} Server) Information</h2>
     		<div class="break"></div>
-    		<div class="infoleft">
+    		<div class="infoleftgrey">
     			<p>Code:</p>
     			<p>Division:</p>
     			<p>Group:</p>

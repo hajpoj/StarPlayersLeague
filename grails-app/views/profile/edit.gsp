@@ -19,7 +19,7 @@
             </g:hasErrors>
 	    	<div class="mcontent">
 	    		<h2>Account Information</h2><br/>
-	    		<div class="infoleft">
+	    		<div class="infoleftgrey">
 	    			<p>Username:</p>
 	    			<p>Email Address:</p>
 	    		</div>
@@ -28,20 +28,20 @@
 	    			<p><input type='text' class='text_' name='email' value='${userInstance?.email}'/></p>
 	    		</div>
 	    	</div>
-	    	<div class="break"></div>
+	    	<div class="innerlinebreak"></div>
 	    	<div class="mcontent">
 	    		<h2>Email Notifications</h2><br/>
-	    		<div class="infoleft">
+	    		<div class="infoleftgrey">
 	    			<p>When I receive new messages:</p>
 	    		</div>
 	    		<div class="inforight">
 	    			<p><g:checkBox name="messageNotification" value="${userInstance?.messageNotification}" /></p>
 	    		</div>
 	    	</div>
-	    	<div class="break"></div>
+	    	<div class="innerlinebreak"></div>
 	    	<div class="mcontent">
 	    		<h2>Change Password</h2><br/>
-	    		<div class="infoleft">
+	    		<div class="infoleftgrey">
 	    			<p>Old Password:</p>
 	    			<p>New Password:</p>
 	    			<p>Confirm New Password:</p>

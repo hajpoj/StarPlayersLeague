@@ -32,9 +32,6 @@
 					<p class="note">Posted on ${noticeInstance.lastUpdated.format('MM-dd-yyyy, HH:mm z')}</p>
 			</g:each>
 		</div>
-		<div class="paginateLinks">
-			<g:paginate next="Next" prev="Previous" action="welcome" total="${noticeInstanceTotal}" />
-		</div>
 	</body>
 
 </html>

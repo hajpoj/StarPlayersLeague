@@ -19,20 +19,20 @@ body {
 }
 h1 {
     color: #ff4b00;
-    font-size: 32px;
+    font-size: 24px;
+    font-weight: normal;
 }
 h2 {
 	color: #444444;
-	font: 18px;
+	font-size: 14px;
 }
 h3 {
 	color: #444444;
-	font: 12px;
+	font-size: 12px;
 }
 h4 {
 	margin: 0 0 3px 0;
 	color: #ffffff;
-	font: 14px;
 }
 a {
 	
@@ -85,7 +85,7 @@ a {
 }
 ul.menuitems {
 	text-align: center;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: bold;
 	padding: 0 0 5px 0; /* set padding (tab size) as desired; THIRD number must change with respect to padding-top (X) above */
 }
@@ -139,7 +139,8 @@ ul.menuitems a:hover {
 	width: 100%;
 }
 .inforight {
-	line-height: 200%
+	padding: 1px 0 0;
+	line-height: 200%;
 }
 .infoleft {
 	float: left;
@@ -147,6 +148,19 @@ ul.menuitems a:hover {
 	padding: 0 10px 0 0;
 	line-height: 200%;
 	font-weight: bold;
+}
+.infoleftgrey {
+	color: #777777;
+	float: left;
+	width: auto;
+	padding: 0 10px 0 0;
+	line-height: 200%;
+	font-weight: bold;
+}
+#editaccount {
+	float: right;
+	margin: 11px;
+	width: 725px;
 }
 .break {
 	height: 10px;
