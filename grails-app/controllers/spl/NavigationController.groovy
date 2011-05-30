@@ -109,6 +109,8 @@ class NavigationController {
 		def standingsList
 		def matchesList
 		def quarterFinals
+		def semiFinals
+		def finals
 		if (params.group == 'null') {
 			render g.select(noSelection:[null:"Select one..."])
 		} else {
@@ -118,7 +120,9 @@ class NavigationController {
 			if (group.playoffs) {
 				matchesList = group.matches.toArray().sort{[it.id]}
 				quarterFinals = matchesList.getAt(0..3)
-				render(template: "playoffsTemplate", model:[matchesInstanceList: matchesList, groupInstance: group, quarterFinalsInstanceList: quarterFinals])
+//				semiFinals
+//				finals
+				render(template: "playoffsTemplate", model:[matchesInstanceList: matchesList, groupInstance: group, quarterFinalsInstanceList: quarterFinals, semiFinalsInstanceList: semiFinals, finalsInstanceList: finals])
 			}
 			else {
 				render(template: "tableTemplate", model:[standingsInstanceList: standingsList, matchesInstanceList: matchesList, groupInstance: group])

@@ -1,6 +1,7 @@
 <div class="break"></div>
 <h2>${groupInstance.division.code} / ${groupInstance.division} / Playoffs</h2>
 <div class="bracket">
+	<%--QUARTERFINAL MATCHES --%>
 	<div class="r0801">
 		<p>
 			<g:if test="${quarterFinalsInstanceList.getAt(0).played == true}">
@@ -13,15 +14,19 @@
 						</span>
 				</g:if>
 				<g:else>
+					<span>
 						<span class="bracketscore">
 							${quarterFinalsInstanceList.getAt(0).loserScore}
 						</span>
 				</g:else>
+					<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(0).race.concat('.png'))}" 
+							alt="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(0).race}" />
+						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(0).id}">
+							${fieldValue(bean: quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(0), field: "bnetId")}
+						</g:link>
+					</span>
 			</g:if>
 			<g:else>
-						<span class="bracketscore">
-							0
-						</span>
 						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(0).race.concat('.png'))}" 
 							alt="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(0).race}" />
 						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(0).id}">
@@ -37,21 +42,25 @@
 				<g:if test="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(1).id == quarterFinalsInstanceList.getAt(0).winner.id}">
 					<span style="font-weight: bold;">
 						<span class="bracketscore">
-							<g:if test="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(1).id == quarterFinalsInstanceList.getAt(1).winner.id}">
+							<g:if test="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(1).id == quarterFinalsInstanceList.getAt(0).winner.id}">
 								${(Integer)quarterFinalsInstanceList.getAt(0).bestOf/2+1}
 							</g:if>
 						</span>
 				</g:if>
 				<g:else>
+					<span>
 						<span class="bracketscore">
 							${quarterFinalsInstanceList.getAt(0).loserScore}
 						</span>
 				</g:else>
+						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(1).race.concat('.png'))}" 
+							alt="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(1).race}" />
+						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(1).id}">
+							${fieldValue(bean: quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(1), field: "bnetId")}
+						</g:link>
+					</span>
 			</g:if>
 			<g:else>
-						<span class="bracketscore">
-							0
-						</span>
 						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(1).race.concat('.png'))}" 
 							alt="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(1).race}" />
 						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(1).id}">
@@ -73,15 +82,19 @@
 						</span>
 				</g:if>
 				<g:else>
+					<span>
 						<span class="bracketscore">
 							${quarterFinalsInstanceList.getAt(1).loserScore}
 						</span>
 				</g:else>
+						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(0).race.concat('.png'))}" 
+							alt="${quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(0).race}" />
+						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(0).id}">
+							${fieldValue(bean: quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(0), field: "bnetId")}
+						</g:link>
+					</span>
 			</g:if>
 			<g:else>
-						<span class="bracketscore">
-							0
-						</span>
 						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(0).race.concat('.png'))}" 
 							alt="${quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(0).race}" />
 						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(0).id}">
@@ -103,15 +116,19 @@
 						</span>
 				</g:if>
 				<g:else>
+					<span>
 						<span class="bracketscore">
 							${quarterFinalsInstanceList.getAt(1).loserScore}
 						</span>
 				</g:else>
+						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(1).race.concat('.png'))}" 
+							alt="${quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(1).race}" />
+						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(1).id}">
+							${fieldValue(bean: quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(1), field: "bnetId")}
+						</g:link>
+					</span>
 			</g:if>
 			<g:else>
-						<span class="bracketscore">
-							0
-						</span>
 						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(1).race.concat('.png'))}" 
 							alt="${quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(1).race}" />
 						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(1).id}">
@@ -133,15 +150,19 @@
 						</span>
 				</g:if>
 				<g:else>
+					<span>
 						<span class="bracketscore">
 							${quarterFinalsInstanceList.getAt(2).loserScore}
 						</span>
 				</g:else>
+						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(2).entries.toArray().getAt(0).race.concat('.png'))}" 
+							alt="${quarterFinalsInstanceList.getAt(2).entries.toArray().getAt(0).race}" />
+						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(0).id}">
+							${fieldValue(bean: quarterFinalsInstanceList.getAt(2).entries.toArray().getAt(0), field: "bnetId")}
+						</g:link>
+					</span>
 			</g:if>
 			<g:else>
-						<span class="bracketscore">
-							0
-						</span>
 						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(2).entries.toArray().getAt(0).race.concat('.png'))}" 
 							alt="${quarterFinalsInstanceList.getAt(2).entries.toArray().getAt(0).race}" />
 						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(0).id}">
@@ -163,15 +184,19 @@
 						</span>
 				</g:if>
 				<g:else>
+					<span>
 						<span class="bracketscore">
 							${quarterFinalsInstanceList.getAt(2).loserScore}
 						</span>
 				</g:else>
+						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(2).entries.toArray().getAt(1).race.concat('.png'))}" 
+							alt="${quarterFinalsInstanceList.getAt(2).entries.toArray().getAt(1).race}" />
+						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(1).id}">
+							${fieldValue(bean: quarterFinalsInstanceList.getAt(2).entries.toArray().getAt(1), field: "bnetId")}
+						</g:link>
+					</span>
 			</g:if>
 			<g:else>
-						<span class="bracketscore">
-							0
-						</span>
 						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(2).entries.toArray().getAt(1).race.concat('.png'))}" 
 							alt="${quarterFinalsInstanceList.getAt(2).entries.toArray().getAt(1).race}" />
 						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(1).id}">
@@ -193,15 +218,19 @@
 						</span>
 				</g:if>
 				<g:else>
+					<span>
 						<span class="bracketscore">
 							${quarterFinalsInstanceList.getAt(3).loserScore}
 						</span>
 				</g:else>
+						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(3).entries.toArray().getAt(0).race.concat('.png'))}" 
+							alt="${quarterFinalsInstanceList.getAt(3).entries.toArray().getAt(0).race}" />
+						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(0).id}">
+							${fieldValue(bean: quarterFinalsInstanceList.getAt(3).entries.toArray().getAt(0), field: "bnetId")}
+						</g:link>
+					</span>
 			</g:if>
 			<g:else>
-						<span class="bracketscore">
-							0
-						</span>
 						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(3).entries.toArray().getAt(0).race.concat('.png'))}" 
 							alt="${quarterFinalsInstanceList.getAt(3).entries.toArray().getAt(0).race}" />
 						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).entries.toArray().getAt(0).id}">
@@ -223,15 +252,19 @@
 						</span>
 				</g:if>
 				<g:else>
+					<span>
 						<span class="bracketscore">
 							${quarterFinalsInstanceList.getAt(3).loserScore}
 						</span>
 				</g:else>
+						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(3).entries.toArray().getAt(1).race.concat('.png'))}" 
+							alt="${quarterFinalsInstanceList.getAt(3).entries.toArray().getAt(1).race}" />
+						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(1).id}">
+							${fieldValue(bean: quarterFinalsInstanceList.getAt(3).entries.toArray().getAt(1), field: "bnetId")}
+						</g:link>
+					</span>
 			</g:if>
 			<g:else>
-						<span class="bracketscore">
-							0
-						</span>
 						<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(3).entries.toArray().getAt(1).race.concat('.png'))}" 
 							alt="${quarterFinalsInstanceList.getAt(3).entries.toArray().getAt(1).race}" />
 						<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(1).entries.toArray().getAt(1).id}">
@@ -241,10 +274,218 @@
 			</g:else>
 		</p>
 	</div>
-	<div class="r0401"><p>RO4-01</p></div>
-	<div class="r0402"><p>RO4-02</p></div>
-	<div class="r0403"><p>RO4-03</p></div>
-	<div class="r0404"><p>RO4-04</p></div>
+	<%--SEMIFINAL MATCHES --%>
+	<div class="r0401">
+		<p>
+			<g:if test="${semiFinalsInstanceList == null}">
+				<g:if test="${quarterFinalsInstanceList.getAt(0).played == true}">
+					<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(0).winner.race.concat('.png'))}" 
+						alt="${quarterFinalsInstanceList.getAt(0).winner.race}" />
+					<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).winner.id}">
+						${fieldValue(bean: quarterFinalsInstanceList.getAt(0).winner, field: "bnetId")}
+					</g:link>
+				</g:if>
+				<g:else>
+					Winner of QF Match 1
+				</g:else>
+			</g:if>
+			<g:else>
+				<g:if test="${quarterFinalsInstanceList.getAt(0).played == true}">
+					<g:if test="${semiFinalsInstanceList.getAt(0).played == true}">
+						<g:if test="${semiFinalsInstanceList.getAt(0).entries.toArray().getAt(0).id == semiFinalsInstanceList.getAt(0).winner.id}">
+							<span style="font-weight: bold;">
+								<span class="bracketscore">
+									<g:if test="${semiFinalsInstanceList.getAt(0).entries.toArray().getAt(0).id == semiFinalsInstanceList.getAt(0).winner.id}">
+										${(Integer)semiFinalsInstanceList.getAt(0).bestOf/2+1}
+									</g:if>
+								</span>
+						</g:if>
+						<g:else>
+							<span>
+								<span class="bracketscore">
+									${semiFinalsInstanceList.getAt(0).loserScore}
+								</span>
+						</g:else>
+								<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(0).winner.race.concat('.png'))}" 
+									alt="${quarterFinalsInstanceList.getAt(0).winner.race}" />
+								<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).winner.id}">
+									${fieldValue(bean: quarterFinalsInstanceList.getAt(0).winner, field: "bnetId")}
+								</g:link>
+							</span>
+					</g:if>
+					<g:else>
+								<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(0).winner.race.concat('.png'))}" 
+									alt="${quarterFinalsInstanceList.getAt(0).winner.race}" />
+								<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(0).winner.id}">
+									${fieldValue(bean: quarterFinalsInstanceList.getAt(0).winner, field: "bnetId")}
+								</g:link>
+							</span>
+					</g:else>
+				</g:if>
+				<g:else>
+					Winner of QF Match 1
+				</g:else>
+			</g:else>
+		</p>
+	</div>
+	<div class="r0402">
+		<p>
+			<g:if test="${semiFinalsInstanceList == null}">
+				<g:if test="${quarterFinalsInstanceList.getAt(1).played == true}">
+					<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(1).winner.race.concat('.png'))}" 
+						alt="${quarterFinalsInstanceList.getAt(1).winner.race}" />
+					<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(1).winner.id}">
+						${fieldValue(bean: quarterFinalsInstanceList.getAt(1).winner, field: "bnetId")}
+					</g:link>
+				</g:if>
+				<g:else>
+					Winner of QF Match 2
+				</g:else>
+			</g:if>
+			<g:else>
+				<g:if test="${quarterFinalsInstanceList.getAt(1).played == true}">
+					<g:if test="${semiFinalsInstanceList.getAt(0).played == true}">
+						<g:if test="${semiFinalsInstanceList.getAt(0).entries.toArray().getAt(1).id == semiFinalsInstanceList.getAt(0).winner.id}">
+							<span style="font-weight: bold;">
+								<span class="bracketscore">
+									<g:if test="${semiFinalsInstanceList.getAt(0).entries.toArray().getAt(1).id == semiFinalsInstanceList.getAt(0).winner.id}">
+										${(Integer)semiFinalsInstanceList.getAt(0).bestOf/2+1}
+									</g:if>
+								</span>
+						</g:if>
+						<g:else>
+								<span class="bracketscore">
+									${semiFinalsInstanceList.getAt(0).loserScore}
+								</span>
+						</g:else>
+								<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(1).winner.race.concat('.png'))}" 
+									alt="${quarterFinalsInstanceList.getAt(1).winner.race}" />
+								<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(1).winner.id}">
+									${fieldValue(bean: quarterFinalsInstanceList.getAt(1).winner, field: "bnetId")}
+								</g:link>
+							</span>
+					</g:if>
+					<g:else>
+								<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(1).winner.race.concat('.png'))}" 
+									alt="${quarterFinalsInstanceList.getAt(1).winner.race}" />
+								<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(1).winner.id}">
+									${fieldValue(bean: quarterFinalsInstanceList.getAt(1).winner, field: "bnetId")}
+								</g:link>
+							</span>
+					</g:else>
+				</g:if>
+				<g:else>
+					Winner of QF Match 2
+				</g:else>
+			</g:else>
+		</p>
+	</div>
+	<div class="r0403">
+		<p>
+			<g:if test="${semiFinalsInstanceList == null}">
+				<g:if test="${quarterFinalsInstanceList.getAt(2).played == true}">
+					<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(2).winner.race.concat('.png'))}" 
+						alt="${quarterFinalsInstanceList.getAt(2).winner.race}" />
+					<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(2).winner.id}">
+						${fieldValue(bean: quarterFinalsInstanceList.getAt(2).winner, field: "bnetId")}
+					</g:link>
+				</g:if>
+				<g:else>
+					Winner of QF Match 3
+				</g:else>
+			</g:if>
+			<g:else>
+				<g:if test="${quarterFinalsInstanceList.getAt(2).played == true}">
+					<g:if test="${semiFinalsInstanceList.getAt(1).played == true}">
+						<g:if test="${semiFinalsInstanceList.getAt(1).entries.toArray().getAt(0).id == semiFinalsInstanceList.getAt(1).winner.id}">
+							<span style="font-weight: bold;">
+								<span class="bracketscore">
+									<g:if test="${semiFinalsInstanceList.getAt(1).entries.toArray().getAt(0).id == semiFinalsInstanceList.getAt(1).winner.id}">
+										${(Integer)semiFinalsInstanceList.getAt(1).bestOf/2+1}
+									</g:if>
+								</span>
+						</g:if>
+						<g:else>
+							<span>
+								<span class="bracketscore">
+									${semiFinalsInstanceList.getAt(1).loserScore}
+								</span>
+						</g:else>
+								<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(2).winner.race.concat('.png'))}" 
+									alt="${quarterFinalsInstanceList.getAt(2).winner.race}" />
+								<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(2).winner.id}">
+									${fieldValue(bean: quarterFinalsInstanceList.getAt(2).winner, field: "bnetId")}
+								</g:link>
+							</span>
+					</g:if>
+					<g:else>
+								<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(2).winner.race.concat('.png'))}" 
+									alt="${quarterFinalsInstanceList.getAt(2).winner.race}" />
+								<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(2).winner.id}">
+									${fieldValue(bean: quarterFinalsInstanceList.getAt(2).winner, field: "bnetId")}
+								</g:link>
+							</span>
+					</g:else>
+				</g:if>
+				<g:else>
+					Winner of QF Match 3
+				</g:else>
+			</g:else>
+		</p>
+	</div>
+	<div class="r0404">
+		<p>
+			<g:if test="${semiFinalsInstanceList == null}">
+				<g:if test="${quarterFinalsInstanceList.getAt(3).played == true}">
+					<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(3).winner.race.concat('.png'))}" 
+						alt="${quarterFinalsInstanceList.getAt(3).winner.race}" />
+					<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(3).winner.id}">
+						${fieldValue(bean: quarterFinalsInstanceList.getAt(3).winner, field: "bnetId")}
+					</g:link>
+				</g:if>
+				<g:else>
+					Winner of QF Match 4
+				</g:else>
+			</g:if>
+			<g:else>
+				<g:if test="${quarterFinalsInstanceList.getAt(3).played == true}">
+					<g:if test="${semiFinalsInstanceList.getAt(1).played == true}">
+						<g:if test="${semiFinalsInstanceList.getAt(1).entries.toArray().getAt(1).id == semiFinalsInstanceList.getAt(1).winner.id}">
+							<span style="font-weight: bold;">
+								<span class="bracketscore">
+									<g:if test="${semiFinalsInstanceList.getAt(1).entries.toArray().getAt(1).id == semiFinalsInstanceList.getAt(1).winner.id}">
+										${(Integer)semiFinalsInstanceList.getAt(1).bestOf/2+1}
+									</g:if>
+								</span>
+						</g:if>
+						<g:else>
+							<span>
+								<span class="bracketscore">
+									${semiFinalsInstanceList.getAt(1).loserScore}
+								</span>
+						</g:else>
+								<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(3).winner.race.concat('.png'))}" 
+									alt="${quarterFinalsInstanceList.getAt(3).winner.race}" />
+								<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(3).winner.id}">
+									${fieldValue(bean: quarterFinalsInstanceList.getAt(3).winner, field: "bnetId")}
+								</g:link>
+							</span>
+					</g:if>
+					<g:else>
+								<img class="icons" src="${resource(dir:'images/icons', file:quarterFinalsInstanceList.getAt(3).winner.race.concat('.png'))}" 
+									alt="${quarterFinalsInstanceList.getAt(3).winner.race}" />
+								<g:link controller="navigation" action="profile" id="${quarterFinalsInstanceList.getAt(3).winner.id}">
+									${fieldValue(bean: quarterFinalsInstanceList.getAt(3).winner, field: "bnetId")}
+								</g:link>
+							</span>
+					</g:else>
+				</g:if>
+				<g:else>
+					Winner of QF Match 4
+				</g:else>
+			</g:else>
+		</p>
+	</div>
 	<div class="r0201"><p>RO2-01</p></div>
 	<div class="r0202"><p>RO2-02</p></div>
 	<div class="r0203"><p>RO2-03</p></div>
@@ -267,7 +508,7 @@
 	       	</tr>
 	       	<g:each in="${quarterFinalsInstanceList}" status="i" var="matchesInstance">
 	        	<tr class="${(matchesInstance.matchNumber % 2) == 0 ? 'odd' : 'even'}">
-	            	<td class="right">${fieldValue(bean: matchesInstance, field: "matchNumber")}</td>
+	            	<td class="right">${i+1}</td>
 	            	<g:if test="${matchesInstance.played == false}">
 						<td class="right">
 					</g:if>
