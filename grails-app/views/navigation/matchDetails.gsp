@@ -61,7 +61,7 @@
 							<td class="left">
 						</g:else>
 					</g:else>
-								<img src="${resource(dir:'images/icons', file:matchInstance.entries.toArray().getAt(1).race.concat('.png'))}" 
+								<img class="icons" src="${resource(dir:'images/icons', file:matchInstance.entries.toArray().getAt(1).race.concat('.png'))}" 
 									alt="${matchInstance.entries.toArray().getAt(1).race}" />
 								<g:link controller="navigation" action="profile" id="${matchInstance.entries.toArray().getAt(1).user.id}">
 									${fieldValue(bean: matchInstance.entries.toArray().getAt(1), field: "bnetId")}

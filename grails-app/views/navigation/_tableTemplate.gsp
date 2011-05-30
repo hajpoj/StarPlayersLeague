@@ -1,29 +1,5 @@
 <g:if test="${standingsInstanceList.size() > 0}">
 	<div class="break"></div>
-	<div class="bracket">
-		<div class="r0101"><p><span class="bracketscore">0</span><img class="icons" src="${resource(dir:'images/icons', file:'Terran.png')}" 
-						alt="zerg" /> TwoHeadedBoy</p></div>
-		<div class="r0102"><p><span class="bracketscore">2</span><img class="icons" src="${resource(dir:'images/icons', file:'Zerg.png')}" 
-						alt="zerg" /> HotTub</p></div>
-		<div class="r0103"><p>RO8-03</p></div>
-		<div class="r0104"><p>RO8-04</p></div>
-		<div class="r0105"><p>RO8-05</p></div>
-		<div class="r0106"><p>RO8-06</p></div>
-		<div class="r0107"><p>RO8-07</p></div>
-		<div class="r0108"><p>RO8-08</p></div>
-		<div class="r0201"><p>RO4-01</p></div>
-		<div class="r0202"><p>RO4-02</p></div>
-		<div class="r0203"><p>RO4-03</p></div>
-		<div class="r0204"><p>RO4-04</p></div>
-		<div class="r0301"><p>RO2-01</p></div>
-		<div class="r0302"><p>RO2-02</p></div>
-		<div class="r0303"><p>RO2-03</p></div>
-		<div class="r0304"><p>RO2-04</p></div>
-		<div class="r0401"><p>Champion</p></div>
-		<div class="r0402"><p>2nd Place</p></div>
-		<div class="r0403"><p>3rd Place</p></div>
-	</div>
-	<div class="break"></div>
 	<h2>${fieldValue(bean: standingsInstanceList.first(), field: "code")} /
 	${fieldValue(bean: standingsInstanceList.first(), field: "division")} / 
 	${fieldValue(bean: standingsInstanceList.first(), field: "group")}</h2>
