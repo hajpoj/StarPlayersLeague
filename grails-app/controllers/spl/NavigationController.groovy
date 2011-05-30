@@ -120,8 +120,8 @@ class NavigationController {
 			if (group.playoffs) {
 				matchesList = group.matches.toArray().sort{[it.id]}
 				quarterFinals = matchesList.getAt(0..3)
-//				semiFinals
-//				finals
+//				semiFinals = matchesList.getAt(4..5)
+//				finals = matchesList.getAt(6..7)
 				render(template: "playoffsTemplate", model:[matchesInstanceList: matchesList, groupInstance: group, quarterFinalsInstanceList: quarterFinals, semiFinalsInstanceList: semiFinals, finalsInstanceList: finals])
 			}
 			else {
