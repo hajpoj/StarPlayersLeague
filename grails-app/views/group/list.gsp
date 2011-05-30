@@ -28,6 +28,8 @@
                         
                             <th><g:message code="group.division.label" default="Division" /></th>
                         
+                            <g:sortableColumn property="playoffs" title="${message(code: 'group.playoffs.label', default: 'Playoffs')}" />
+                        
                         </tr>
                     </thead>
                     <tbody>
@@ -39,6 +41,8 @@
                             <td>${fieldValue(bean: groupInstance, field: "name")}</td>
                         
                             <td>${fieldValue(bean: groupInstance, field: "division")}</td>
+                        
+                            <td><g:formatBoolean boolean="${groupInstance.playoffs}" /></td>
                         
                         </tr>
                     </g:each>

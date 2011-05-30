@@ -100,4 +100,42 @@ class DivisionController {
             redirect(action: "list")
         }
     }
+	
+	def createPlayoffs = {
+		def divisionList = Division.list()
+		def mapPackList = MapPack.list().toArray()
+		def random = new Random()
+		def mapPack = mapPackList[random.nextInt(100) % mapPackList.size()]
+		for (_division in divisionList) {
+			def firstSeedList = []
+			def secondSeedList = []
+			if (_division.groups.size() == 4) {
+				for (_group in _division.groups) {
+					def sortedGroup = _group.entries.toArray().sort{[-it.matchesWon, it.matchesLost, -it.gameDiff]}
+					// take top 2, what happens if tied for 2nd spot?
+					firstSeedList.push(sortedGroup[0])
+					secondSeedList.push(sortedGroup[1])
+				}
+				def playoffs = new Group(name: "Playoffs",
+										 division: _division,
+										 playoffs: true)
+				_division.addToGroups(playoffs)
+				for (_i in 0..3) {
+					def playoffMatch = new Match(matchNumber: 1,
+												 mapPack: mapPack,
+												 bestOf: 3,
+												 leagueGroup: playoffs,
+												 forfeit: false,
+												 name: "Quarterfinals",
+												 playoffs: true)
+					firstSeedList[_i].addToMatches(playoffMatch)
+					secondSeedList[3-_i].addToMatches(playoffMatch)
+					playoffMatch.createGames()
+					playoffs.addToMatches(playoffMatch)
+				}
+			}
+			_division.save(flush:true)
+		}
+		redirect(action: "list")
+	}
 }
