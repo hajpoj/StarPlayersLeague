@@ -2,6 +2,7 @@ package spl
 
 class Group {
 	String name
+	Boolean playoffs
 	static belongsTo = [division:Division]
 	static hasMany = [matches:Match, entries:Registration]
 	static mapping = {
