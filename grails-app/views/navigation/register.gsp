@@ -14,7 +14,7 @@
 		</div>
 		<div class="innerlinebreak"></div>
 		<div class="mcontent">
-			<p>Join our <a href="http://eepurl.com/dCOs6">mailing list</a> to receive updates when new league season and tournament registrations open!</p>
+			<p>Join our <a href="http://eepurl.com/dCOs6">mailing list</a> to receive updates when new league season registrations open!</p>
 		</div>
 	</body>
 

@@ -34,8 +34,7 @@ h4 {
 	color: #ffffff;
 }
 a {
-	
-	color: #444444;
+	color: #00b4ff;
     text-decoration: underline;
 }
 
@@ -195,6 +194,18 @@ ul.menuitems a:hover {
 	vertical-align: middle;
 }
 
+ul.normal {
+	padding: 0 0 0 25px;
+}
+
+ul.faqlist {
+	padding: 0 0 0 25px;
+}
+
+ul.faqlist li a {
+	color: #444444;
+}
+
 /* BRACKET */
 
 .bracket {
@@ -291,10 +302,6 @@ ul.flinks li a {
 }
 ul.flinks li a:hover {
 	color: #ffb400;
-}
-
-ul.normal {
-	padding: 0 0 0 25px;
 }
 
 /* I DON'T KNOW WHAT THIS IS! */

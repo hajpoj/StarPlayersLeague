@@ -8,23 +8,25 @@
 			<h1>Frequently Asked Questions</h1>
 			<div class="break"></div>
 			<div class="break"></div>
-				<p><a href="#14">What is the StarPlayers League?</a>
-				</p><br/><p><a href="#1">I registered, but why have I not received any emails?</a>
-				</p><br/><p><a href="#2">May I change races after the league has started?</a>
-				</p><br/><p><a href="#3">May I register in the league more than once as multiple races?</a>
-				</p><br/><p><a href="#4">How do I contact my opponent?</a>
-				</p><br/><p><a href="#5">How many matches do I play per week?</a>
-				</p><br/><p><a href="#6">When do our matches for the week need to be played by?</a>
-				</p><br/><p><a href="#7">What do I do if my opponent is unresponsive to my messages?</a>
-				</p><br/><p><a href="#8">What do I do if my opponent responds just before the due date where there is not enough time to play or schedule a match?</a>
-				</p><br/><p><a href="#9">What do I do if my opponent and I schedule a match time, but he doesn't show up? How long should I wait?</a>
-				</p><br/><p><a href="#14">Who should report the score?</a>
-				</p><br/><p><a href="#10">What do I do if my opponent reports an incorrect score?</a>
-				</p><br/><p><a href="#11">How do I view which maps to play on for my match?</a>
-				</p><br/><p><a href="#15">Who wins when a player disconnects from the game?</a>
-				</p><br/><p><a href="#12">Is there a StarPlayers League channel on Battle.net?</a>
-				</p><br/><p><a href="#13">How can I help out the StarPlayers League?</a>
-				</p>
+				<ul class="faqlist">
+					<li><a href="#14">What is the StarPlayers League?</a>
+					</li><br/><li><a href="#1">I registered, but why have I not received any emails?</a>
+					</li><br/><li><a href="#2">May I change races after the league has started?</a>
+					</li><br/><li><a href="#3">May I register in the league more than once as multiple races?</a>
+					</li><br/><li><a href="#4">How do I contact my opponent?</a>
+					</li><br/><li><a href="#5">How many matches do I play per week?</a>
+					</li><br/><li><a href="#6">When do our matches for the week need to be played by?</a>
+					</li><br/><li><a href="#7">What do I do if my opponent is unresponsive to my messages?</a>
+					</li><br/><li><a href="#8">What do I do if my opponent responds just before the due date where there is not enough time to play or schedule a match?</a>
+					</li><br/><li><a href="#9">What do I do if my opponent and I schedule a match time, but he doesn't show up? How long should I wait?</a>
+					</li><br/><li><a href="#14">Who should report the score?</a>
+					</li><br/><li><a href="#10">What do I do if my opponent reports an incorrect score?</a>
+					</li><br/><li><a href="#11">How do I view which maps to play on for my match?</a>
+					</li><br/><li><a href="#15">Who wins when a player disconnects from the game?</a>
+					</li><br/><li><a href="#12">Is there a StarPlayers League channel on Battle.net?</a>
+					</li><br/><li><a href="#13">How can I help out the StarPlayers League?</a>
+					</li>
+				</ul>
 		</div>
 		<div class="majorlinebreak"><span class="accent"></span></div>
 		<div class="mcontent">

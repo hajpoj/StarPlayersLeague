@@ -12,32 +12,45 @@
 				<a href="http://starplayersleague.tumblr.com/rss"><img src="${resource(dir:'images/icons',file:'rss.png')}" alt="RSS Feed" /></a>
 			</p>
 			<div class="break"></div>
-			<p>Help us spread the word!</p>
+			<p>
+				Welcome to the StarPlayers League!
+			</p>
 			<div class="innerlinebreak"></div>
-			<h3>
-				${fieldValue(bean: standingsInstanceList.first(), field: "code")} Rankings
-			</h3>
+			<h3>General Information</h3>
 			<div class="break"></div>
-			<p class="note">The most prestigious code in the StarPlayers League.</p>
+			<ul class="normal">
+				<li>
+					<g:link controller="navigation" action="info">League Information</g:link>
+				</li>
+				<li>
+					<g:link controller="navigation" action="faq">Frequently Asked Questions</g:link>
+				</li>
+			</ul>
+			<div class="innerlinebreak"></div>
+			<h3>StarPlayers League Blog</h3>
 			<div class="break"></div>
-			<div class="list">
-	    		<table>
-		            <tr>
-			            <th class="colstrank">Rank</th>
-			            <th class="colgap"></th>
-			            <th class="colstandingid">Player</th>
-		            </tr>
-		            <g:each in="${standingsInstanceList}" status="i" var="registrationInstance">
-		            	<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-			                <td class="right">${i+1}</td>
-			                <td></td>
-							<td><img class="icons" src="${resource(dir:'images/icons', file:registrationInstance.race.concat('.png'))}" 
-								alt="${registrationInstance.race}" />
-								<g:link controller="navigation" action="profile" id="${registrationInstance.user.id}">${fieldValue(bean: registrationInstance, field: "bnetId")}</g:link></td>
-		                </tr>
-		        	</g:each>
-	        	</table>
-   			</div>
+			<p>
+				Keep up, and interact with the StarPlayers development team! In the StarPlayers League Blog, the development team discusses 
+				issues, new features, and future plans in addition to giving insight on many different aspects of the league itself.
+			</p>
+			<div class="break"></div>
+			<p>
+				Check out the blog <a href="http://starplayersleague.tumblr.com">here</a>.
+			</p>
+			<div class="innerlinebreak"></div>
+			<h3>Mailing List</h3>
+			<div class="break"></div>
+			<p>
+				Join our <a href="http://eepurl.com/dCOs6">mailing list</a> to receive updates when new league season registrations open!
+			</p>
+			<div class="innerlinebreak"></div>
+			<h3>Questions? Comments?</h3>
+			<div class="break"></div>
+			<p>
+				If you have any questions, comments, or any other feedback about the StarPlayers League, 
+				please email us at <a href="mailto:contact@starplayersleague.com">contact@starplayersleague.com</a>. 
+				We are always looking for ways to improve our website and player experience.
+			</p>
 		</div>
 		<div class="mcontainer">
 			<div class="majorlinebreak"><span class="accent"></span></div>
