@@ -12,8 +12,8 @@ html {
 	height: 100%;
 }
 body {
-	background:#eeeeee url('../images/background.png') repeat-x center top;
-	color: #444444;
+	background:#eee url('../images/background.png') repeat-x center top;
+	color: #444;
     font: 12px verdana, arial, helvetica, sans-serif;
     height: 100%;
 }
@@ -22,16 +22,16 @@ h1 {
     font-size: 20px;
 }
 h2 {
-	color: #444444;
+	color: #444;
 	font-size: 14px;
 }
 h3 {
-	color: #444444;
+	color: #444;
 	font-size: 12px;
 }
 h4 {
 	margin: 0 0 3px 0;
-	color: #ffffff;
+	color: #fff;
 }
 a {
 	color: #00b4ff;
@@ -56,7 +56,7 @@ a {
 	margin: 10px auto;
 	padding: 0 30px;
 	height: 10px;
-	color: #ffffff;
+	color: #fff;
 	text-align: left;
 }
 #loginheader a {
@@ -93,9 +93,9 @@ ul.menuitems li {
 
 ul.menuitems li a {
 	padding: 5px 10px; /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above */
-	border: 1px solid #888888;
-	background-color: #ffffff;
-	color: #444444;
+	border: 1px solid #888;
+	background-color: #fff;
+	color: #444;
 	text-decoration: none;
 }
  
@@ -135,7 +135,7 @@ ul.menuitems a:hover {
 	margin: 0 0 -20px 0;
 }
 .note {
-	color: #777777;
+	color: #777;
 	font-style: italic;
 }
 .mcontent {
@@ -156,7 +156,7 @@ ul.menuitems a:hover {
 	font-weight: bold;
 }
 .infoleftgrey {
-	color: #777777;
+	color: #777;
 	float: left;
 	width: auto;
 	padding: 0 10px 0 0;
@@ -172,19 +172,19 @@ ul.menuitems a:hover {
 	height: 10px;
 }
 .majorlinebreak {
-	background: #cccccc;
+	background: #ccc;
 	margin: 50px 0 10px;
 	height: 2px;
 	width: 100%
 }
 .accent {
 	display: block;
-	background: #888888;
+	background: #888;
 	height: 2px;
 	width: 50px;
 }
 .innerlinebreak {
-	background: #dddddd;
+	background: #ddd;
 	margin: 20px;
 	height: 1px;
 	width: auto;
@@ -203,7 +203,7 @@ ul.faqlist {
 }
 
 ul.faqlist li a {
-	color: #444444;
+	color: #444;
 }
 
 /* BRACKET */
@@ -271,8 +271,8 @@ input.submitButton {
 	height: 150px;
 }
 #footer {
-	background: #000000;
-	border-top: solid 5px #888888;
+	background: #000;
+	border-top: solid 5px #888;
 	height: 145px;
 }
 #footerwrap {
@@ -427,14 +427,14 @@ td.matchscore {
 }
 th {
     background: #fff url(../images/skin/shadow.jpg);
-    color: #444444;
+    color: #444;
     font-size: 11px;
     font-weight: bold;
     line-height: 17px;
     padding: 2px 6px;
 }
 th a:link, th a:visited, th a:hover {
-    color: #444444;
+    color: #444;
     display: block;
     font-size: 10px;
     text-decoration: none;
@@ -456,14 +456,6 @@ th.desc a {
 }
 .even {
     background: #fff;
-}
-
-td a:link {
-	color: #444;
-    text-decoration: none;
-}
-td a:hover {
-	text-decoration: underline;
 }
 
 /* TABLE COLUMN FORMATTING */
@@ -540,7 +532,12 @@ th.collastmessage {
 .list table {
     border-collapse: collapse;
 }
-.list th, .list td {
+.list table a {
+	color: #444;
+    text-decoration: none;
+} 
+.list table a:hover {
+	text-decoration: underline;
 }
 .list tr:hover {
     background: #ffeecc;
@@ -570,13 +567,13 @@ th.collastmessage {
 }
 
 .paginateLinks {
-    color: #444444;
+    color: #444;
     font-size: 12px;
     overflow: hidden;
     padding: 20px 5px 0 0;
 }
 .paginateLinks a {
-    color: #444444;
+    color: #444;
     padding: 0 5px 0 0;
 }
 .paginateLinks span {
