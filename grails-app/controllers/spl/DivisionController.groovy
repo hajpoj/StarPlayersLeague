@@ -101,6 +101,7 @@ class DivisionController {
         }
     }
 	
+	/*
 	def createPlayoffs = {
 		def divisionList = Division.list()
 		def mapPackList = MapPack.list().toArray()
@@ -137,5 +138,5 @@ class DivisionController {
 			_division.save(flush:true)
 		}
 		redirect(action: "list")
-	}
+	}*/
 }

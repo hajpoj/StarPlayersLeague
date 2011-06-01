@@ -31,7 +31,7 @@ class ProfileController {
 		def registrationList = user.registrations
 		user.username = params.username
 		user.email = params.email
-		user.messageNotification = params.messageNotification
+		user.messageNotification = params.messageNotification ? true : false
 		if (   params.oldPassword != "" 
 			|| params.newPassword != "" 
 			|| params.confirmNewPassword != "") {
