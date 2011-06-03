@@ -192,6 +192,13 @@ class NavigationController {
 		
 	}
 	
+	// CREATE ACCOUNT
+	def createAccount = {
+		def userInstance = new User()
+		userInstance.properties = params
+		return [userInstance: userInstance]
+	}
+	
 	// PROFILE VIEW
 	def profile = {
 		def user = User.get(params.id)

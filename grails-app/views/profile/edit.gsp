@@ -2,7 +2,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <title>Edit Profile</title>
+        <title>Edit Account</title>
     </head>
     
     <body>
@@ -20,11 +20,9 @@
 	    	<div class="mcontent">
 	    		<h2>Account Information</h2><br/>
 	    		<div class="infoleftgrey">
-	    			<p>Username:</p>
 	    			<p>Email Address:</p>
 	    		</div>
 	    		<div class="inforight">
-	    			<p><input type='text' class='text_' name='username' value='${userInstance?.username}'/></p>
 	    			<p><input type='text' class='text_' name='email' value='${userInstance?.email}'/></p>
 	    		</div>
 	    	</div>
