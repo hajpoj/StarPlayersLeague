@@ -8,6 +8,8 @@
 		<div id="sc2banner"></div>
 		<div id="sidebar">
 			<p>
+				<a href="http://www.tumblr.com/follow/starplayersleague"><img src="${resource(dir:'images/icons',file:'tumblr.png')}" alt="tumblr" /></a>
+				<a href="http://forum.starplayersleague.com"><img src="${resource(dir:'images/icons',file:'reddit.png')}" alt="reddit" /></a>
 				<a href="http://twitter.com/#!/StarPlayersSC"><img src="${resource(dir:'images/icons',file:'twitter.png')}" alt="Twitter" /></a>
 				<a href="http://starplayersleague.tumblr.com/rss"><img src="${resource(dir:'images/icons',file:'rss.png')}" alt="RSS Feed" /></a>
 				<a href="http://www.youtube.com/user/starplayersleague"><img src="${resource(dir:'images/icons',file:'youtube.png')}" alt="YouTube" /></a>
