@@ -42,7 +42,8 @@
 					<li class="controller"><g:link controller="navigation" action="mapPool">Map Pool</g:link></li>
 					<li class="controller"><g:link controller="navigation" action="standings">Standings</g:link></li>
 					<li class="controller"><g:link controller="navigation" action="register">Registration</g:link></li>
-					<li class="controller"><a href="http://starplayersleague.tumblr.com">Blog</a></li>
+					<li class="controller"><a href="http://blog.starplayersleague.com">Blog</a></li>
+					<li class="controller"><a href="http://forum.starplayersleague.com">Forum</a></li>
 				</ul>
 			</div>
 			<!-- content -->
@@ -87,8 +88,11 @@
 						<h4>SPL Community</h4>
 						<ul class="flinks">
 							<li><a href="http://starplayersleague.tumblr.com">StarPlayers League Blog</a></li>
+							<li><a href="http://forum.starplayersleague.com">r/starplayersleague</a></li>
 							<li><a href="http://twitter.com/#!/StarPlayersSC">Twitter</a></li>
-							<li><a href="http://starplayersleague.tumblr.com/rss">RSS Feed</a></li>
+							<li><a href="http://blog.starplayersleague.com/rss">RSS Feed</a></li>
+							<li><a href="http://www.youtube.com/user/starplayersleague">YouTube</a></li>
+							<li><a href="http://eepurl.com/dCOs6">Mailing List</a></li>
 						</ul>
 					</div>
 					<div class="donate">

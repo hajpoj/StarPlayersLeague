@@ -10,6 +10,7 @@
 			<p>
 				<a href="http://twitter.com/#!/StarPlayersSC"><img src="${resource(dir:'images/icons',file:'twitter.png')}" alt="Twitter" /></a>
 				<a href="http://starplayersleague.tumblr.com/rss"><img src="${resource(dir:'images/icons',file:'rss.png')}" alt="RSS Feed" /></a>
+				<a href="http://www.youtube.com/user/starplayersleague"><img src="${resource(dir:'images/icons',file:'youtube.png')}" alt="YouTube" /></a>
 			</p>
 			<div class="break"></div>
 			<p>
@@ -30,12 +31,14 @@
 			<h3>StarPlayers League Blog</h3>
 			<div class="break"></div>
 			<p>
-				Keep up, and interact with the StarPlayers development team! In the StarPlayers League Blog, the development team discusses 
+				Keep up, and interact with the StarPlayers development team! In the <a href="http://blog.starplayersleague.com">StarPlayers League Blog</a>, the development team discusses 
 				issues, new features, and future plans in addition to giving insight on many different aspects of the league itself.
 			</p>
+			<div class="innerlinebreak"></div>
+			<h3>Check us out on Reddit!</h3>
 			<div class="break"></div>
 			<p>
-				Check out the blog <a href="http://starplayersleague.tumblr.com">here</a>.
+				Subscribe to the SPL subreddit over at <a href="http://forum.starplayersleague.com">r/starplayersleague</a>, and participate in key discussions related to the league.
 			</p>
 			<div class="innerlinebreak"></div>
 			<h3>Mailing List</h3>
@@ -65,7 +68,7 @@
 				</p>
 			</div>
 			<div class="majorlinebreak"><span class="accent"></span></div>
-			<h1>Latest News</h1>
+			<h1>Notices</h1>
 			<div class="break"></div>
 			<div class="content">
 				<g:each in="${noticeInstanceList}" status="i" var="noticeInstance">
