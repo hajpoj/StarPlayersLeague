@@ -8,14 +8,14 @@
 		<div id="sc2banner"></div>
 		<div id="sidebar">
 			<p>
-				<a href="http://forum.starplayersleague.com"><img src="${resource(dir:'images/icons',file:'reddit.png')}" alt="reddit" /></a>
+				Follow the StarPlayers League!
+			</p>
+			<div class="break"></div>
+			<p style="padding-left: 10px;">
+				<a href="http://www.reddit.com/r/starplayersleague"><img src="${resource(dir:'images/icons',file:'reddit.png')}" alt="reddit" /></a>
 				<a href="http://twitter.com/#!/StarPlayersSC"><img src="${resource(dir:'images/icons',file:'twitter.png')}" alt="Twitter" /></a>
 				<a href="http://starplayersleague.tumblr.com/rss"><img src="${resource(dir:'images/icons',file:'rss.png')}" alt="RSS Feed" /></a>
 				<a href="http://www.youtube.com/user/starplayersleague"><img src="${resource(dir:'images/icons',file:'youtube.png')}" alt="YouTube" /></a>
-			</p>
-			<div class="break"></div>
-			<p>
-				Welcome to the StarPlayers League!
 			</p>
 			<div class="innerlinebreak"></div>
 			<h3>General Information</h3>
@@ -69,18 +69,15 @@
 				</p>
 			</div>
 			<div class="majorlinebreak"><span class="accent"></span></div>
-			<h1>Notices</h1>
+			<h1>Latest News</h1>
 			<div class="break"></div>
 			<div class="content">
 				<g:each in="${noticeInstanceList}" status="i" var="noticeInstance">
 					<g:if test="${i > 0}">
 						<div class="innerlinebreak"></div>
-						</g:if>
-						<h2>${fieldValue(bean: noticeInstance, field: "title")}</h2>
-						<br/>
-						<p>${fieldValue(bean: noticeInstance, field: "text")}</p>
-						<br/>
-						<p class="note">Posted on ${noticeInstance.lastUpdated.format('MM-dd-yyyy, HH:mm z')}</p>
+					</g:if>
+					<h2>${noticeInstance.name }</h2>
+					<g:blurb name="${noticeInstance.name }" />
 				</g:each>
 			</div>
 		</div>

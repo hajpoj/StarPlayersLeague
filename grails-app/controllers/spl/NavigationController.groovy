@@ -9,7 +9,7 @@ class NavigationController {
 	
 	// HOME VIEW
 	def welcome = {
-		def notices = Notice.list().toArray()
+		def notices = Blurb.list().toArray()
 		def total = notices.size()
 		def range
 		
@@ -42,7 +42,7 @@ class NavigationController {
 			} else {
 				range = [params.offset.toInteger()..(params.offset.toInteger()+params.max.toInteger()-1)]
 			}
-			notices = notices.sort{it.lastUpdated}.reverse().getAt(range)
+			notices = notices.sort{it.id}.reverse().getAt(range)
 		}
 		[noticeInstanceList: notices, noticeInstanceTotal: total, standingsInstanceList: standingsList]
 	}

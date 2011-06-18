@@ -11,6 +11,8 @@
         <g:if test="${flash.message}">
         	<div class="message">${flash.message}</div>
         </g:if>
+        <h2>Match Details</h2>
+        <div class="break"></div>
         <div class="list">
 	   		<table>
 		       	<tr>
@@ -18,7 +20,7 @@
 		       		<th class="colbnetidl">Player</th>
 	       			<th class="colvs">vs</th>
 	       			<th class="colbentidr">Player</th>
-	       			<th class="colmappack"></th>
+	       			<th class="colviewdetails"></th>
        			</tr>
        			<tr>
 	       			<td class="right">${fieldValue(bean: matchInstance, field: "matchNumber")}</td>
@@ -67,7 +69,7 @@
 									${fieldValue(bean: matchInstance.entries.toArray().getAt(1), field: "bnetId")}
 								</g:link>
 							</td>
-	                <td class="right"><g:link controller="navigation" action="mapPack" id="${matchInstance.mapPack.id}">${matchInstance.mapPack}</g:link></td>
+	                <td class="right"></td>
 	            </tr>
    			</table>
 		</div>

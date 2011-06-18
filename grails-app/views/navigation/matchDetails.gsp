@@ -20,6 +20,7 @@
 		       		<th class="colbnetidl">Player</th>
 	       			<th class="colvs">vs</th>
 	       			<th class="colbentidr">Player</th>
+	       			<th class="colviewdetails"></th>
        			</tr>
        			<tr>
 	       			<td class="right">${fieldValue(bean: matchInstance, field: "matchNumber")}</td>
@@ -67,6 +68,7 @@
 									${fieldValue(bean: matchInstance.entries.toArray().getAt(1), field: "bnetId")}
 								</g:link>
 							</td>
+					<td class="right"></td>
 	            </tr>
    			</table>
 		</div>
