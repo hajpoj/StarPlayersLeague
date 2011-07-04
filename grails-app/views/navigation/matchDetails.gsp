@@ -83,12 +83,11 @@
 		   			<th class="colmatch">Game</th>
 		   			<th class="colviewdetails">Map</th>
 			   		<th>Winner</th>
-			   		<th class="colmappack">Replay</th>
-			   		<th class="colmappack">VOD</th>
+			   		<th class="colviewdetails">Replay</th>
 		   		</tr>
         	
         		<g:each in="${matchInstance.games}" status="i" var="game">
-        			<tr>
+        			<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
         				<td class="right">${i+1}</td>
         				<td>${game.map}</td>
         				<td class="left">
@@ -102,14 +101,6 @@
         					<g:if test="${!game.pathToReplay}">-</g:if>
         					<g:else>
         						<a href="<g:resource dir="${groupDirInstance}" file="${game.pathToReplay}" absolute="true" />">Download</a>
-        					</g:else>
-        				</td>
-        				<td>
-        					<g:if test="${!game.linkToVod}">
-        						-
-        					</g:if>
-        					<g:else>
-        						<a href="http://${game.linkToVod}">View</a>
         					</g:else>
         				</td>
         			</tr>

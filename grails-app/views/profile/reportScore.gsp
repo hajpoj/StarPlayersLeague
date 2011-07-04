@@ -87,7 +87,7 @@
         			</tr>
         			
         			<g:each in="${matchInstance.games}" status="i" var="game">
-        				<tr>
+        				<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
         					<td class="right">${i+1}</td>
         					<td>${game.map}</td>
         					<td>
