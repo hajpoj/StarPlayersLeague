@@ -12,7 +12,7 @@
 			</p>
 			<div class="break"></div>
 			<p style="padding-left: 10px;">
-				<a href="http://www.reddit.com/r/starplayersleague"><img src="${resource(dir:'images/icons',file:'reddit.png')}" alt="reddit" /></a>
+				<a href="http://www.reddit.com/"><img src="${resource(dir:'images/icons',file:'reddit.png')}" alt="reddit" /></a>
 				<a href="http://twitter.com/#!/StarPlayersSC"><img src="${resource(dir:'images/icons',file:'twitter.png')}" alt="Twitter" /></a>
 				<a href="http://starplayersleague.tumblr.com/rss"><img src="${resource(dir:'images/icons',file:'rss.png')}" alt="RSS Feed" /></a>
 				<a href="http://www.youtube.com/user/starplayersleague"><img src="${resource(dir:'images/icons',file:'youtube.png')}" alt="YouTube" /></a>
