@@ -9,8 +9,8 @@ class LoginHeaderTagLib {
 		def auth = springSecurityService.authentication
 		if (!currentUser) {
 			out << g.link(controller:"login", "Log In")
-//			out << " | "
-//			out << g.link(controller:"navigation", action:"createAccount", "Create Account")
+			out << " | "
+			out << g.link(controller:"navigation", action:"createAccount", "Create Account")
 		} else {
 			def messageCount = currentUser.unreadMessageCount()
 			out << "Welcome ${currentUser.username}! "

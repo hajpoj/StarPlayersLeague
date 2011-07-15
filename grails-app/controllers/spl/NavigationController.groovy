@@ -184,11 +184,24 @@ class NavigationController {
 	
 	// CONTACT US VIEW
 	def contact = {
-		
 	}
 	
 	// FAQ VIEW
 	def faq = {
+	}
+	
+	// CHECK EMAIL VIEW
+	def checkEmail = {
+	}
+	
+	//VERIFY EMAIL ADDRESS VIEW
+	def verifyEmail = {
+		
+		//for some reasons enabled variable isn't getting saved.
+		//this def needs mad work
+		def user = User.get(params.id)
+		user.enabled = true
+		user.save()	
 		
 	}
 	
@@ -197,6 +210,27 @@ class NavigationController {
 		def userInstance = new User()
 		userInstance.properties = params
 		return [userInstance: userInstance]
+	}
+	
+	// SAVE ACCOUNT
+	def saveAccount = {
+		def userInstance = new User(params)
+		
+		if (userInstance.save(flush: true)) {
+			
+			def userRole = AuthRole.findByAuthority("ROLE_USER")
+			AuthUserAuthRole.create(userInstance, userRole)
+			
+			//not exact sure what this does.... just copied from user/create
+			flash.message = "${message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])}"
+		
+			sendVerificationMail(userInstance)
+				
+			redirect(action: "checkEmail")
+		}
+		else {
+			render(view: "create", model: [userInstance: userInstance])
+		}
 	}
 	
 	// PROFILE VIEW
@@ -208,5 +242,16 @@ class NavigationController {
 	
 	def myProfile = {
 		redirect(action: "profile", id:springSecurityService.currentUser.id)
+	}
+	
+	private void sendVerificationMail(User user) {
+		
+		sendMail {
+			to "${user.email}"
+			from "No-Reply <no-reply@starplayersleague.com>"
+			subject "StarPlayers League: Verify your email address"
+			html( view:"/htmlEmails/sendVerificationMail",
+				model:[id: user.id])
+		}
 	}
 }
