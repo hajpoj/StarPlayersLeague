@@ -94,6 +94,15 @@
                                     <g:select name="primarySkillLevel" from="${userInstance.constraints.primarySkillLevel.inList}" value="${userInstance?.primarySkillLevel}" valueMessagePrefix="user.primarySkillLevel"  />
                                 </td>
                             </tr>
+                            
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="bnetDivisionRank"><g:message code="user.bnetDivisionRank.label" default="Bnet Division Rank" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'bnetDivisionRank', 'errors')}">
+                                    <g:select name="bnetDivisionRank" from="${userInstance.constraints.bnetDivisionRank.inList}" value="${userInstance?.bnetDivisionRank}" valueMessagePrefix="user.bnetDivisionRank"  />
+                                </td>
+                            </tr>
                         
                         </tbody>
                     </table>

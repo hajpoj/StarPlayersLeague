@@ -79,9 +79,23 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="user.bnetDivisionRank.label" default="Bnet Division Rank" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: userInstance, field: "bnetDivisionRank")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="user.lastLogin.label" default="Last Login" /></td>
                             
                             <td valign="top" class="value"><g:formatDate date="${userInstance?.lastLogin}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="user.messageNotification.label" default="Message Notification" /></td>
+                            
+                            <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.messageNotification}" /></td>
                             
                         </tr>
                     
@@ -103,13 +117,6 @@
                             <td valign="top" class="name"><g:message code="user.enabled.label" default="Enabled" /></td>
                             
                             <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.enabled}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="user.messageNotification.label" default="Message Notification" /></td>
-                            
-                            <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.messageNotification}" /></td>
                             
                         </tr>
                     

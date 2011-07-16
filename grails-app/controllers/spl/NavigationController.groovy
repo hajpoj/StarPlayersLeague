@@ -221,6 +221,16 @@ class NavigationController {
 	def saveAccount = {
 		def userInstance = new User(params)
 		
+		if(User.findByUsername(params.username) != null) {
+			flash.message = "User name already exists. Please try again"
+			redirect(action: "createAccount", params:[email:userInstance.email,
+				bnetId:userInstance.bnetId,
+				bnetCharCode:userInstance.bnetCharCode,
+				primaryRace:userInstance.primaryRace,
+				primarySkillLevel:userInstance.primarySkillLevel])
+			return
+		}
+		
 		if (params.password != "" || params.confirmPassword != "") {
 			if (params.password == params.confirmPassword) {
 				
@@ -244,16 +254,6 @@ class NavigationController {
 						bnetCharCode:userInstance.bnetCharCode,
 						primaryRace:userInstance.primaryRace,
 						primarySkillLevel:userInstance.primarySkillLevel])
-			return
-		}
-		
-		if(User.findByUsername(params.username) != null) {
-			flash.message = "User name already exists. Please try again"
-			redirect(action: "createAccount", params:[email:userInstance.email,
-				bnetId:userInstance.bnetId,
-				bnetCharCode:userInstance.bnetCharCode,
-				primaryRace:userInstance.primaryRace,
-				primarySkillLevel:userInstance.primarySkillLevel])
 			return
 		}
 		

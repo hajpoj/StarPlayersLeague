@@ -6,6 +6,7 @@ class User extends AuthUser {
 	String bnetCharCode
 	String primaryRace
 	String primarySkillLevel
+	String bnetDivisionRank
 	Boolean messageNotification
 	Date lastLogin
 	static hasMany = [registrations:Registration, threadsToMe:MessageThread, threadsFromMe:MessageThread]
@@ -17,6 +18,7 @@ class User extends AuthUser {
 		bnetCharCode(nullable:false, blank:true)
 		primaryRace(inList:["Random", "Zerg", "Protoss", "Terran"])
 		primarySkillLevel(inList:["Master", "Diamond", "Platinum", "Gold", "Silver", "Bronze"])
+		bnetDivisionRank(inList:["1-50","51-100"])
 		lastLogin(nullable:true)
 		messageNotification(nullable:true)
 	}
