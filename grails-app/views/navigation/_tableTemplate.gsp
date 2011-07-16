@@ -21,7 +21,7 @@
 	                <td></td>
 	                <td><img class="icons" src="${resource(dir:'images/icons', file:registrationInstance.race.concat('.png'))}" 
 						alt="${registrationInstance.race}" />
-						<g:link controller="navigation" action="profile" id="${registrationInstance.user.id}">${fieldValue(bean: registrationInstance, field: "bnetId")}</g:link></td>
+						<g:link controller="navigation" action="profile" id="${registrationInstance.user.id}" target="_blank">${fieldValue(bean: registrationInstance, field: "bnetId")}</g:link></td>
 	                <td class="right">${fieldValue(bean: registrationInstance, field: "matchesPlayed")}</td>
 	                <td class="right">${fieldValue(bean: registrationInstance, field: "matchesWon")}</td>
 	                <td class="right">${fieldValue(bean: registrationInstance, field: "matchesLost")}</td>
@@ -44,7 +44,7 @@
 	       		<th class="viewdetails"></th>
 	       	</tr>
 	       	<g:each in="${matchesInstanceList}" status="i" var="matchesInstance">
-	        	<tr class="${(matchesInstance.matchNumber % 2) == 0 ? 'odd' : 'even'}">
+	        	<tr class="${(matchesInstance.matchNumber % 2) == 0 ? 'even' : 'odd'}">
 	            	<td class="right">${fieldValue(bean: matchesInstance, field: "matchNumber")}</td>
 	            	<g:if test="${matchesInstance.played == false}">
 						<td class="right">
@@ -57,7 +57,7 @@
 							<td class="right">
 						</g:else>
 					</g:else>
-								<g:link controller="navigation" action="profile" id="${matchesInstance.entries.toArray().getAt(0).user.id}">
+								<g:link controller="navigation" action="profile" id="${matchesInstance.entries.toArray().getAt(0).user.id}" target="_blank">
 									${fieldValue(bean: matchesInstance.entries.toArray().getAt(0), field: "bnetId")}
 								</g:link>
 								<img class="icons" src="${resource(dir:'images/icons', file:matchesInstance.entries.toArray().getAt(0).race.concat('.png'))}" 
@@ -91,11 +91,11 @@
 					</g:else>
 								<img class="icons" src="${resource(dir:'images/icons', file:matchesInstance.entries.toArray().getAt(1).race.concat('.png'))}" 
 									alt="${matchesInstance.entries.toArray().getAt(1).race}" />
-								<g:link controller="navigation" action="profile" id="${matchesInstance.entries.toArray().getAt(1).user.id}">
+								<g:link controller="navigation" action="profile" id="${matchesInstance.entries.toArray().getAt(1).user.id}" target="_blank">
 									${fieldValue(bean: matchesInstance.entries.toArray().getAt(1), field: "bnetId")}
 								</g:link>
 							</td>
-	                <td class="right"><g:link controller="navigation" action="matchDetails" id="${matchesInstance.id}">View Details</g:link></td>
+	                <td class="right"><g:link controller="navigation" action="matchDetails" id="${matchesInstance.id}" target="_blank">View Details</g:link></td>
 	            </tr>
 			</g:each>
 		</table>

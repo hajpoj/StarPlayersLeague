@@ -107,8 +107,10 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="buttons">
-                    <span class="button"><g:submitButton name="create" class="saveAccount" value="${message(code: 'default.button.create.label', default: 'Create')}" /></span>
+                <div class="break">
+                </div>
+                <div>
+                	<p><g:submitButton name="create" class="submitButton" value="${message(code: 'default.button.create.label', default: 'Create')}" /></p>
                 </div>
             </g:form>
         </div>

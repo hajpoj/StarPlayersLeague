@@ -29,6 +29,7 @@
 		       			<th class="colbnetidl">Player</th>
 		       			<th class="colvs">vs</th>
 		       			<th class="colbnetidr2">Player</th>
+		       			<th class="colviewdetails"></th>
 		       			<th class="colreportscore"></th>
 		       			<th class="colviewdetails"></th>
 		       		</tr>
@@ -82,8 +83,11 @@
 									</g:else>
 												<img class="icons" src="${resource(dir:'images/icons', file:entry.race.concat('.png'))}" 
 													alt="${entry.race}" />
-												<g:link action="newThread" id="${entry.user.id}">${fieldValue(bean: entry, field: "bnetId")}</g:link>
+												<g:link controller="navigation" action="profile" id="${entry.user.id}">${fieldValue(bean: entry, field: "bnetId")}.${fieldValue(bean: entry, field: "bnetCharCode")}</g:link>
 											</td>
+											<td>
+		               							<g:link action="newThread" id="${entry.user.id}">Send Message</g:link>
+		               						</td>
 									
 		               			</g:if>
 		               		</g:each>

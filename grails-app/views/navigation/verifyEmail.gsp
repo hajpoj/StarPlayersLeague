@@ -6,17 +6,17 @@
 	
 	<body>
 		<div class="mcontent">
-			<h1>great success!</h1>
+			<h1>Account Verification</h1>
 			<div class="break"></div>
 			<g:if test="${previouslyEnabled}">
-				<h2>Your email was previously verified.</h2>
+				<h2>You already verified your account!</h2>
 			</g:if>
 			<g:else>
-				<h2>Your email has been verified!</h2>
+				<h2>Thank you for verifying your account!</h2>
 			</g:else>
 			<div class="break"></div>
-			<h3>Register for a league 
-			<g:link action="register">here</g:link></h3>
+			<p>Now that you have an account, you can register for a league 
+			<g:link action="register">here</g:link>.</p>
 		</div>
 	</body>
 	
