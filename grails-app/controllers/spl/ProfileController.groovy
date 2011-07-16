@@ -29,7 +29,7 @@ class ProfileController {
 	def update = {
 		def user = springSecurityService.currentUser
 		def registrationList = user.registrations
-		user.username = params.username
+		//user.username = params.username
 		user.email = params.email
 		user.messageNotification = params.messageNotification ? true : false
 		if (   params.oldPassword != "" 
