@@ -20,10 +20,20 @@
 	    	<div class="mcontent">
 	    		<h2>Account Information</h2><br/>
 	    		<div class="infoleftgrey">
-	    			<p>Email Address:</p>
+		    		<p><label for="email"><g:message code="user.email.label" default="Email Address" /></label>:</p>
+		    		<p><label for="bnetId"><g:message code="user.bnetId.label" default="Battle.net ID" /></label>:</p>
+		    		<p><label for="bnetCharCode"><g:message code="user.bnetCharCode.label" default="Battle.net Char Code" /></label>:</p>
+		    		<p><label for="primaryRace"><g:message code="user.primaryRace.label" default="Primary Race" /></label>:</p>
+		    		<p><label for="primarySkillLevel"><g:message code="user.primarySkillLevel.label" default="Skill Level" /></label>:</p>
+		    		<p><label for="bnetDivisionRank"><g:message code="user.bnetDivisionRank.label" default="Division Rank" /></label>:</p>
 	    		</div>
 	    		<div class="inforight">
-	    			<p><input type='text' class='text_' name='email' value='${userInstance?.email}'/></p>
+	    			<p><g:textField name="email" value="${userInstance?.email}" /></p>
+	    			<p><g:textField name="bnetId" value="${userInstance?.bnetId}" /></p>
+	    			<p><g:textField name="bnetCharCode" value="${userInstance?.bnetCharCode}" /></p>
+	    			<p><g:select name="primaryRace" from="${userInstance.constraints.primaryRace.inList}" value="${userInstance?.primaryRace}" valueMessagePrefix="user.primaryRace"  /></p>
+	    			<p><g:select name="primarySkillLevel" from="${userInstance.constraints.primarySkillLevel.inList}" value="${userInstance?.primarySkillLevel}" valueMessagePrefix="user.primarySkillLevel"  /></p>
+	    			<p><g:select name="bnetDivisionRank" from="${userInstance.constraints.bnetDivisionRank.inList}" value="${userInstance?.bnetDivisionRank}" valueMessagePrefix="user.bnetDivisionRank"  /></p>
 	    		</div>
 	    	</div>
 	    	<div class="innerlinebreak"></div>
@@ -51,7 +61,7 @@
 	    		</div>
 	    	</div>
 	    	<div class="break"></div>
-	    	<p><g:actionSubmit class="submitButton" action="update" value="Update" /></p>
+	    		<p><g:actionSubmit class="submitButton" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" /></p>
 	    </g:form>
     </body>
 </html>

@@ -31,6 +31,11 @@ class ProfileController {
 		def registrationList = user.registrations
 		//user.username = params.username
 		user.email = params.email
+		user.bnetId = params.bnetId
+		user.bnetCharCode = params.bnetCharCode
+		user.primaryRace = params.primaryRace
+		user.primarySkillLevel = params.primarySkillLevel
+		user.bnetDivisionRank = params.bnetDivisionRank
 		user.messageNotification = params.messageNotification ? true : false
 		if (   params.oldPassword != "" 
 			|| params.newPassword != "" 

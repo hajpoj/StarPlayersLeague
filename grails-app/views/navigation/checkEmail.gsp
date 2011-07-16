@@ -6,11 +6,14 @@
 	
 	<body>
 		<div class="mcontent">
-			<h1>great success!</h1>
+			<h1>Create Account</h1>
 			<div class="break"></div>
-			<h2>Verification email sent. Please check your email!</h2>
+			<h2>Verification email sent!</h2>
 			<div class="break"></div>
-			<h3>After you verify your email address you can register for a league.</h3>
+			<p>Please check your email. If you do not receive an email, 
+			please contact us at <a href="mailto:contact@starplayersleague.com">
+			contact@starplayersleague.com</a>. After you verify your account, 
+			you can register for a league.</p>
 		</div>
 	</body>
 	

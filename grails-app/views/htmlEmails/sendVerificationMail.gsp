@@ -5,8 +5,8 @@
 	</div>
 	<br />
 	<div>
-		<p>Great! You got our email. Verify and activate your account 
-		<g:link controller="navigation" action="verifyEmail" absolute="true" params="[id:id]">here</g:link>
+		<p>Great! You got our email. Verify your account 
+		<g:link controller="navigation" action="verifyEmail" absolute="true" params="[id:id]">here</g:link>.
 		</p>
 	</div>
 

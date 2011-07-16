@@ -28,6 +28,8 @@
     			<p>Battle.net ID:</p>
     			<p>Battle.net Char Code:</p>
     			<p>Primary Race:</p>
+    			<p>Skill Level:</p>
+    			<p>Division Rank:</p>
     		</div>
     		<div class="inforight">
     			<p>${userInstance.username}</p>
@@ -35,6 +37,8 @@
     			<p>${userInstance.bnetId}</p>
     			<p>${userInstance.bnetCharCode}</p>
     			<p>${userInstance.primaryRace}</p>
+    			<p>${userInstance.primarySkillLevel}</p>
+    			<p>${userInstance.bnetDivisionRank}</p>
     		</div>
     	</div>
     	<div class="innerlinebreak"></div>

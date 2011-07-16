@@ -22,10 +22,14 @@
     		<div class="infoleftgrey">
     			<p>Battle.net ID:</p>
     			<p>Primary Race:</p>
+    			<p>Skill Level:</p>
+    			<p>Division Rank:</p>
     		</div>
     		<div class="inforight">
     			<p>${userInstance.bnetId}</p>
     			<p>${userInstance.primaryRace}</p>
+    			<p>${userInstance.primarySkillLevel}</p>
+    			<p>${userInstance.bnetDivisionRank}</p>
     		</div>
     	</div>
     	<g:each in="${registrationInstanceList}" status="i" var="registrationInstance">
@@ -34,14 +38,10 @@
     		<h2>${fieldValue(bean: registrationInstance.group.division.code.season, field: "league")} (${fieldValue(bean: registrationInstance, field: "server")} Server) Information</h2>
     		<div class="break"></div>
     		<div class="infoleftgrey">
-    			<p>Code:</p>
-    			<p>Division:</p>
-    			<p>Group:</p>
+    			<p>Code/Division/Group:</p>
     		</div>
     		<div class="inforight">
-    			<p>${fieldValue(bean: registrationInstance.code, field: "name")}</p>
-    			<p>${fieldValue(bean: registrationInstance.division, field: "name")}</p>
-    			<p>${fieldValue(bean: registrationInstance.group, field: "name")}</p>
+    			<p>${fieldValue(bean: registrationInstance.code, field: "name")}/${fieldValue(bean: registrationInstance.division, field: "name")}/${fieldValue(bean: registrationInstance.group, field: "name")}</p>
     		</div>
     	</div>
     	</g:each>
