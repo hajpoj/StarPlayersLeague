@@ -196,13 +196,18 @@ class NavigationController {
 	
 	//VERIFY EMAIL ADDRESS VIEW
 	def verifyEmail = {
-		
-		//for some reasons enabled variable isn't getting saved.
-		//this def needs mad work
 		def user = User.get(params.id)
-		user.enabled = true
-		user.save()	
+		def previouslyEnabled = user.enabled
 		
+		if(!user.enabled) {
+			user.enabled = true
+			if (!user.save(flush: true)){
+				user.errors.each {
+					println it
+				}
+			}
+		}
+		model: [previouslyEnabled  : previouslyEnabled ]
 	}
 	
 	// CREATE ACCOUNT
@@ -215,6 +220,42 @@ class NavigationController {
 	// SAVE ACCOUNT
 	def saveAccount = {
 		def userInstance = new User(params)
+		
+		if (params.password != "" || params.confirmPassword != "") {
+			if (params.password == params.confirmPassword) {
+				
+				userInstance.password = springSecurityService.encodePassword(params.password) 
+				
+			} else {
+				flash.message = "Your passwords did not match. Please try again"
+				redirect(action: "createAccount", params:[username:userInstance.username,
+						email:userInstance.email,
+						bnetId:userInstance.bnetId,
+						bnetCharCode:userInstance.bnetCharCode,
+						primaryRace:userInstance.primaryRace,
+						primarySkillLevel:userInstance.primarySkillLevel])
+				return 
+			}
+		} else {
+			flash.message = "Invalid password. Please try again."
+			redirect(action: "createAccount", params:[username:userInstance.username,
+						email:userInstance.email,
+						bnetId:userInstance.bnetId,
+						bnetCharCode:userInstance.bnetCharCode,
+						primaryRace:userInstance.primaryRace,
+						primarySkillLevel:userInstance.primarySkillLevel])
+			return
+		}
+		
+		if(User.findByUsername(params.username) != null) {
+			flash.message = "User name already exists. Please try again"
+			redirect(action: "createAccount", params:[email:userInstance.email,
+				bnetId:userInstance.bnetId,
+				bnetCharCode:userInstance.bnetCharCode,
+				primaryRace:userInstance.primaryRace,
+				primarySkillLevel:userInstance.primarySkillLevel])
+			return
+		}
 		
 		if (userInstance.save(flush: true)) {
 			
@@ -229,7 +270,8 @@ class NavigationController {
 			redirect(action: "checkEmail")
 		}
 		else {
-			render(view: "create", model: [userInstance: userInstance])
+			flash.message = "An error has occurred. Please try again."
+			redirect(action: "createAccount")
 		}
 	}
 	

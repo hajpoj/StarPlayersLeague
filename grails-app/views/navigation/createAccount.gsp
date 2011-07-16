@@ -9,6 +9,15 @@
     
     <div class="body">
             <h1>Create Account</h1>
+            <div class="break"></div>
+	    	<g:if test="${flash.message}">
+            <div class="message">${flash.message}</div>
+            </g:if>
+            <g:hasErrors bean="${userInstance}">
+            <div class="errors">
+                <g:renderErrors bean="${userInstance}" as="list" />
+            </div>
+            </g:hasErrors>
             <g:form action="saveAccount" >
                 <div class="dialog">
                     <table>
@@ -22,13 +31,22 @@
                                     <g:textField name="username" value="${userInstance?.username}" />
                                 </td>
                             </tr>
-                        
+                            
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="password"><g:message code="user.password.label" default="Password" /></label>
+                                    <label for="password">Password</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'password', 'errors')}">
-                                    <g:textField name="password" value="${userInstance?.password}" />
+                                <td valign="top">
+                                	<input type='password' class='text_' name='password' />
+                                </td>
+                            </tr>
+                            
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="password">Confirm Password</label>
+                                </td>
+                                <td valign="top">
+                                	<input type='password' class='text_' name='confirmPassword' />
                                 </td>
                             </tr>
                         
