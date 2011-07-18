@@ -26,7 +26,6 @@
 				<li>A match is a best of 3 games.</li>
 				<li>Maps for each game are provided in the match details.</li>
 				<li>Each player will play 1 match per week.</li>
-				<li>Games times are on Wednesday at 8:30pm.</li>
 				<li>Players can reschedule their match ahead of time.</li>
 				<li>Spectators are not allowed during matches unless both players agree that it is okay.</li>
 			</ul>
