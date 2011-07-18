@@ -14,9 +14,9 @@
 			<br/>
 			<ul class="normal">
 				<li>The league separates players by code, division, and group.</li>
-				<li>Codes designate overall skill level.</li>
+				<li>Codes designate overall skill level. Code S is the highest followed by Code A, B, C, etc.</li>
 				<li>Divisions designate skill level within a code.</li>
-				<li>Groups separate players in groups of 10-13 within a division.</li>
+				<li>Groups separate players in groups of 6 within a division.</li>
 				<li>One season is a single round robin within a group.</li>
 			</ul>
 			<br/>
@@ -25,7 +25,9 @@
 			<ul class="normal">
 				<li>A match is a best of 3 games.</li>
 				<li>Maps for each game are provided in the match details.</li>
-				<li>Each player will play 2 matches per week.</li>
+				<li>Each player will play 1 match per week.</li>
+				<li>Games times are on Wednesday at 8:30pm.</li>
+				<li>Players can reschedule their match ahead of time.</li>
 				<li>Spectators are not allowed during matches unless both players agree that it is okay.</li>
 			</ul>
         	<br/>
@@ -36,9 +38,7 @@
 				<li>Games that result in draws must be played again.</li>
 				<li>Replays are mandatory for reporting scores.</li>
 				<li>If a player does not show up for a match within 15 minutes of the scheduled time, the player must forfeit the match.</li>
-				<li>Players must report scores for BOTH weekly matches by Sunday at 11:59pm EDT.</li>
-				<li>If a player is unresponsive by the due date, his opponent may report a forfeit on his behalf.</li>
-				<li>Disconnects are automatic losses unless both players agree to rematch or if both players can agree on a clear winner before the disconnect occurred.</li>
+				<li>Disconnects are automatic losses unless both players agree to a rematch or if both players can agree on a clear winner before the disconnect occurred.</li>
 			</ul>
 			<br/>
 			<p class="note">Standings</p>
@@ -51,15 +51,8 @@
 			<p class="note">End of Season Promotions & Relegations</p>
 			<br/>
 			<ul class="normal">
-				<li>The top 3 ranked players of each group are promoted to a higher division.</li>
-				<li>The bottom 3 ranked players of each group are relegated to a lower division.</li>
-				<li>Codes A, S, and SP are the exception to this rule:</li>
-				<ul class="normal">
-					<li>The top 2 ranked players of each group in Code A / Division 1 are promoted to Code S.</li>
-					<li>The bottom 4 ranked players of each group in the bottom division of Code S are relegated to Code A.</li>
-					<li>The top 3 ranked players of each group in Code S / Division 1 are promoted to Code SP.
-					<li>The bottom 6 ranked players of each group in Code SP are relegated to Code S.
-				</ul>
+				<li>The top 2 ranked players of each group are promoted to a higher division.</li>
+				<li>The bottom 2 ranked players of each group are relegated to a lower division.</li>
 			</ul>
 			<br/>
 			<p class="note">Player Conduct</p>
