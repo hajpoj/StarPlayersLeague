@@ -7,8 +7,10 @@ class User extends AuthUser {
 	String primaryRace
 	String primarySkillLevel
 	String bnetDivisionRank
+	String registrationValue
 	Boolean messageNotification
 	Date lastLogin
+	Date registrationDate
 	static hasMany = [registrations:Registration, threadsToMe:MessageThread, threadsFromMe:MessageThread]
 	static mappedBy = [threadsToMe:"toUser", threadsFromMe:"fromUser"] 
 	
@@ -19,8 +21,10 @@ class User extends AuthUser {
 		primaryRace(inList:["Random", "Zerg", "Protoss", "Terran"])
 		primarySkillLevel(inList:["Master", "Diamond", "Platinum", "Gold", "Silver", "Bronze"])
 		bnetDivisionRank(inList:["1-50","51-100"])
-		lastLogin(nullable:true)
+		registrationValue (nullable:true)
 		messageNotification(nullable:true)
+		lastLogin(nullable:true)
+		registrationDate(nullable:true)
 	}
 
 	String toString() {

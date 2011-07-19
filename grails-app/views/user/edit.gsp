@@ -114,6 +114,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="registrationValue"><g:message code="user.registrationValue.label" default="Registration Value" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'registrationValue', 'errors')}">
+                                    <g:textField name="registrationValue" value="${userInstance?.registrationValue}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                   <label for="messageNotification"><g:message code="user.messageNotification.label" default="Message Notification" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'messageNotification', 'errors')}">
@@ -154,6 +163,15 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'passwordExpired', 'errors')}">
                                     <g:checkBox name="passwordExpired" value="${userInstance?.passwordExpired}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="registrationDate"><g:message code="user.registrationDate.label" default="Registration Date" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'registrationDate', 'errors')}">
+                                    <g:datePicker name="registrationDate" precision="day" value="${userInstance?.registrationDate}"  />
                                 </td>
                             </tr>
                         

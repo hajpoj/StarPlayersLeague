@@ -93,6 +93,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="user.registrationValue.label" default="Registration Value" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: userInstance, field: "registrationValue")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="user.messageNotification.label" default="Message Notification" /></td>
                             
                             <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.messageNotification}" /></td>
@@ -124,6 +131,13 @@
                             <td valign="top" class="name"><g:message code="user.passwordExpired.label" default="Password Expired" /></td>
                             
                             <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.passwordExpired}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="user.registrationDate.label" default="Registration Date" /></td>
+                            
+                            <td valign="top" class="value"><g:formatDate date="${userInstance?.registrationDate}" /></td>
                             
                         </tr>
                     

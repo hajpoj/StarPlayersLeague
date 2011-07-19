@@ -19,7 +19,10 @@
 					<p><label for='remember_me'>Remember me:</label></p>
 				</div>
 				<div class='inforight'>
-					<p><input type='text' class='text_' name='j_username' id='username'/></p>
+					<p>
+						<input type='text' class='text_' name='j_username' id='username'/>
+						<g:link controller='navigation' action='createAccount'>Create Account</g:link>
+					</p>
 					<p>
 						<input type='password' class='text_' name='j_password' id='password'/> 
 						<g:link controller='login' action='forgotPassword'>Forget your password?</g:link>

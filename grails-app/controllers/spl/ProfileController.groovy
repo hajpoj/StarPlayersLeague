@@ -320,4 +320,31 @@ class ProfileController {
 				model:[messageInstance: message])
 		}
 	}
+	
+	//REGISTRATION
+	def alreadyRegistered = {
+	}
+	def nowRegistered = {
+	}
+	def registerNAE = {
+		def user = springSecurityService.currentUser
+		if (user.registrationValue != null) {
+			redirect(action: "alreadyRegistered")
+		} else {
+			user.registrationValue = "nae"
+			user.registrationDate = new Date()
+			redirect(action: "nowRegistered")
+		}
+	}
+	def registerNAW = {
+		def user = springSecurityService.currentUser
+		[userInstance: user]
+		if (user.registrationValue != null) {
+			redirect(action: "alreadyRegistered")
+		} else {
+			user.registrationValue = "naw"
+			user.registrationDate = new Date()
+			redirect(action: "nowRegistered")
+		}
+	}
 }

@@ -1,24 +1,32 @@
 <html>
 
 	<head>
-		<title>StarPlayers League</title>
+		<title>Registration</title>
 		<meta name="layout" content="main" />
 	</head>
 	<body>
 		<h1>Beta Season 2 Registrations</h1>
 		<div class="break"></div>
 		<div class="mcontent">
-			<h2>North American East >> <a href="#">Register</a></h2>
+			<h2>North American East</h2>
 			<div class="break"></div>
-				<p>North American server only.</p>
-				<p>Matches are on Wednesdays at 8:30pm ET.</p>
+			<p>North American server only.</p>
+			<p>Matches are on Wednesdays at 8:30pm ET.</p>
+			<div class="break"></div>
+			<g:form controller="profile" action="registerNAE">
+				<p><g:actionSubmit class="submitButton" action="registerNAE" value="Register" /></p>
+			</g:form>
 		</div>
 		<div class="innerlinebreak"></div>
 		<div class="mcontent">
-			<h2>North American West >> <a href="#">Register</a></h2>
+			<h2>North American West</h2>
 			<div class="break"></div>
-				<p>North American server only.</p>
-				<p>Matches are on Wednesdays at 8:30pm PT.</p>
+			<p>North American server only.</p>
+			<p>Matches are on Wednesdays at 8:30pm PT.</p>
+			<div class="break"></div>
+			<g:form controller="profile" action="registerNAW">
+				<p><g:actionSubmit class="submitButton" action="registerNAW" value="Register" /></p>
+			</g:form>
 		</div>
 		<div class="majorlinebreak"><span class="accent"></span></div>
 		<div class="mcontent">
