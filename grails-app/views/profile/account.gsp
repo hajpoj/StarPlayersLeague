@@ -57,5 +57,36 @@
  				</g:else>
     		</div>
     	</div>
+    	<div class="innerlinebreak"></div>
+    	<div class="mcontent">
+    		<h2>Registration</h2>
+    		<div class="break"></div>
+    		<div class="infoleftgrey">
+    			<p>League Registered:</p>
+    			<p>Date Registered:</p>
+    			
+    		</div>
+    		<div class="inforight">
+    			<p>
+    				<g:if test="${userInstance.registrationValue}">
+    					${userInstance.registrationValue}
+    				</g:if>
+    				<g:else>
+    					none
+    				</g:else>
+    			</p>
+    			<p>
+    				<g:if test="${userInstance.registrationDate}">
+    					${userInstance.registrationDate}
+    				</g:if>
+    				<g:else>
+    					none
+    				</g:else>
+    			</p>
+    			<g:form>
+					<p><g:actionSubmit class="submitButton" action="withdrawRegistration" value="Withdraw" /></p>
+				</g:form>
+    		</div>
+    	</div>
     </body>
 </html>    

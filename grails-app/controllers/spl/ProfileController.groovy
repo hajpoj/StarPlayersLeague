@@ -331,7 +331,7 @@ class ProfileController {
 		if (user.registrationValue != null) {
 			redirect(action: "alreadyRegistered")
 		} else {
-			user.registrationValue = "nae"
+			user.registrationValue = "North American East"
 			user.registrationDate = new Date()
 			redirect(action: "nowRegistered")
 		}
@@ -342,9 +342,22 @@ class ProfileController {
 		if (user.registrationValue != null) {
 			redirect(action: "alreadyRegistered")
 		} else {
-			user.registrationValue = "naw"
+			user.registrationValue = "North American West"
 			user.registrationDate = new Date()
 			redirect(action: "nowRegistered")
 		}
+	}
+	def withdrawRegistration = {
+		def user = springSecurityService.currentUser
+		if (user.registrationValue != null) {
+			user.registrationValue = null
+			user.registrationDate = null
+			flash.message = "We successfully withdrew you from your registration."
+			redirect(action: "account",)
+		} else {
+			flash.message = "You are not registered for a league."
+			redirect(action: "account",)
+		}
+		
 	}
 }

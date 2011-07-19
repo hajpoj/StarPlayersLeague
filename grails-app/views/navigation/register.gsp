@@ -41,6 +41,8 @@
 			</g:form>
 		</div>
 		<div class="innerlinebreak"></div>
+		<p class="note">Visit the <g:link controller="navigation" action="info">League Info</g:link> and <g:link controller="navigation" action="faq">FAQ</g:link> page if you have any questions regarding the league rules or format.</p>
+		<br/>
 		<p class="note">
 			Registration does NOT guarantee a spot in the league. Due to the nature of our league format, you may be put on the waiting list. Why? 
 			Our league is built on divisions of 24 players. If there is a remainder of players, the last division cannot be created.
@@ -50,7 +52,7 @@
 		<div class="mcontent">
 			<h1>Missed Registrations?</h1>
 			<div class="break"></div>
-			<h2>Open Pickup Games</h2>
+			<h2>Pickup Games</h2>
 			<div class="break"></div>
 				<p>Visit the "StarPlayers League" in-game channel, and see how you stack up against current SPL players!</p>
 		</div>
