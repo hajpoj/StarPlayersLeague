@@ -10,8 +10,14 @@
 		<div class="mcontent">
 			<h2>North American East</h2>
 			<div class="break"></div>
+			<div style="float: right;">
+				<img src="${resource(dir:'images', file:'east.jpg')}" alt="North American East" />
+			</div>
 			<p>North American server only.</p>
 			<p>Matches are on Wednesdays at 8:30pm ET.</p>
+			<div class="break"></div>
+			<p class="note">Registration closes on July 24 at 10:00pm ET.</p>
+			<p class="note">League begins on July 27, 2011.</p>
 			<div class="break"></div>
 			<g:form controller="profile" action="registerNAE">
 				<p><g:actionSubmit class="submitButton" action="registerNAE" value="Register" /></p>
@@ -21,13 +27,25 @@
 		<div class="mcontent">
 			<h2>North American West</h2>
 			<div class="break"></div>
+			<div style="float: right;">
+				<img src="${resource(dir:'images', file:'west.jpg')}" alt="North American West" />
+			</div>
 			<p>North American server only.</p>
 			<p>Matches are on Wednesdays at 8:30pm PT.</p>
+			<div class="break"></div>
+			<p class="note">Registration closes on July 24 at 7:00pm PT.</p>
+			<p class="note">League begins on July 27, 2011.</p>
 			<div class="break"></div>
 			<g:form controller="profile" action="registerNAW">
 				<p><g:actionSubmit class="submitButton" action="registerNAW" value="Register" /></p>
 			</g:form>
 		</div>
+		<div class="innerlinebreak"></div>
+		<p class="note">
+			Registration does NOT guarantee a spot in the league. Due to the nature of our league format, you may be put on the waiting list. Why? 
+			Our league is built on divisions of 24 players. If there is a remainder of players, the last division cannot be created.
+			The league spots are given on a first come, first serve basis.
+		</p>
 		<div class="majorlinebreak"><span class="accent"></span></div>
 		<div class="mcontent">
 			<h1>Missed Registrations?</h1>
