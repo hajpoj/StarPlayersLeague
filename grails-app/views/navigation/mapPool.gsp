@@ -20,7 +20,7 @@
        				<th>Author</th>
        			</tr>
 	       		<g:each in="${gameMapInstanceList}" status="i" var="gameMapInstance">
-	       			<g:if test="${i > 9}">
+	       			<g:if test="${i > 8}">
 		            	<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 		            		<td>${fieldValue(bean: gameMapInstance, field: "name")}</td>
 							<td>${fieldValue(bean: gameMapInstance, field: "listedName")}</td>
@@ -34,7 +34,7 @@
    		<div class="mcontent">
    		<div class='break'></div>
    			<g:each in="${gameMapInstanceList}" status="i" var="gameMapInstance">
-   				<g:if test="${i > 9}">
+   				<g:if test="${i > 8}">
 	   				<div style="text-align: center">
 	   					<h2>${fieldValue(bean: gameMapInstance, field: "name")}</h2>
 	   					<div class='break'></div>
