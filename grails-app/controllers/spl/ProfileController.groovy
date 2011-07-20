@@ -333,6 +333,7 @@ class ProfileController {
 		} else {
 			user.registrationValue = "North American East"
 			user.registrationDate = new Date()
+			user.save(flush: true)
 			redirect(action: "nowRegistered")
 		}
 	}
@@ -344,6 +345,7 @@ class ProfileController {
 		} else {
 			user.registrationValue = "North American West"
 			user.registrationDate = new Date()
+			user.save(flush: true)
 			redirect(action: "nowRegistered")
 		}
 	}
@@ -352,6 +354,7 @@ class ProfileController {
 		if (user.registrationValue != null) {
 			user.registrationValue = null
 			user.registrationDate = null
+			user.save(flush: true)
 			flash.message = "We successfully withdrew you from your registration."
 			redirect(action: "account",)
 		} else {
