@@ -50,6 +50,13 @@
                             
                         </tr>
                     
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="gameMap.mapImageFileName.label" default="Map Image File Name" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: gameMapInstance, field: "mapImageFileName")}</td>
+                            
+                        </tr>
+                    
                     </tbody>
                 </table>
             </div>

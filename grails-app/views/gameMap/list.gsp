@@ -30,6 +30,8 @@
                         
                             <g:sortableColumn property="author" title="${message(code: 'gameMap.author.label', default: 'Author')}" />
                         
+                            <g:sortableColumn property="mapImageFileName" title="${message(code: 'gameMap.mapImageFileName.label', default: 'Map Image File Name')}" />
+                        
                         </tr>
                     </thead>
                     <tbody>
@@ -43,6 +45,8 @@
                             <td>${fieldValue(bean: gameMapInstance, field: "listedName")}</td>
                         
                             <td>${fieldValue(bean: gameMapInstance, field: "author")}</td>
+                        
+                            <td>${fieldValue(bean: gameMapInstance, field: "mapImageFileName")}</td>
                         
                         </tr>
                     </g:each>

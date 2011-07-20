@@ -58,6 +58,15 @@
                                 </td>
                             </tr>
                         
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="mapImageFileName"><g:message code="gameMap.mapImageFileName.label" default="Map Image File Name" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: gameMapInstance, field: 'mapImageFileName', 'errors')}">
+                                    <g:textField name="mapImageFileName" value="${gameMapInstance?.mapImageFileName}" />
+                                </td>
+                            </tr>
+                        
                         </tbody>
                     </table>
                 </div>
