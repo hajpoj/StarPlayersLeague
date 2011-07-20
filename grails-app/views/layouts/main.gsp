@@ -106,5 +106,14 @@
 					</div>
 	        	</div>
 			</div>
+			
+<script type="text/javascript">
+  (function() {
+    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/nnrkwOg0tcHnUESsftKA.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+  })();
+</script>
+
     </body>
 </html>
