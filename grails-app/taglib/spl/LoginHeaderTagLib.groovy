@@ -13,7 +13,7 @@ class LoginHeaderTagLib {
 			out << g.link(controller:"navigation", action:"createAccount", "Create Account")
 		} else {
 			def messageCount = currentUser.unreadMessageCount()
-			out << "Welcome ${currentUser.username}! "
+			out << "Welcome ${currentUser.username.encodeAsHTML()}! "
 			if (SpringSecurityUtils.ifAllGranted("ROLE_ADMIN")) {
 				out << g.link(controller:"administration", action:"index", "Admin")
 				out << " | "

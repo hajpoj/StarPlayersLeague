@@ -32,13 +32,13 @@
     			<p>Division Rank:</p>
     		</div>
     		<div class="inforight">
-    			<p>${userInstance.username}</p>
-    			<p>${userInstance.email}</p>
-    			<p>${userInstance.bnetId}</p>
-    			<p>${userInstance.bnetCharCode}</p>
-    			<p>${userInstance.primaryRace}</p>
-    			<p>${userInstance.primarySkillLevel}</p>
-    			<p>${userInstance.bnetDivisionRank}</p>
+    			<p>${userInstance.username.encodeAsHTML()}</p>
+    			<p>${userInstance.email.encodeAsHTML()}</p>
+    			<p>${userInstance.bnetId.encodeAsHTML()}</p>
+    			<p>${userInstance.bnetCharCode.encodeAsHTML()}</p>
+    			<p>${userInstance.primaryRace.encodeAsHTML()}</p>
+    			<p>${userInstance.primarySkillLevel.encodeAsHTML()}</p>
+    			<p>${userInstance.bnetDivisionRank.encodeAsHTML()}</p>
     		</div>
     	</div>
     	<div class="innerlinebreak"></div>
