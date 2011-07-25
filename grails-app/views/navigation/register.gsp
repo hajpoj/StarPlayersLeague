@@ -18,12 +18,13 @@
 			<p>North American server only.</p>
 			<p>Matches are on Wednesdays at 8:30pm ET.</p>
 			<div class="break"></div>
-			<p class="note">Registration closes on July 24 at 10:00pm ET.</p>
+			<p class="note">Registration closed on July 24 at 10:00pm ET.</p>
 			<p class="note">League begins on July 27, 2011.</p>
 			<div class="break"></div>
-			<g:form controller="profile" action="registerNAE">
-				<p><g:actionSubmit class="submitButton" action="registerNAE" value="Register" /></p>
-			</g:form>
+			<p class="note">Placement info and match assignments will be given out on Tuesday, July 26.</p>
+<%--			<g:form controller="profile" action="registerNAE">--%>
+<%--				<p><g:actionSubmit class="submitButton" action="registerNAE" value="Register" /></p>--%>
+<%--			</g:form>--%>
 		</div>
 		<div class="innerlinebreak"></div>
 		<div class="mcontent">
@@ -35,12 +36,13 @@
 			<p>North American server only.</p>
 			<p>Matches are on Wednesdays at 8:30pm PT.</p>
 			<div class="break"></div>
-			<p class="note">Registration closes on July 24 at 7:00pm PT.</p>
+			<p class="note">Registration closed on July 24 at 7:00pm PT.</p>
 			<p class="note">League begins on July 27, 2011.</p>
 			<div class="break"></div>
-			<g:form controller="profile" action="registerNAW">
-				<p><g:actionSubmit class="submitButton" action="registerNAW" value="Register" /></p>
-			</g:form>
+			<p class="note">Placement info and match assignments will be given out on Tuesday, July 26.</p>
+<%--			<g:form controller="profile" action="registerNAW">--%>
+<%--				<p><g:actionSubmit class="submitButton" action="registerNAW" value="Register" /></p>--%>
+<%--			</g:form>--%>
 		</div>
 		<div class="innerlinebreak"></div>
 		<p class="note">
