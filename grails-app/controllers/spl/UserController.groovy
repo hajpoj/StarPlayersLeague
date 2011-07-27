@@ -321,7 +321,7 @@ class UserController {
 						
 										Match match = new Match(matchNumber:(_round+1),
 																played: false,
-																mapPack:MapPack.get((_round % 9)+1),
+																mapPack:MapPack.get((_round % numRounds)+10),
 																bestOf:3,
 																leagueGroup:_group)
 										matchRegistrations[_match].addToMatches(match)
@@ -349,6 +349,22 @@ class UserController {
 				}
 			}
 		}
+		render("Done")
+	}
+	
+	def emailRegisteredUsers = {
+		def users = User.findAllByRegistrationValueIsNotNull()
+		render("Sending emails to...<br/><br/>")
+		for (_user in users) {
+			render("${_user.email} ${_user.waitingList}<br/>")
+			if (_user.waitingList) {
+				//email waiting list
+			} else {
+				//email registered users
+				
+			}
+		}
+		
 		render("Done")
 	}
 }

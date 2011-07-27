@@ -12,13 +12,13 @@ class BootStrap {
 
 		switch(GrailsUtil.environment) {
 			case "development":
-			
+				importMaps();
 				break
 			case "test":				
-						
+				importMaps();
 				break
 			case "production":
-				
+				importMaps();
 				break
 		}
 		
@@ -79,45 +79,57 @@ class BootStrap {
 	}
 	
 	private void importMaps() {
-		if (GameMap.list() && MapPack.list()) return
+		
 		// import Maps
 		def filePath = "resources/Map Pool.csv"
 		def text = ApplicationHolder.application.parentContext.getResource("classpath:$filePath").inputStream.text
-		text.eachLine {
-			def line = it.split(",")
-			def name = line[1]
-			def listedName = line[2]
-			def author = line[3]
-			def mapImageFileName = line[4]
-			GameMap map = new GameMap(name:name,
-									  listedName:listedName,
-									  author:author,
-									  mapImageFileName:mapImageFileName)
-			map.save()
-			if (map.hasErrors()) {
-				map.errors.each {
-					println it
+		def mapCount = 1
+		if (GameMap.list().size() != 18) {
+			text.eachLine {
+				if (mapCount > GameMap.list().size()) {
+					def line = it.split(",")
+					def name = line[1]
+					def listedName = line[2]
+					def author = line[3]
+					def mapImageFileName = line[4]
+					GameMap map = new GameMap(name:name,
+											  listedName:listedName,
+											  author:author,
+											  mapImageFileName:mapImageFileName)
+					map.save()
+					if (map.hasErrors()) {
+						map.errors.each {
+							println it
+						}
+					}
 				}
+				mapCount++
 			}
 		}
 		
 		// import Map Packs
 		filePath = "resources/Map Packs BO3.csv"
 		text = ApplicationHolder.application.parentContext.getResource("classpath:$filePath").inputStream.text
-		text.eachLine {
-			def line = it.split(",")
-			def map1 = line[1]
-			def map2 = line[2]
-			def map3 = line[3]
-			MapPack mapPack = new MapPack()
-			mapPack.addToMaps(GameMap.get(map1))
-			mapPack.addToMaps(GameMap.get(map2))
-			mapPack.addToMaps(GameMap.get(map3))
-			mapPack.save()
-			if (mapPack.hasErrors()) {
-				mapPack.errors.each {
-					print it
+		def packCount = 1
+		if (MapPack.list().size() != 14) {
+			text.eachLine {
+				if (packCount > MapPack.list().size()) {
+					def line = it.split(",")
+					def map1 = line[1]
+					def map2 = line[2]
+					def map3 = line[3]
+					MapPack mapPack = new MapPack()
+					mapPack.addToMaps(GameMap.get(map1))
+					mapPack.addToMaps(GameMap.get(map2))
+					mapPack.addToMaps(GameMap.get(map3))
+					mapPack.save()
+					if (mapPack.hasErrors()) {
+						mapPack.errors.each {
+							print it
+						}
+					}
 				}
+				packCount++
 			}
 		}
 	}
