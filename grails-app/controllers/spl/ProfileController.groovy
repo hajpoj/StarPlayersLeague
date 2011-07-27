@@ -64,7 +64,7 @@ class ProfileController {
 		def entry
 		def matchesList = []
 		if ((user != null) && (user.registrations.toArray().size() != 0)) {
-			entry = user.registrations.toArray().first()
+			entry = user.registrations.toArray().sort{-it.id}.first()
 			matchesList = entry.matches.toArray().sort{[it.matchNumber]}
 		}
 		[matchesInstanceList: matchesList, entryInstance: entry]

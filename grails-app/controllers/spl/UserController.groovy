@@ -359,10 +359,21 @@ class UserController {
 		for (_user in users) {
 			render("${_user.email} ${_user.waitingList}<br/>")
 			if (_user.waitingList) {
-				//email waiting list
+				sendMail {
+					to "${_user.email}"
+					from "No-Reply <no-reply@starplayersleague.com>"
+					subject "You have been waitlisted."
+					html( view:"/htmlEmails/sendWaitlistedUserMail",
+						model:[messageInstance: message])
+				}
 			} else {
-				//email registered users
-				
+				sendMail {
+					to "${_user.email}"
+					from "No-Reply <no-reply@starplayersleague.com>"
+					subject "Your matches have been assigned!"
+					html( view:"/htmlEmails/sendPlacedUserMail",
+						model:[messageInstance: message])
+				}
 			}
 		}
 		
