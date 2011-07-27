@@ -152,6 +152,7 @@ class UserController {
 		//def DIVISIONS = 1 BOZO not using
 		def SERVER_NAME = "NA"
 		def GROUP_SIZE = 6
+		def GROUP_SLACK = 1
 		def SEASON = 1
 		def CREATE = (params.createLeague == "true") ? true : false
 		 
@@ -197,12 +198,12 @@ class UserController {
 					render("${_user.value.username} ${_user.value.registrationDate}")
 					render("<br/>")
 					
-					if (groupUsers.size() >= GROUP_SIZE) {
+					if (groupUsers.size() == GROUP_SIZE) {
 						groupName++
 						groupUsers = []
 					}
 				}
-				if (   groupUsers.size() < GROUP_SIZE
+				if (   groupUsers.size() < (GROUP_SIZE-GROUP_SLACK)
 					&& groupUsers.size() > 0) {
 					render("People on waiting list for ${_league.key} Code ${_code.key}: ${groupUsers.size()}")
 					render("<br/>")
@@ -239,13 +240,13 @@ class UserController {
 						for (_group in _division.value) {
 							def group
 							def matchRegistrations = []
-							if (_group.value.size() == GROUP_SIZE) {
+							if (_group.value.size() >= (GROUP_SIZE-GROUP_SLACK)) {
 								group = new Group(name:_group.key)
 								division.addToGroups(group)
 							}
 							
 							for (_user in _group.value) {
-								if (_group.value.size() != GROUP_SIZE) {
+								if (_group.value.size() < (GROUP_SIZE-GROUP_SLACK)) {
 									waitlistedUsers.push(_user.value)
 									_user.value.waitingList = true
 								} else {
