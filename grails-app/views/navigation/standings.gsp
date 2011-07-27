@@ -14,11 +14,23 @@
            		<p>View standings for a specific Code/Division/Group.</p>
            		<br />
            		<div class="infoleft">
+           			<p><label for="league">League:</label></p>
            			<p><label for="code">Code:</label></p>
-           			<p><label for="division">Division:</label></p>
+           			<%--<p><label for="division">Division:</label></p> --%>
            			<p><label for="group">Group:</label></p>
            		</div>
            		<div style="line-height: 200%; height: 75px;">
+           			<p> 
+           				<g:select id="leagueDropdown" 
+                                     name="leagueDropdown" 
+                                     from="${leagueInstanceList}" 
+                                     optionKey="id"
+                                     noSelection="${['null': 'Select one...']}" 
+                                     onchange="${remoteFunction(action:'newLeague',
+                                     						     update:'codeDropdown', 
+                                      						   	 params:'\'league=\' + this.value')}"/>
+           			</p>
+           			
            			<p>
            				<g:select id="codeDropdown" 
                                      name="codeDropdown" 
@@ -26,19 +38,10 @@
                                      optionKey="id"
                                      noSelection="${['null': 'Select one...']}" 
                                      onchange="${remoteFunction(action:'newCode',
-                                     						     update:'divisionDropdown', 
+                                     						     update:'groupDropdown', 
                                       						   	 params:'\'code=\' + this.value')}"/>
                    	</p>
-           			<div id="divisionDropdown">
-           				<g:select id="divisionDropdown" 
-                              	      name="divisionDropdown" 
-                                  	  from="${divisionInstanceList}" 
-                                  	  optionKey="id"
-                                  	  noSelection="${['null': 'Select one...']}" 
-                                  	  onchange="${remoteFunction(action:'newDivision',
-                                  							     update:'groupDropdown', 
-                                  							   	 params:'\'division=\' + this.value')}"/>
-           			</div>
+
            			<div id="groupDropdown">
            				<g:select id="groupDropdown" 
                               	      name="groupDropdown" 

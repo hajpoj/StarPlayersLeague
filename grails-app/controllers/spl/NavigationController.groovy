@@ -68,30 +68,42 @@ class NavigationController {
 	}
 	
 	// STANDINGS VIEW
+	def newLeague = {
+		if (params.league == 'null') {
+			render g.select(noSelection:[null:"Select one..."])
+		} else {
+			def leagueInstance = League.get(params.league)
+			def seasonList = Season.findAllByLeague(leagueInstance)
+			//right now we only have 1 season for every league
+			def seasonOne = seasonList.toArray()[0]
+			
+			def codeList = Code.findAllBySeason(seasonOne).toArray().sort{[-it.priority, it.name]}
+			
+			render g.select(optionKey:"id",
+							optionValue:"name",
+							from: codeList,
+							id: "codeDropdown",
+							name: "codeDropdown",
+							noSelection:[null:"Select one..."],
+							onchange: remoteFunction(action:"newCode",
+													 update:"groupDropdown",
+													 params:"\"code=\" + this.value"))
+		}
+	}
+	
 	def newCode = {
 		if (params.code == 'null') {
 			render g.select(noSelection:[null:"Select one..."])
 		} else {
 			def codeInstance = Code.get(params.code)
-			def newDivisionList = Division.findAllByCode(codeInstance)
-			render g.select(optionKey:"id",
-							optionValue:"name",
-							from: newDivisionList,
-							id: "divisionDropdown",
-							name: "divisionDropdown",
-							noSelection:[null:"Select one..."],
-							onchange: remoteFunction(action:"newDivision",
-													 update:"groupDropdown",
-													 params:"\"division=\" + this.value"))
-		}
-	}
-	
-	def newDivision = {
-		if (params.division == 'null') {
-			render g.select(noSelection:[null:"Select one..."])
-		} else {
-			def divisionInstance = Division.get(params.division)
-			def newGroupList = Group.findAllByDivision(divisionInstance).toArray().sort{it.name}
+			
+			def divisionInstance = Division.findByCode(codeInstance)
+			def divisionList = Division.findAllByCode(codeInstance)
+			// right now we only have 1 division for every code
+			def divisionOne = divisionList.toArray()[0]
+			
+			def newGroupList = Group.findAllByDivision(divisionOne).toArray().sort{it.name}
+			
 			render g.select(optionKey:"id",
 							optionValue:"name",
 							from: newGroupList,
@@ -134,22 +146,23 @@ class NavigationController {
 		def group
 		def standingsList
 		def matchesList
-		def codeList = Code.list().toArray().toList().sort{[-it.priority, it.name]}
-
-		// WHY THE FUCK DO I NEED TO DO THIS:
-		def codeS = codeList.pop()
-		codeList = codeList.reverse()
-		codeList.push(codeS)
-		codeList = codeList.reverse()
-		// END BS
-
+		def leagueList = League.list().toArray().toList().sort{[it.name]}
+		
+		def leagueToRemove = League.findByName("1v1 StarPlayers League")
+		leagueList.remove (leagueToRemove)
+		
 		def user = springSecurityService.currentUser
 		if (params.group) { 
+			//if a user is logged in
 			group = Group.get(params.group)
 		} else if ((user == null) || (user.registrations.toArray().size() == 0)) {
-			def code = Code.findByName("S")
+			// if the user is not logged in
+			def league = League.findByName("North American East")
+			def season = Season.findByLeague(league)
+			def code = Code.findByNameAndSeason("S", season)
 			def division = Division.findByNameAndCode("1", code)
 			group = Group.findByNameAndDivision("A", division)
+			
 		} else {
 			//BOZO: this code only displays the first registration's matches
 			def registration = user.registrations.toArray().sort{-it.id}.first()
@@ -157,7 +170,7 @@ class NavigationController {
 		}
 		standingsList = group.entries.toArray().sort{[-it.matchesWon, it.matchesLost, -it.gameDiff]}
 		matchesList = group.matches.toArray().toList().sort{[it.matchNumber]}
-		[codeInstanceList: codeList, standingsInstanceList: standingsList, matchesInstanceList: matchesList, groupInstance: group]
+		[leagueInstanceList: leagueList, standingsInstanceList: standingsList, matchesInstanceList: matchesList, groupInstance: group]
 	}
 	
 	def matchDetails = {
