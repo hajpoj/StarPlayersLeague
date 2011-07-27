@@ -1,10 +1,6 @@
 <%@ page contentType="text/html"%>
 <body>
 	<div>
-		<h1><img src="<g:resource dir="images" file="splbanner.png" absolute="true" />" alt="StarPlayers League" /></h1>
-	</div>
-	<br />
-	<div>
 		<h4>You have a message from ${fieldValue(bean: messageInstance, field: "fromUser")} (${messageInstance.fromUser.bnetId}.${messageInstance.fromUser.bnetCharCode}):</h4>
 		<p>"${fieldValue(bean: messageInstance, field: "text")}"</p>
 		<p>Sent on ${messageInstance.dateCreated.format('MM-dd-yyyy, HH:mm z')}</p>
