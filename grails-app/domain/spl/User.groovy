@@ -9,6 +9,7 @@ class User extends AuthUser {
 	String bnetDivisionRank
 	String registrationValue
 	Boolean messageNotification
+	Boolean waitingList
 	Date lastLogin
 	Date registrationDate
 	static hasMany = [registrations:Registration, threadsToMe:MessageThread, threadsFromMe:MessageThread]
@@ -23,6 +24,7 @@ class User extends AuthUser {
 		bnetDivisionRank(inList:["1-50","51-100"])
 		registrationValue (nullable:true)
 		messageNotification(nullable:true)
+		waitingList(nullable:true)
 		lastLogin(nullable:true)
 		registrationDate(nullable:true)
 	}

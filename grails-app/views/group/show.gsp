@@ -69,13 +69,6 @@
                             
                         </tr>
                     
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="group.playoffs.label" default="Playoffs" /></td>
-                            
-                            <td valign="top" class="value"><g:formatBoolean boolean="${groupInstance?.playoffs}" /></td>
-                            
-                        </tr>
-                    
                     </tbody>
                 </table>
             </div>

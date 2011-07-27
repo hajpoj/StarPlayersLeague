@@ -86,13 +86,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="user.lastLogin.label" default="Last Login" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${userInstance?.lastLogin}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="user.registrationValue.label" default="Registration Value" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: userInstance, field: "registrationValue")}</td>
@@ -103,6 +96,27 @@
                             <td valign="top" class="name"><g:message code="user.messageNotification.label" default="Message Notification" /></td>
                             
                             <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.messageNotification}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="user.waitingList.label" default="Waiting List" /></td>
+                            
+                            <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.waitingList}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="user.lastLogin.label" default="Last Login" /></td>
+                            
+                            <td valign="top" class="value"><g:formatDate date="${userInstance?.lastLogin}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="user.registrationDate.label" default="Registration Date" /></td>
+                            
+                            <td valign="top" class="value"><g:formatDate date="${userInstance?.registrationDate}" /></td>
                             
                         </tr>
                     
@@ -131,13 +145,6 @@
                             <td valign="top" class="name"><g:message code="user.passwordExpired.label" default="Password Expired" /></td>
                             
                             <td valign="top" class="value"><g:formatBoolean boolean="${userInstance?.passwordExpired}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="user.registrationDate.label" default="Registration Date" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${userInstance?.registrationDate}" /></td>
                             
                         </tr>
                     

@@ -128,15 +128,6 @@
                                 </td>
                             </tr>
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="playoffs"><g:message code="match.playoffs.label" default="Playoffs" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: matchInstance, field: 'playoffs', 'errors')}">
-                                    <g:checkBox name="playoffs" value="${matchInstance?.playoffs}" />
-                                </td>
-                            </tr>
-                        
                         </tbody>
                     </table>
                 </div>

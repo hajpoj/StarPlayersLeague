@@ -111,13 +111,6 @@
                             
                         </tr>
                     
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="match.playoffs.label" default="Playoffs" /></td>
-                            
-                            <td valign="top" class="value"><g:formatBoolean boolean="${matchInstance?.playoffs}" /></td>
-                            
-                        </tr>
-                    
                     </tbody>
                 </table>
             </div>

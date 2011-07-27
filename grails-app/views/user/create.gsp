@@ -102,15 +102,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="lastLogin"><g:message code="user.lastLogin.label" default="Last Login" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'lastLogin', 'errors')}">
-                                    <g:datePicker name="lastLogin" precision="day" value="${userInstance?.lastLogin}" default="none" noSelection="['': '']" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                     <label for="registrationValue"><g:message code="user.registrationValue.label" default="Registration Value" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'registrationValue', 'errors')}">
@@ -124,6 +115,33 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'messageNotification', 'errors')}">
                                     <g:checkBox name="messageNotification" value="${userInstance?.messageNotification}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="waitingList"><g:message code="user.waitingList.label" default="Waiting List" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'waitingList', 'errors')}">
+                                    <g:checkBox name="waitingList" value="${userInstance?.waitingList}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="lastLogin"><g:message code="user.lastLogin.label" default="Last Login" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'lastLogin', 'errors')}">
+                                    <g:datePicker name="lastLogin" precision="day" value="${userInstance?.lastLogin}" default="none" noSelection="['': '']" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="registrationDate"><g:message code="user.registrationDate.label" default="Registration Date" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'registrationDate', 'errors')}">
+                                    <g:datePicker name="registrationDate" precision="day" value="${userInstance?.registrationDate}" default="none" noSelection="['': '']" />
                                 </td>
                             </tr>
                         
@@ -160,15 +178,6 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'passwordExpired', 'errors')}">
                                     <g:checkBox name="passwordExpired" value="${userInstance?.passwordExpired}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="registrationDate"><g:message code="user.registrationDate.label" default="Registration Date" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: userInstance, field: 'registrationDate', 'errors')}">
-                                    <g:datePicker name="registrationDate" precision="day" value="${userInstance?.registrationDate}"  />
                                 </td>
                             </tr>
                         
