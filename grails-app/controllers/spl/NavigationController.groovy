@@ -137,9 +137,9 @@ class NavigationController {
 		def codeList = Code.list().toArray().toList().sort{[-it.priority, it.name]}
 
 		// WHY THE FUCK DO I NEED TO DO THIS:
-		def codeSP = codeList.pop()
+		def codeS = codeList.pop()
 		codeList = codeList.reverse()
-		codeList.push(codeSP)
+		codeList.push(codeS)
 		codeList = codeList.reverse()
 		// END BS
 
@@ -147,12 +147,12 @@ class NavigationController {
 		if (params.group) { 
 			group = Group.get(params.group)
 		} else if ((user == null) || (user.registrations.toArray().size() == 0)) {
-			def code = Code.findByName("SP")
+			def code = Code.findByName("S")
 			def division = Division.findByNameAndCode("1", code)
 			group = Group.findByNameAndDivision("A", division)
 		} else {
 			//BOZO: this code only displays the first registration's matches
-			def registration = user.registrations.toArray().first()
+			def registration = user.registrations.toArray().sort{-it.id}.first()
 			group = registration.group
 		}
 		standingsList = group.entries.toArray().sort{[-it.matchesWon, it.matchesLost, -it.gameDiff]}
