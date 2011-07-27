@@ -321,7 +321,7 @@ class UserController {
 						
 										Match match = new Match(matchNumber:(_round+1),
 																played: false,
-																mapPack:MapPack.get((_round % numRounds)+10),
+																mapPack:MapPack.get((_round % numRounds)+11),
 																bestOf:3,
 																leagueGroup:_group)
 										matchRegistrations[_match].addToMatches(match)
