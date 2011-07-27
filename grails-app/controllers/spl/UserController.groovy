@@ -162,6 +162,7 @@ class UserController {
 		transformer = {LazyMap.decorate(new LinkedHashMap(), transformer)} as Transformer
 		def users = transformer.transform(null)
 		
+		def waitingList = []
 		def registeredUsers = User.findAllByRegistrationValueIsNotNull()
 		
 		for (_user in registeredUsers) {
@@ -179,43 +180,104 @@ class UserController {
 			} else if (_user.primarySkillLevel == new String("Bronze")) {
 				 code = new String("E")
 			}
+
+			// if hashtable is empty for this code, create empty list to push users into
+			if (usersByCode[_user.registrationValue][code].size() == 0) {
+				usersByCode[_user.registrationValue][code] = []
+			}
 			
-			usersByCode[_user.registrationValue][code]["${_user.username}"] = _user
+			usersByCode[_user.registrationValue][code].push(_user)
 		}
 		
 		for (_league in usersByCode) {
-			render("<br/><br/>${_league.key}<br/>")
 			for (_code in _league.value) {
-				render("<br/>Code ${_code.key}<br/>")
+				def tempUsers = _code.value
+				def numWaiting = _code.value.size() % GROUP_SIZE
+				// leftover users go on waiting list
+				if (   numWaiting != 0
+				    && numWaiting < (GROUP_SIZE-GROUP_SLACK)) {
+					for (_i in 1..numWaiting) {
+						waitingList.push(tempUsers.pop())
+					}
+				}
+				
+				// redistribute races tempUsers
+				tempUsers = tempUsers.sort{it.primaryRace}
+				//def numGroups = ((Integer)(tempUsers.size()/GROUP_SIZE))
+				def numGroups = (tempUsers.size() - (tempUsers.size() % GROUP_SIZE))/GROUP_SIZE + ((tempUsers.size() % GROUP_SIZE) ? 1 : 0)
+				//println "${tempUsers.size()} ${numGroups}"
 				def groupName = "A"
-				def groupUsers = []
-				for (_user in _code.value.sort{it.value.registrationDate}) {
-					if (groupUsers.size() == 0) {
-						render("<br/>Group ${groupName}<br/>")
+				def groupCnt = 0
+				while(tempUsers.size() > 0) {
+					if (users[_league.key][_code.key]["1"][groupName].size() == 0) {
+						users[_league.key][_code.key]["1"][groupName] = []
 					}
-					groupUsers.push(_user.value)
-					users[_league.key][_code.key]["1"][groupName][_user.value.username] = _user.value
-					render("${_user.value.username} ${_user.value.registrationDate}")
-					render("<br/>")
-					
-					if (groupUsers.size() == GROUP_SIZE) {
-						groupName++
-						groupUsers = []
+					users[_league.key][_code.key]["1"][groupName].push(tempUsers.pop())
+					groupCnt++
+					groupName++
+					if (groupCnt >= numGroups) {
+						groupCnt = 0
+						groupName = "A"
 					}
 				}
-				if (   groupUsers.size() < (GROUP_SIZE-GROUP_SLACK)
-					&& groupUsers.size() > 0) {
-					render("People on waiting list for ${_league.key} Code ${_code.key}: ${groupUsers.size()}")
-					render("<br/>")
-				}
+												 
+//				def groupName = "A"
+//				def groupUsers = []
+//				for (_user in tempUsers) {
+//					if (groupUsers.size() == 0) {
+//						render("<br/>Group ${groupName}<br/>")
+//					}
+//					groupUsers.push(_user)
+//					if (users[_league.key][_code.key]["1"][groupName].size() == 0) {
+//						users[_league.key][_code.key]["1"][groupName] = []
+//					}
+//					users[_league.key][_code.key]["1"][groupName].push(_user)
+//					render("${_user.username} ${_user.registrationDate}")
+//					render("<br/>")
+//					
+//					if (groupUsers.size() == GROUP_SIZE) {
+//						groupName++
+//						groupUsers = []
+//					}
+//				}
 			}
 		}
 		
-		def waitlistedUsers = []
+		for (_league in users) {
+			render("<br/><br/>${_league.key}<br/>")
+			for (_code in _league.value) {
+				render("<br/>Code ${_code.key}<br/>")
+				for (_division in _code.value) {
+					for (_group in _division.value) {
+						render("<br/>${_group.key}<br/>")
+						for (_user in _group.value) { 
+							render("${_user.username} ${_user.registrationDate} ${_user.primaryRace}<br/>")
+						}
+					}
+				}				
+			}
+		}
+		
+		render("<br/><br/>Waiting List<br/>")
+		for (_i in waitingList) {
+			render("${_i.username} ${_i.primarySkillLevel} ${_i.registrationValue} ${_i.registrationDate}<br/>")
+		}
+		
 		if (!CREATE) {
-			render("Test only. NOT creating league.<br/>")
+			render("<br/>Test only. NOT creating league.<br/>")
 		} else {
-			render("<br/><br/>Creating league!!<br/>")
+			render("<br/>Creating league!!<br/>")
+			
+			for (_i in waitingList) {
+				_i.waitingList = true
+				_i.save()
+				if (_i.hasErrors()) {
+					_i.errors.each {
+						println it
+					}
+				}
+			}
+			
 			def server = Server.findByName(SERVER_NAME)
 			for (_league in users) {
 				def league = new League(name:_league.key)
@@ -247,18 +309,18 @@ class UserController {
 							
 							for (_user in _group.value) {
 								if (_group.value.size() < (GROUP_SIZE-GROUP_SLACK)) {
-									waitlistedUsers.push(_user.value)
-									_user.value.waitingList = true
+									//_user.waitingList = true
+									println ("Should never get here: ${_user.username}")
 								} else {
-									def registration = new Registration(bnetId:_user.value.bnetId,
-																		bnetCharCode:_user.value.bnetCharCode,
-																		race:_user.value.primaryRace,
-																		skillLevel:_user.value.primarySkillLevel)
-									_user.value.addToRegistrations(registration)
-									_user.value.waitingList = false
-									_user.value.save()
-									if (_user.value.hasErrors()) {
-										_user.value.errors.each {
+									def registration = new Registration(bnetId:_user.bnetId,
+																		bnetCharCode:_user.bnetCharCode,
+																		race:_user.primaryRace,
+																		skillLevel:_user.primarySkillLevel)
+									_user.addToRegistrations(registration)
+									_user.waitingList = false
+									_user.save()
+									if (_user.hasErrors()) {
+										_user.errors.each {
 											println it
 										}
 									}
