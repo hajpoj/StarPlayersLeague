@@ -15,8 +15,35 @@ class UserController {
     }
 
     def list = {
-        params.max = params.max ? params.int('max') : 500
-        [userInstanceList: User.list(params), userInstanceTotal: User.count()]
+        //params.max = params.max ? params.int('max') : 100
+		
+		def league = (params.league == null || params.league == "") ? null : params.league;
+		def waitingList = (params.waitingList == null || params.waitingList == "") ? null : params.waitingList;  
+		
+		
+		def userList;
+		def c = User.createCriteria()
+		if(league == null && waitingList == null) {
+			userList = User.list()
+		}
+		else if (league == null) {
+			userList = c {
+				eq("waitingList", waitingList.toBoolean())
+			}
+		}
+		else if(waitingList == null) {
+			userList = c {
+				eq("registrationValue", league)
+			}
+		}
+		else {
+			userList =  c {
+				eq("registrationValue", league)
+				eq("waitingList", waitingList.toBoolean())
+			}
+		}
+		
+        [userInstanceList: userList, userInstanceTotal: userList.count(), league: league, waitingList: waitingList.toString()]
     }
 
     def create = {
