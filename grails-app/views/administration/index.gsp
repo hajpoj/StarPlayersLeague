@@ -11,6 +11,7 @@
 		<g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
         </g:if>
+        
         <g:form>
 	        <div class="mcontent">
 		        <div class="infoleft">
@@ -37,5 +38,9 @@
 		    	</div>
 	        </div>
 	    </g:form>
+	    <br />
+	    <h1>Other Admin pages</h1>
+	    <br />
+	    <g:link action="stats">Stats Page</g:link>
 	</body>
 </html>
